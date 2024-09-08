@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.2
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -125,5 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 0.5
-  _velocity: 500
+  _rotationSpeed: 0
+  _velocity: 0
+  minRot: 0.5
+  maxRot: 1
+  minVel: 500
+  maxVel: 700

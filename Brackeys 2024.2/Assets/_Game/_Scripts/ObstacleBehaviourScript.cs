@@ -5,10 +5,10 @@ using UnityEngine;
 public class ObstacleBehaviourScript : MonoBehaviour
 {
     #region Variáveis Globais
-    [SerializeField] private float _rotationSpeed;
-    [SerializeField] private float _velocity;
-    //[SerializeField] private float minRot, maxRot;
-    //[SerializeField] private float minVel, maxVel;
+    [SerializeField] private float minRot, maxRot;
+    [SerializeField] private float minVel, maxVel;
+    private float _rotationSpeed;
+    private float _velocity;
     private Rigidbody2D _rb;
     #endregion
 
@@ -20,18 +20,18 @@ public class ObstacleBehaviourScript : MonoBehaviour
 
     private void Start()
     {
+        _velocity = Random.Range(minVel, maxVel);
+
         _rb.AddForce(-transform.right * _velocity);
     }
 
     void Update()
     {
-        //_rotationSpeed = Random.Range(minRot, maxRot);
-        //_velocity = Random.Range(minVel, maxVel);
-        transform.Rotate(0, 0, _rotationSpeed);
-    }
-    #endregion
+        _rotationSpeed = Random.Range(minRot, maxRot);
 
-    #region Funções Próprias
-    
+        transform.Rotate(0, 0, _rotationSpeed);
+
+        Destroy(gameObject, 8f);
+    }
     #endregion
 }
