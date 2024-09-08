@@ -16,11 +16,6 @@ public class BalloonMovement : MonoBehaviour
        _rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         _rb.velocity = new Vector2(0, upSpeed);
