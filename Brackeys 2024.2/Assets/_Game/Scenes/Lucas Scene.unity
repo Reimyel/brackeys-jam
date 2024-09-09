@@ -409,9 +409,10 @@ MonoBehaviour:
   upSpeed: 8
   horizontalSpeed: 15
   tiltAmount: 15
+  minInterval: 3
+  maxInterval: 5
   windForce: 10
   windDuration: 3
-  windInterval: 5
 --- !u!212 &278357415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -506,6 +507,75 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!1001 &315183644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848556800756624251, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348291717794159863, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: m_Name
+      value: BaloonStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: minSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: minStability
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
 --- !u!1 &466062911
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,3 +948,4 @@ SceneRoots:
   - {fileID: 1089495621}
   - {fileID: 18084264}
   - {fileID: 278357416}
+  - {fileID: 315183644}

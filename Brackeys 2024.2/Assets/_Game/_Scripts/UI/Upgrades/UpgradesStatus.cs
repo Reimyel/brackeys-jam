@@ -24,7 +24,7 @@ public class UpgradesStatus : MonoBehaviour
         Speed,
         Stability,
         Durability,
-        Armor,
+        Gun,
         Chicken
     }
     #endregion
@@ -43,19 +43,22 @@ public class UpgradesStatus : MonoBehaviour
         switch (stats) 
         {
             case TargetStats.Speed:
-                _currentLevel = BaloonStats.Speed;
+                _currentLevel = BaloonStats.SpeedLevel;
                 break;
 
             case TargetStats.Stability:
-                _currentLevel = BaloonStats.Stability;
+                _currentLevel = BaloonStats.StabilityLevel;
                 break;
 
             case TargetStats.Durability:
-                _currentLevel = BaloonStats.Durability;
+                _currentLevel = BaloonStats.DurabilityLevel;
                 break;
 
-            case TargetStats.Armor:
-                _currentLevel = BaloonStats.Armor;
+            case TargetStats.Gun:
+                if (BaloonStats.HasGun)
+                    _currentLevel = 1;
+                else
+                    _currentLevel = 0;
                 break;
 
             case TargetStats.Chicken:

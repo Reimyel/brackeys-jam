@@ -9,20 +9,23 @@ public class BaloonStats : MonoBehaviour
     public static BaloonStats Instance;
 
     [Header("Configurações:")]
-    [SerializeField] private int minSpeed;
-    [SerializeField] private int maxSpeed;
-    [SerializeField] private int minStability;
-    [SerializeField] private int maxStability;
+    [SerializeField] private float minSpeed;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float minStability;
+    [SerializeField] private float maxStability;
     [SerializeField] private int minDurability;
     [SerializeField] private int maxDurability;
-    [SerializeField] private int maxArmor;
     
     // Atributos atuais do Balão
-    public static int Speed { get; private set; }
-    public static int Stability { get; private set; }
+    public static float Speed { get; private set; }
+    public static float Stability { get; private set; }
     public static int Durability { get; private set; }
-    public static int Armor { get; private set; }
+    public static bool HasGun { get; private set; }
     public static bool HasChicken { get; private set; }
+
+    public static int SpeedLevel;
+    public static int StabilityLevel;
+    public static int DurabilityLevel;
     #endregion
 
     #region Funções Unity
@@ -33,7 +36,6 @@ public class BaloonStats : MonoBehaviour
         ChangeSpeed();
         ChangeStability();
         ChangeDurability();
-        ChangeArmor();
     }
 
     private void Update()
@@ -41,30 +43,52 @@ public class BaloonStats : MonoBehaviour
         Debug.Log("Speed: " + Speed);
         Debug.Log("Stability: " + Stability);
         Debug.Log("Durability: " + Durability);
-        Debug.Log("Armor: " + Armor);
+        Debug.Log("Gun: " + HasGun);
         Debug.Log("HasChicken: " + HasChicken);
     }
     #endregion
 
     #region Funções Próprias
-    public void ChangeSpeed(int value=0) 
+    public void ChangeSpeed(float value=0) 
     {
-        Speed = Mathf.Clamp(Speed + value, minSpeed, maxSpeed);
+        var newValue = Mathf.Clamp(Speed + value, minSpeed, maxSpeed);
+
+        if (newValue < Speed)
+            SpeedLevel--;
+        else
+            SpeedLevel++;
+
+        Speed = newValue;
     }
 
-    public void ChangeStability(int value=0)
+    public void ChangeStability(float value=0)
     {
-        Stability = Mathf.Clamp(Stability + value, minStability, maxStability);
+        var newValue = Mathf.Clamp(Stability + value, minStability, maxStability);
+
+        if (newValue < Stability)
+            StabilityLevel--;
+        else
+            StabilityLevel++;
+
+        Stability = newValue;
     }
 
     public void ChangeDurability(int value=0) 
     {
-        Durability = Mathf.Clamp(Durability + value, minDurability, maxDurability);
+        var newValue = Mathf.Clamp(Durability + value, minDurability, maxDurability);
+
+        if (newValue < Durability)
+            DurabilityLevel--;
+        else
+            DurabilityLevel++;
+
+        Durability = newValue;
     }
 
-    public void ChangeArmor(int value=0) 
+    public void EnableGun() 
     {
-        Armor = Mathf.Clamp(Armor + value, 0, maxArmor);
+        HasGun = true;
+        //TODO: ATIVAR ARMA DEPOIS
     }
 
     public void EnableChicken() 

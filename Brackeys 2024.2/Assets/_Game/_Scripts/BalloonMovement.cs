@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BalloonMovement : MonoBehaviour
 {
-    [SerializeField] private int upSpeed = 8;
-    [SerializeField] private int horizontalSpeed = 10;
+    [SerializeField] private float upSpeed = 8f;
+    [SerializeField] private float horizontalSpeed;
     [SerializeField] private float tiltAmount = 15f;
     private float tiltSpeed = 5f;
     private float targetRotation = 0f; //Rotação Atual
     private float dirX;
 
     //Variáveis do vento
-    private float windInterval = 5f;
     [Header("Ventania")]
+    private float windInterval = 5f;
     public float minInterval = 3f;
     public float maxInterval = 5f;
     public float windForce = 10f; 
@@ -22,10 +22,12 @@ public class BalloonMovement : MonoBehaviour
     //Component
     private Rigidbody2D _rb;
 
-    void Start()
+    private void Start()
     {
-       _rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         StartCoroutine(WindEffect());
+
+        horizontalSpeed = BaloonStats.Speed;
     }
 
     private void Update()
@@ -56,7 +58,7 @@ public class BalloonMovement : MonoBehaviour
         _rb.velocity = new Vector2(0, upSpeed);
 
         dirX = Input.GetAxisRaw("Horizontal");
-        _rb.velocity = new Vector2(dirX * horizontalSpeed + windDirection, _rb.velocity.y);
+        _rb.velocity = new Vector2(dirX * horizontalSpeed + windDirection * BaloonStats.Stability, _rb.velocity.y);
  
     }
 
