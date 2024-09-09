@@ -10,8 +10,12 @@ public class BalloonMovement : MonoBehaviour
     private float tiltSpeed = 5f;
     private float targetRotation = 0f; //Rotação Atual
     private float dirX;
+
     //Variáveis do vento
     private float windInterval = 5f;
+    [Header("Ventania")]
+    public float minInterval = 3f;
+    public float maxInterval = 5f;
     public float windForce = 10f; 
     public float windDuration = 3f; 
     private float windDirection = 0f;
@@ -71,7 +75,7 @@ public class BalloonMovement : MonoBehaviour
             // Para a ventania após a duração
             windDirection = 0f;
             //Da um novo intervalo
-            windInterval = Random.Range(3f, 6f);
+            windInterval = Random.Range(minInterval, maxInterval);
         }
     }
 }
