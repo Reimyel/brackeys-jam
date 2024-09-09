@@ -407,8 +407,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upSpeed: 8
-  horizontalSpeed: 10
+  horizontalSpeed: 15
   tiltAmount: 15
+  windForce: 10
+  windDuration: 3
+  windInterval: 5
 --- !u!212 &278357415
 SpriteRenderer:
   m_ObjectHideFlags: 0
