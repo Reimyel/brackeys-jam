@@ -7,24 +7,10 @@ public class GunBehaviourScript : MonoBehaviour
     [SerializeField] private int projectileSpeed;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawnpoint;
-    GameObject _cowObject;
-
-    private void Start()
-    {
-        _cowObject = GameObject.FindGameObjectWithTag("Cow");
-    }
-
-    private void Update()
-    {
-        if (_cowObject != null)
-        {
-            transform.LookAt(_cowObject.transform);
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject == _cowObject)
+        if (other.CompareTag("Cow"))
         {
             GameObject projectile = Instantiate(projectilePrefab, projectileSpawnpoint.position, Quaternion.identity);
 

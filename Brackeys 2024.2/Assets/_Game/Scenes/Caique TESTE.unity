@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0838562dcd3037f4c8940683555b39ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 1
+  projectileSpeed: 70
   projectilePrefab: {fileID: 1888065499314421501, guid: befee28643d9d6347be86521326e6685, type: 3}
   projectileSpawnpoint: {fileID: 51877697}
 --- !u!212 &695970751
@@ -732,6 +732,10 @@ MonoBehaviour:
   upSpeed: 8
   horizontalSpeed: 10
   tiltAmount: 15
+  minInterval: 3
+  maxInterval: 5
+  windForce: 10
+  windDuration: 3
 --- !u!212 &729943408
 SpriteRenderer:
   m_ObjectHideFlags: 0
