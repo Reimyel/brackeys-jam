@@ -5378,8 +5378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelInputs: {fileID: 1055610569}
-  nextSceneName: 
-  transitionSettings: {fileID: 0}
+  nextSceneName: Lucas Scene
+  transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
   loadTime: 0
 --- !u!95 &1714147517
 Animator:

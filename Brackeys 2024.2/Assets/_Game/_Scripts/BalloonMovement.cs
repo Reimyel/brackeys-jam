@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BalloonMovement : MonoBehaviour
 {
+    [Header("Configuração:")]
+
+    [Header("Movimentação:")]
     [SerializeField] private float upSpeed = 8f;
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float tiltAmount = 15f;
@@ -11,7 +14,7 @@ public class BalloonMovement : MonoBehaviour
     private float targetRotation = 0f; //Rotação Atual
     private float dirX;
 
-    //Variáveis do vento
+    // Variáveis do vento
     [Header("Ventania")]
     private float windInterval = 5f;
     public float minInterval = 3f;
@@ -19,8 +22,18 @@ public class BalloonMovement : MonoBehaviour
     public float windForce = 10f; 
     public float windDuration = 3f; 
     private float windDirection = 0f;
-    //Component
+
+    [Header("Referências:")]
+    [SerializeField] private Transform chickenTransform;
+    
+    // Componentes:
     private Rigidbody2D _rb;
+
+    private void Awake()
+    {
+        if (BaloonStats.HasChicken)
+            chickenTransform.gameObject.SetActive(true);
+    }
 
     private void Start()
     {
@@ -71,6 +84,7 @@ public class BalloonMovement : MonoBehaviour
             // Determina uma direção aleatória para a ventania (-1 para esquerda, 1 para direita)
             windDirection = Random.Range(0, 2) == 0 ? -windForce : windForce;
 
+            SetNewChickenRotationY(Mathf.Sign(windDirection));
             // Aplica ventania por um tempo
             yield return new WaitForSeconds(windDuration);
 
@@ -78,7 +92,16 @@ public class BalloonMovement : MonoBehaviour
             windDirection = 0f;
             //Da um novo intervalo
             windInterval = Random.Range(minInterval, maxInterval);
+            StartCoroutine(WindEffect());
         }
+    }
+
+    private void SetNewChickenRotationY(float dir) 
+    {
+        if (dir > 0)
+            chickenTransform.GetComponent<Animator>().Play("Chicken Turning Right Animation");       
+        else
+            chickenTransform.GetComponent<Animator>().Play("Chicken Turning Left Animation");
     }
 }
 
