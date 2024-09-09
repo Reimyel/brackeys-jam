@@ -11,8 +11,8 @@ public class UpgradesStatus : MonoBehaviour
     [SerializeField] private TargetStats stats;
 
     [Header("Cores:")]
-    [SerializeField] private Color activeColor;
-    [SerializeField] private Color disactiveColor;
+    [SerializeField] private Sprite activeSprite;
+    [SerializeField] private Sprite disactiveSprite;
 
     [Header("Referências:")]
     [SerializeField] private Image[] levelImages;
@@ -75,9 +75,9 @@ public class UpgradesStatus : MonoBehaviour
         for (int i = 0; i < levelImages.Length; i++) 
         {
             if (i < _currentLevel)
-                levelImages[i].color = activeColor;
+                levelImages[i].sprite = activeSprite;
             else
-                levelImages[i].color = disactiveColor;
+                levelImages[i].sprite = disactiveSprite;
         }
     }
     #endregion

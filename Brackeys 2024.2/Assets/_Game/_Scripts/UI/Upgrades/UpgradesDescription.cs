@@ -7,14 +7,17 @@ public class UpgradesDescription : MonoBehaviour, IPointerEnterHandler, IPointer
 {
     [Header("Referências:")]
     [SerializeField] private GameObject panelDescription;
+    [SerializeField] private GameObject arrowParent;
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         panelDescription.SetActive(true);
+        arrowParent.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
         panelDescription.SetActive(false);
+        arrowParent.SetActive(false);
     }
 }
