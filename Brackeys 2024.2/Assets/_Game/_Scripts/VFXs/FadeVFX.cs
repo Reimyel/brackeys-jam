@@ -37,6 +37,7 @@ public class FadeVFX : MonoBehaviour
     private void Update()
     {
         ApplyFade();
+        if (RotationParent != null) return;
         gameObject.transform.rotation = RotationParent.rotation;
     }
     #endregion

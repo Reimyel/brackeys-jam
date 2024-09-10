@@ -54,7 +54,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
         effectSpr.gameObject.transform.localScale = gameObject.transform.localScale;
 
         // Colocando a referência para rotação
-        effect.GetComponent<FadeVFX>().RotationParent = this.transform;
+        effect.GetComponent<FadeVFX>().RotationParent = gameObject.transform;
 
         StartCoroutine(ApplyEffect(0.01f));
     }
