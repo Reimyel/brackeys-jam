@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BaloonStats : MonoBehaviour
+public class BalloonStats : MonoBehaviour
 {
     #region Variáveis
-    public static BaloonStats Instance;
+    public static BalloonStats Instance;
 
     [Header("Configurações:")]
     [SerializeField] private float minSpeed;

@@ -129,3 +129,5 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
+  fadeColor: {r: 0.16064437, g: 0.3584906, b: 0.16270061, a: 1}
+  fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}

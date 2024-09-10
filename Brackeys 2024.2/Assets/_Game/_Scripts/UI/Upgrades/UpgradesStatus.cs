@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class UpgradesStatus : MonoBehaviour
@@ -43,26 +42,26 @@ public class UpgradesStatus : MonoBehaviour
         switch (stats) 
         {
             case TargetStats.Speed:
-                _currentLevel = BaloonStats.SpeedLevel;
+                _currentLevel = BalloonStats.SpeedLevel;
                 break;
 
             case TargetStats.Stability:
-                _currentLevel = BaloonStats.StabilityLevel;
+                _currentLevel = BalloonStats.StabilityLevel;
                 break;
 
             case TargetStats.Durability:
-                _currentLevel = BaloonStats.DurabilityLevel;
+                _currentLevel = BalloonStats.DurabilityLevel;
                 break;
 
             case TargetStats.Gun:
-                if (BaloonStats.HasGun)
+                if (BalloonStats.HasGun)
                     _currentLevel = 1;
                 else
                     _currentLevel = 0;
                 break;
 
             case TargetStats.Chicken:
-                if (BaloonStats.HasChicken)
+                if (BalloonStats.HasChicken)
                     _currentLevel = 1;
                 else
                     _currentLevel = 0;

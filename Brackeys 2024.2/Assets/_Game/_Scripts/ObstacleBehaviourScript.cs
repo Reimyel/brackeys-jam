@@ -5,8 +5,14 @@ using UnityEngine;
 public class ObstacleBehaviourScript : MonoBehaviour
 {
     #region Variáveis Globais
+    [Header("Configurações:")]
     [SerializeField] private float minRot, maxRot;
     [SerializeField] private float minVel, maxVel;
+    [SerializeField] private Color fadeColor;
+
+    [Header("Referências:")]
+    [SerializeField] private FadeVFX fadePrefab;
+
     private float _rotationSpeed;
     private float _velocity;
     private Rigidbody2D _rb;
@@ -23,15 +29,34 @@ public class ObstacleBehaviourScript : MonoBehaviour
         _velocity = Random.Range(minVel, maxVel);
 
         _rb.AddForce(-transform.right * _velocity);
+
+        StartCoroutine(ApplyEffect(0.01f));
     }
 
-    void Update()
+    private void Update()
     {
         _rotationSpeed = Random.Range(minRot, maxRot);
 
         transform.Rotate(0, 0, _rotationSpeed);
 
         Destroy(gameObject, 8f);
+    }
+
+    private IEnumerator ApplyEffect(float t) 
+    {
+        yield return new WaitForSeconds(t);
+        var effect = Instantiate(fadePrefab, transform.position, Quaternion.identity);
+        var effectSpr = effect.GetComponent<SpriteRenderer>();
+
+        // Configurando Sprite do Fade
+        effectSpr.sprite = GetComponent<SpriteRenderer>().sprite;
+        effectSpr.color = fadeColor;
+        effectSpr.gameObject.transform.localScale = gameObject.transform.localScale;
+
+        // Colocando a referência para rotação
+        effect.GetComponent<FadeVFX>().RotationParent = this.transform;
+
+        StartCoroutine(ApplyEffect(0.01f));
     }
     #endregion
 }

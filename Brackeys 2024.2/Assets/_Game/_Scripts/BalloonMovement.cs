@@ -25,14 +25,25 @@ public class BalloonMovement : MonoBehaviour
 
     [Header("Referências:")]
     [SerializeField] private Transform chickenTransform;
-    
+
+    // Referências:
+    private Animator _chickenAnimator;
+
     // Componentes:
     private Rigidbody2D _rb;
 
     private void Awake()
     {
-        if (BaloonStats.HasChicken)
+        if (BalloonStats.HasChicken) 
+        {
             chickenTransform.gameObject.SetActive(true);
+            _chickenAnimator = chickenTransform.gameObject.GetComponent<Animator>();
+
+            if (Random.Range(0, 100) < 50)
+                _chickenAnimator.Play("Chicken Turning Right Animation");
+            else
+                _chickenAnimator.Play("Chicken Turning Left Animation");
+        }
     }
 
     private void Start()
@@ -40,7 +51,7 @@ public class BalloonMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         StartCoroutine(WindEffect());
 
-        horizontalSpeed = BaloonStats.Speed;
+        horizontalSpeed = BalloonStats.Speed;
     }
 
     private void Update()
@@ -71,7 +82,7 @@ public class BalloonMovement : MonoBehaviour
         _rb.velocity = new Vector2(0, upSpeed);
 
         dirX = Input.GetAxisRaw("Horizontal");
-        _rb.velocity = new Vector2(dirX * horizontalSpeed + windDirection * BaloonStats.Stability, _rb.velocity.y);
+        _rb.velocity = new Vector2(dirX * horizontalSpeed + windDirection * BalloonStats.Stability, _rb.velocity.y);
  
     }
 
@@ -84,7 +95,8 @@ public class BalloonMovement : MonoBehaviour
             // Determina uma direção aleatória para a ventania (-1 para esquerda, 1 para direita)
             windDirection = Random.Range(0, 2) == 0 ? -windForce : windForce;
 
-            SetNewChickenRotationY(Mathf.Sign(windDirection));
+            if (chickenTransform != null)
+                SetNewChickenRotationY(Mathf.Sign(windDirection));
             // Aplica ventania por um tempo
             yield return new WaitForSeconds(windDuration);
 
@@ -99,9 +111,9 @@ public class BalloonMovement : MonoBehaviour
     private void SetNewChickenRotationY(float dir) 
     {
         if (dir > 0)
-            chickenTransform.GetComponent<Animator>().Play("Chicken Turning Right Animation");       
+            _chickenAnimator.Play("Chicken Turning Right Animation");       
         else
-            chickenTransform.GetComponent<Animator>().Play("Chicken Turning Left Animation");
+            _chickenAnimator.Play("Chicken Turning Left Animation");
     }
 }
 
