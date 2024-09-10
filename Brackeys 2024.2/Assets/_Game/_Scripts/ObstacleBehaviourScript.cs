@@ -31,6 +31,8 @@ public class ObstacleBehaviourScript : MonoBehaviour
         _rb.AddForce(-transform.right * _velocity);
 
         StartCoroutine(ApplyEffect(0.01f));
+
+        Destroy(gameObject, 8f);
     }
 
     private void Update()
@@ -38,8 +40,6 @@ public class ObstacleBehaviourScript : MonoBehaviour
         _rotationSpeed = Random.Range(minRot, maxRot);
 
         transform.Rotate(0, 0, _rotationSpeed);
-
-        Destroy(gameObject, 8f);
     }
 
     private IEnumerator ApplyEffect(float t) 

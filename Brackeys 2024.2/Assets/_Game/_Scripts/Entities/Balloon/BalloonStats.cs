@@ -26,6 +26,7 @@ public class BalloonStats : MonoBehaviour
     public static int SpeedLevel;
     public static int StabilityLevel;
     public static int DurabilityLevel;
+    public static int CurrentMoney;
     #endregion
 
     #region Funções Unity
