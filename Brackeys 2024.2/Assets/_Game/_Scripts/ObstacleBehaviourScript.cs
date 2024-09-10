@@ -8,6 +8,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
     [Header("Configurações:")]
     [SerializeField] private float minRot, maxRot;
     [SerializeField] private float minVel, maxVel;
+    public int BallonDamage;
     [SerializeField] private Color fadeColor;
 
     [Header("Referências:")]

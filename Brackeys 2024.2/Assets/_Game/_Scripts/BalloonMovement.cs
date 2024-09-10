@@ -7,7 +7,7 @@ public class BalloonMovement : MonoBehaviour
     [Header("Configuração:")]
 
     [Header("Movimentação:")]
-    [SerializeField] private float upSpeed = 8f;
+    //[SerializeField] private float upSpeed = 8f;
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float tiltAmount = 15f;
     private float tiltSpeed = 5f;
@@ -78,8 +78,9 @@ public class BalloonMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Faz a subida
+        /*Faz a subida
         _rb.velocity = new Vector2(0, upSpeed);
+        */
 
         dirX = Input.GetAxisRaw("Horizontal");
         _rb.velocity = new Vector2(dirX * horizontalSpeed + windDirection * BalloonStats.Stability, _rb.velocity.y);
