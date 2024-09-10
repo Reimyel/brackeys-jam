@@ -7,7 +7,7 @@ public class BalloonMovement : MonoBehaviour
     [Header("Configuração:")]
 
     [Header("Movimentação:")]
-    //[SerializeField] private float upSpeed = 8f;
+    [SerializeField] private float upSpeed = 8f;
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float tiltAmount = 15f;
     private float tiltSpeed = 5f;
