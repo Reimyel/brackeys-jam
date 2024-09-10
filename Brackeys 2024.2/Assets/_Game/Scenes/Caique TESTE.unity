@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0838562dcd3037f4c8940683555b39ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 70
+  projectileSpeed: 200
   projectilePrefab: {fileID: 1888065499314421501, guid: befee28643d9d6347be86521326e6685, type: 3}
   projectileSpawnpoint: {fileID: 51877697}
 --- !u!212 &695970751
@@ -641,7 +641,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1369,6 +1369,12 @@ MonoBehaviour:
   minTime: 1
   maxTime: 2
   obstaclesPrefabs:
+  - {fileID: 4878332863736183165, guid: e55537cf244097546a88f3acb925b07f, type: 3}
+  - {fileID: 747976268516018230, guid: 356d7458def172744a2683e5fdc09984, type: 3}
+  - {fileID: 2435219744805616586, guid: 66d7ec3925144034ab3b079880f80427, type: 3}
+  - {fileID: 1888065499314421501, guid: 422a6e33364d26444b1e1c98caf4e694, type: 3}
+  - {fileID: 3003807624242062095, guid: d437f9079acff354193016adaae61379, type: 3}
+  - {fileID: 7179124661092502471, guid: babecc7612f700549b16c93498c40ea5, type: 3}
   - {fileID: 2012646898506410731, guid: 368fdf1cc4058724082fd87344dfb60a, type: 3}
   spawnPoint:
   - {fileID: 1711625708}
