@@ -95,7 +95,7 @@ public class BalloonMovement : MonoBehaviour
             // Determina uma direção aleatória para a ventania (-1 para esquerda, 1 para direita)
             windDirection = Random.Range(0, 2) == 0 ? -windForce : windForce;
 
-            if (chickenTransform != null)
+            if (_chickenAnimator != null)
                 SetNewChickenRotationY(Mathf.Sign(windDirection));
             // Aplica ventania por um tempo
             yield return new WaitForSeconds(windDuration);

@@ -7,7 +7,13 @@ public class UpgradesStatus : MonoBehaviour
 {
     #region Variáveis
     [Header("Configurações:")]
+
+    [Header("Atributo:")]
     [SerializeField] private TargetStats stats;
+
+    [Header("Preço:")]
+    [SerializeField] private int baseCost;
+    [SerializeField] private int baseCostModifier;
 
     [Header("Cores:")]
     [SerializeField] private Sprite activeSprite;
@@ -17,6 +23,7 @@ public class UpgradesStatus : MonoBehaviour
     [SerializeField] private Image[] levelImages;
 
     private int _currentLevel;
+    private int _currentCost;
 
     private enum TargetStats 
     {
@@ -32,7 +39,8 @@ public class UpgradesStatus : MonoBehaviour
     private void Update() 
     {
         SelectStats();
-        SetUpgradeLevel(); 
+        SetUpgradeLevel();
+        SetCurrentCost();
     }
     #endregion
 
@@ -79,5 +87,60 @@ public class UpgradesStatus : MonoBehaviour
                 levelImages[i].sprite = disactiveSprite;
         }
     }
+
+    public void ChangeDecimalStats(float value)
+    {
+        if (BalloonStats.CurrentMoney >= _currentCost) // Paga o Upgrade
+            BalloonStats.CurrentMoney -= _currentCost;
+        else // Ignore o Upgrade
+            return;
+
+        // Aplica o Upgrade
+
+        switch (stats)
+        {
+            case TargetStats.Speed:
+                BalloonStats.Instance.ChangeSpeed(value);
+                break;
+
+            case TargetStats.Stability:
+                BalloonStats.Instance.ChangeStability(value);
+                break;
+        }
+    }
+
+    public void ChangeIntegerStats(int value)
+    {
+        if (BalloonStats.CurrentMoney >= _currentCost) // Paga o Upgrade
+            BalloonStats.CurrentMoney -= _currentCost;
+        else // Ignore o Upgrade
+            return;
+
+        // Aplica o Upgrade
+
+        BalloonStats.Instance.ChangeDurability(value);
+    }
+
+    public void EnableConsumable() 
+    {
+        if (BalloonStats.CurrentMoney >= _currentCost) // Paga o Upgrade
+            BalloonStats.CurrentMoney -= _currentCost;
+        else // Ignore o Upgrade
+            return;
+        
+        // Aplica o Upgrade
+        switch (stats)
+        {
+            case TargetStats.Chicken:
+                BalloonStats.Instance.EnableChicken();
+                break;
+
+            case TargetStats.Gun:
+                BalloonStats.Instance.EnableGun();
+                break;
+        }
+    }
+
+    private void SetCurrentCost() => _currentCost = _currentLevel * baseCostModifier * baseCost;
     #endregion
 }
