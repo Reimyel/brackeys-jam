@@ -993,9 +993,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953239709}
-        m_TargetAssemblyTypeName: BaloonStats, Assembly-CSharp
-        m_MethodName: EnableGun
+      - m_Target: {fileID: 400208072}
+        m_TargetAssemblyTypeName: UpgradesStatus, Assembly-CSharp
+        m_MethodName: EnableConsumable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1056,6 +1056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: 3
+  baseCost: 0
+  baseCostModifier: 0
   activeSprite: {fileID: 21300000, guid: a7313f5ec61411f43bf67beb907f89c0, type: 3}
   disactiveSprite: {fileID: 21300000, guid: 4e8c4d7861872254cac1fe15e538c1cc, type: 3}
   levelImages:
@@ -1589,9 +1591,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953239709}
-        m_TargetAssemblyTypeName: BaloonStats, Assembly-CSharp
-        m_MethodName: EnableChicken
+      - m_Target: {fileID: 541602505}
+        m_TargetAssemblyTypeName: UpgradesStatus, Assembly-CSharp
+        m_MethodName: EnableConsumable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1652,6 +1654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: 4
+  baseCost: 0
+  baseCostModifier: 0
   activeSprite: {fileID: 21300000, guid: a7313f5ec61411f43bf67beb907f89c0, type: 3}
   disactiveSprite: {fileID: 21300000, guid: 4e8c4d7861872254cac1fe15e538c1cc, type: 3}
   levelImages:
@@ -2923,17 +2927,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942986628}
   m_CullTransparentMesh: 1
---- !u!114 &953239709 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
-  m_PrefabInstance: {fileID: 4897277555333784940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0d95adbd23bb44f9f4133710e627df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &961552341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,9 +4376,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953239709}
-        m_TargetAssemblyTypeName: BaloonStats, Assembly-CSharp
-        m_MethodName: ChangeDurability
+      - m_Target: {fileID: 1425369826}
+        m_TargetAssemblyTypeName: UpgradesStatus, Assembly-CSharp
+        m_MethodName: ChangeIntegerStats
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4446,6 +4439,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: 2
+  baseCost: 0
+  baseCostModifier: 0
   activeSprite: {fileID: 21300000, guid: a7313f5ec61411f43bf67beb907f89c0, type: 3}
   disactiveSprite: {fileID: 21300000, guid: 4e8c4d7861872254cac1fe15e538c1cc, type: 3}
   levelImages:
@@ -4721,9 +4716,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953239709}
-        m_TargetAssemblyTypeName: BaloonStats, Assembly-CSharp
-        m_MethodName: ChangeStability
+      - m_Target: {fileID: 1442403956}
+        m_TargetAssemblyTypeName: UpgradesStatus, Assembly-CSharp
+        m_MethodName: ChangeDecimalStats
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4819,6 +4814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: 1
+  baseCost: 0
+  baseCostModifier: 0
   activeSprite: {fileID: 21300000, guid: a7313f5ec61411f43bf67beb907f89c0, type: 3}
   disactiveSprite: {fileID: 21300000, guid: 4e8c4d7861872254cac1fe15e538c1cc, type: 3}
   levelImages:
@@ -6338,9 +6335,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953239709}
-        m_TargetAssemblyTypeName: BaloonStats, Assembly-CSharp
-        m_MethodName: ChangeSpeed
+      - m_Target: {fileID: 2080916782}
+        m_TargetAssemblyTypeName: UpgradesStatus, Assembly-CSharp
+        m_MethodName: ChangeDecimalStats
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6401,6 +6398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: 0
+  baseCost: 0
+  baseCostModifier: 0
   activeSprite: {fileID: 21300000, guid: a7313f5ec61411f43bf67beb907f89c0, type: 3}
   disactiveSprite: {fileID: 21300000, guid: 4e8c4d7861872254cac1fe15e538c1cc, type: 3}
   levelImages:
