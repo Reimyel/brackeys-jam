@@ -10,6 +10,8 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private float timeToStage3;
     private float time;
     private float timeCounter;
+    private bool stage2Triggered = false;
+    private bool stage3Triggered = false;
 
     void Update()
     {
@@ -17,15 +19,19 @@ public class TimerManager : MonoBehaviour
         timeCounter += time;
         timerText.text = ((int)timeCounter).ToString();
 
+        float tolerance = 0.1f;
+
         //lógicas pros pontos de transição
-        if (timeCounter == 2f)
+        if (!stage2Triggered && Mathf.Abs(timeCounter - timeToStage2) <= tolerance)
         {
             Stage2Begin();
+            stage2Triggered = true;
         }
 
-        if (timeCounter == timeToStage3)
+        if (!stage3Triggered && Mathf.Abs(timeCounter - timeToStage3) <= tolerance)
         {
             Stage3Begin();
+            stage3Triggered = true;
         }
     }
 

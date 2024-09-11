@@ -41,11 +41,11 @@ public class BalloonStats : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Speed: " + Speed);
-        Debug.Log("Stability: " + Stability);
-        Debug.Log("Durability: " + Durability);
-        Debug.Log("Gun: " + HasGun);
-        Debug.Log("HasChicken: " + HasChicken);
+        //Debug.Log("Speed: " + Speed);
+        //Debug.Log("Stability: " + Stability);
+        //Debug.Log("Durability: " + Durability);
+        //Debug.Log("Gun: " + HasGun);
+        //Debug.Log("HasChicken: " + HasChicken);
     }
     #endregion
 
