@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BalloonCollision : MonoBehaviour
 {
+    #region Variáveis
     [Header("Configurações:")]
     [SerializeField] private string upgradeScene;
 
@@ -24,7 +25,9 @@ public class BalloonCollision : MonoBehaviour
     private BalloonMovement _balloonMovement;
 
     private int _initialDurability;
+    #endregion
 
+    #region Funções Unity
     private void Awake() => _initialDurability = BalloonStats.Durability;
 
     private void Start()
@@ -39,7 +42,9 @@ public class BalloonCollision : MonoBehaviour
         else if (col.gameObject.layer == layerChangeSide)
             ChangeSide(col.gameObject.tag);
     }
+    #endregion
 
+    #region Funções Próprias
     private void ReduceDurability(int damage) 
     {
         var newValue = BalloonStats.Durability - damage;
@@ -52,6 +57,8 @@ public class BalloonCollision : MonoBehaviour
             // Efeito Sonoro do Balão Murchando
             // Tela Escurecer
             BalloonStats.Durability = _initialDurability;
+            _rb.velocity = Vector2.zero;
+            _balloonMovement.CanMove = false;
             SceneManager.LoadScene(upgradeScene);
         }
         else 
@@ -79,4 +86,5 @@ public class BalloonCollision : MonoBehaviour
     }
 
     private void ResetCanMove() => _balloonMovement.CanMove = true;
+    #endregion
 }

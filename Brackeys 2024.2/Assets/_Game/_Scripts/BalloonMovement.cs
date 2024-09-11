@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BalloonMovement : MonoBehaviour
 {
+    #region Variáveis
     [Header("Configuração:")]
 
     [Header("Movimentação:")]
@@ -33,7 +34,9 @@ public class BalloonMovement : MonoBehaviour
     private Rigidbody2D _rb;
 
     [HideInInspector] public bool CanMove = true;
+    #endregion
 
+    #region Funções Unity
     private void Awake()
     {
         if (BalloonStats.HasChicken) 
@@ -91,7 +94,9 @@ public class BalloonMovement : MonoBehaviour
         _rb.velocity = new Vector2(dirX * horizontalSpeed + windDirection * BalloonStats.Stability, _rb.velocity.y);
  
     }
+    #endregion
 
+    #region Funções Próprias
     IEnumerator WindEffect()
     {
         while (true)
@@ -121,5 +126,6 @@ public class BalloonMovement : MonoBehaviour
         else
             _chickenAnimator.Play("Chicken Turning Left Animation");
     }
+    #endregion
 }
 
