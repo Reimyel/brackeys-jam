@@ -15,13 +15,13 @@ public class BalloonStats : MonoBehaviour
     [SerializeField] private float maxStability;
     [SerializeField] private int minDurability;
     [SerializeField] private int maxDurability;
-    
+
     // Atributos atuais do Balão
-    public static float Speed { get; private set; }
-    public static float Stability { get; private set; }
-    public static int Durability { get; private set; }
-    public static bool HasGun { get; private set; }
-    public static bool HasChicken { get; private set; }
+    public static float Speed;
+    public static float Stability;
+    public static int Durability;
+    public static bool HasGun;
+    public static bool HasChicken;
 
     public static int SpeedLevel;
     public static int StabilityLevel;
