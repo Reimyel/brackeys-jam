@@ -32,6 +32,8 @@ public class BalloonMovement : MonoBehaviour
     // Componentes:
     private Rigidbody2D _rb;
 
+    [HideInInspector] public bool CanMove = true;
+
     private void Awake()
     {
         if (BalloonStats.HasChicken) 
@@ -56,6 +58,8 @@ public class BalloonMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!CanMove) return;
+
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             targetRotation = -tiltAmount; 
@@ -78,6 +82,7 @@ public class BalloonMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!CanMove) return;
         /*Faz a subida
         _rb.velocity = new Vector2(0, upSpeed);
         */

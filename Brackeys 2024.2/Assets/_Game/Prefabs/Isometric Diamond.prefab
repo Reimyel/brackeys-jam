@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3574710163344900780}
   - component: {fileID: -2166624529937530610}
   - component: {fileID: -1079474317998709659}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Isometric Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,5 +129,6 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
+  BallonDamage: 0
   fadeColor: {r: 0.13995194, g: 0.3490566, b: 0.3316425, a: 1}
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}

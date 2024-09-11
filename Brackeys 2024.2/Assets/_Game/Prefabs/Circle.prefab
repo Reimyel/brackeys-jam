@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 676750260687903878}
   - component: {fileID: 4509002212130167903}
   - component: {fileID: -4355945196099065498}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,5 +129,6 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
+  BallonDamage: 0
   fadeColor: {r: 0.16064437, g: 0.3584906, b: 0.16270061, a: 1}
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}

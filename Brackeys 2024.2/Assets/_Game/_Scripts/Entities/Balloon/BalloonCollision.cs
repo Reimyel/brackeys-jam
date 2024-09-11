@@ -8,18 +8,36 @@ public class BalloonCollision : MonoBehaviour
 {
     [Header("Configurações:")]
     [SerializeField] private string upgradeScene;
+
+    [Header("Layers:")]
     [SerializeField] private int layerObstacle;
+    [SerializeField] private int layerChangeSide;
+
+    [Header("Trocando Lados:")]
+    [SerializeField] private float changeSideForce;
+    [SerializeField] private Transform leftSidePoint;
+    [SerializeField] private Transform rightSidePoint;
+    [SerializeField] private float resetCanMoveInterval;
+
+    // Componentes:
+    private Rigidbody2D _rb;
+    private BalloonMovement _balloonMovement;
 
     private int _initialDurability;
 
     private void Awake() => _initialDurability = BalloonStats.Durability;
 
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        _balloonMovement = GetComponent<BalloonMovement>();
+    }
     private void OnCollisionEnter2D(Collision2D col) 
     {
-        if (col.gameObject.layer == layerObstacle) 
-        {
+        if (col.gameObject.layer == layerObstacle)
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BallonDamage);
-        }
+        else if (col.gameObject.layer == layerChangeSide)
+            ChangeSide(col.gameObject.tag);
     }
 
     private void ReduceDurability(int damage) 
@@ -41,4 +59,24 @@ public class BalloonCollision : MonoBehaviour
             BalloonStats.Durability -= damage;   
         }
     }
+
+    private void ChangeSide(string tag) 
+    {
+        _balloonMovement.CanMove = false;
+        _rb.velocity = Vector2.zero;
+        Invoke("ResetCanMove", resetCanMoveInterval);
+
+        if (tag == "LeftSide") 
+        {
+            gameObject.transform.position = rightSidePoint.position;
+            _rb.AddForce(Vector2.left * changeSideForce, ForceMode2D.Impulse);
+        }
+        else // RightSide
+        {
+            gameObject.transform.position = leftSidePoint.position;
+            _rb.AddForce(Vector2.right * changeSideForce, ForceMode2D.Impulse);
+        }
+    }
+
+    private void ResetCanMove() => _balloonMovement.CanMove = true;
 }

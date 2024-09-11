@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7201202476846571037}
   - component: {fileID: 8737085579847127753}
   - component: {fileID: 4135070662044021214}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cow
   m_TagString: Cow
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
+  BallonDamage: 0
   fadeColor: {r: 0.31132078, g: 0.16006587, b: 0.16006587, a: 1}
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &8737085579847127753

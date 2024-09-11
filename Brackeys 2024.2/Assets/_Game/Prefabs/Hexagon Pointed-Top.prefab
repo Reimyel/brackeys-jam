@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5890278270173651126}
   - component: {fileID: 5748122170926182979}
   - component: {fileID: 5147572922319299824}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hexagon Pointed-Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,5 +129,6 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
+  BallonDamage: 0
   fadeColor: {r: 0.46226418, g: 0.3495695, b: 0.22895159, a: 1}
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}

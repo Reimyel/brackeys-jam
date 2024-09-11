@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7451142537717702129}
   - component: {fileID: -8722390251696238764}
   - component: {fileID: 4763100671113409016}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,5 +129,6 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
+  BallonDamage: 0
   fadeColor: {r: 0.4245283, g: 0.122152, b: 0.29745108, a: 1}
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
