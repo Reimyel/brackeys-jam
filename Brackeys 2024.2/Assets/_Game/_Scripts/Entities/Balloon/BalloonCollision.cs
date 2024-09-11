@@ -21,9 +21,6 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private Transform rightSidePoint;
     [SerializeField] private float resetCanMoveInterval;
 
-    [Header("Referências:")]
-    [SerializeField] private GameObject musicPlayer;
-
     [Header("Transição Game Over:")]
     [SerializeField] private string upgradeSceneName;
     [SerializeField] private TransitionSettings transitionSettings;
@@ -44,13 +41,6 @@ public class BalloonCollision : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _balloonMovement = GetComponent<BalloonMovement>();
-
-        Invoke("Teste", 4f);
-    }
-
-    private void Teste() 
-    {
-        ReduceDurability(BalloonStats.Durability);
     }
 
     private void OnCollisionEnter2D(Collision2D col) 
@@ -77,9 +67,9 @@ public class BalloonCollision : MonoBehaviour
             
             // Balão Parar
             _balloonMovement.enabled = false;
-            
+
             // Parar Música
-            if (musicPlayer != null) Destroy(musicPlayer);
+            Destroy(GameObject.FindGameObjectWithTag("Music"));
             
             // Efeito Sonoro do Balão Murchando
             BalloonStats.Durability = _initialDurability;

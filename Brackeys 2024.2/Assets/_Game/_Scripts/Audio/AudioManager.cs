@@ -6,8 +6,7 @@ using UnityEngine;
 [Serializable]
 public class AudioManager : MonoBehaviour
 {
-    #region Variáveis Globais
-    // Unity Inspector:
+    #region Variáveis
     [Header("Assets:")]
     [SerializeField] private Music[] musics;
     [SerializeField] private SFX[] sfxs;
@@ -47,7 +46,7 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Funções Próprias
-    public void PlaySFX(string name)
+    public void PlaySFX(string name, bool loopable=false)
     {
         // Procure pelo sfx desejado
         foreach (SFX s in sfxs)
@@ -60,13 +59,18 @@ public class AudioManager : MonoBehaviour
                 sAudioSource.volume = s.Volume;
                 sAudioSource.pitch = s.Pitch;
                 sAudioSource.Play();
+
+
+                if (loopable)
+                    sAudioSource.loop = true;
+
                 Destroy(sfx, 5f);
                 break;
             }
         }
     }
 
-    public void PlayMusic(string name)
+    public void PlayMusic(string name, bool loopable=true)
     {
         // Procure pela música desejada
         foreach (Music m in musics)
@@ -82,10 +86,13 @@ public class AudioManager : MonoBehaviour
                 else
                     Destroy(musicCurObj);
 
+                mObj.tag = "Music";
                 musicCurObj = mObj;
                 musicCurName = m.Clip.name;
                 mAudioSource.Play();
-                mAudioSource.loop = true;
+
+                if (loopable)
+                    mAudioSource.loop = true;
 
                 curMusicAudioSource = mAudioSource;
             }
