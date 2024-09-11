@@ -675,7 +675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3115650667326957300, guid: cb4c65f8e21e17045a1b9cc617ff112b, type: 3}
       propertyPath: m_Name
-      value: Main Camera 1
+      value: Main Camera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
