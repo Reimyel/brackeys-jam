@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScreenObstacle : MonoBehaviour
 {
+    #region Variáveis
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float disappearSpeed;
 
@@ -13,22 +14,25 @@ public class ScreenObstacle : MonoBehaviour
 
     // Componentes:
     private SpriteRenderer _spr;
+    #endregion
 
+    #region Funções Unity
     private void Start()
     {
         _rotateDir = new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), Random.Range(-1, 2));
         _spr = GetComponent<SpriteRenderer>();
     }
 
-
     private void Update()
     {
         if (_canRotate)
             Rotate();
-        else 
-            Disappear();       
+        else
+            Disappear();
     }
+    #endregion
 
+    #region Funções Próprias
     private void Rotate() => transform.Rotate(_rotateDir * rotateSpeed * Time.deltaTime);
 
     private void DisableRotation()
@@ -39,7 +43,7 @@ public class ScreenObstacle : MonoBehaviour
         transform.localScale = new Vector3(10f, 10f, 1f);
     }
 
-    private void Disappear() 
+    private void Disappear()
     {
         var color = _spr.color;
 
@@ -57,4 +61,5 @@ public class ScreenObstacle : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
 }
