@@ -31,14 +31,17 @@ public class FadeVFX : MonoBehaviour
         if (isUI) _img = GetComponent<Image>();
         else _spr = GetComponent<SpriteRenderer>();
 
-        gameObject.transform.rotation = RotationParent.rotation;
+        if (RotationParent != null)
+            gameObject.transform.rotation = RotationParent.rotation;
     }
 
     private void Update()
     {
         ApplyFade();
-        if (RotationParent != null) return;
-        gameObject.transform.rotation = RotationParent.rotation;
+
+
+        if (RotationParent != null)
+            gameObject.transform.rotation = RotationParent.rotation;
     }
     #endregion
 
