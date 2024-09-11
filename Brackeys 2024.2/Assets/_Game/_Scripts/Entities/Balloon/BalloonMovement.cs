@@ -26,6 +26,7 @@ public class BalloonMovement : MonoBehaviour
 
     [Header("Referências:")]
     [SerializeField] private Transform chickenTransform;
+    [SerializeField] private GameObject windAlert;
 
     // Referências:
     private Animator _chickenAnimator;
@@ -53,6 +54,7 @@ public class BalloonMovement : MonoBehaviour
 
     private void Start()
     {
+        windAlert.gameObject.SetActive(false);
         _rb = GetComponent<Rigidbody2D>();
         StartCoroutine(WindEffect());
 
@@ -102,7 +104,6 @@ public class BalloonMovement : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(windInterval);
-
             // Determina uma direção aleatória para a ventania (-1 para esquerda, 1 para direita)
             windDirection = Random.Range(0, 2) == 0 ? -windForce : windForce;
 
@@ -115,8 +116,17 @@ public class BalloonMovement : MonoBehaviour
             windDirection = 0f;
             //Da um novo intervalo
             windInterval = Random.Range(minInterval, maxInterval);
+
+            windAlert.gameObject.SetActive(true);
+            StartCoroutine(StopWindAlert(windInterval - 2f));
             StartCoroutine(WindEffect());
         }
+    }
+
+    private IEnumerator StopWindAlert(float interval) 
+    {
+        yield return new WaitForSeconds(interval);
+        windAlert.gameObject.SetActive(false);
     }
 
     private void SetNewChickenRotationY(float dir) 
