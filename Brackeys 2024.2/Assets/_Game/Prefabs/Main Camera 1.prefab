@@ -4958,7 +4958,7 @@ GameObject:
   - component: {fileID: 1296194159446761775}
   - component: {fileID: 5315496189357317545}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera 1
   m_TagString: MainCamera
 >>>>>>>> duca:Brackeys 2024.2/Assets/_Game/Prefabs/Main Camera.prefab
   m_Icon: {fileID: 0}
