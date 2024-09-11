@@ -9,8 +9,8 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float timeToStage2;
     [SerializeField] private float timeToStage3;
-    private float time;
-    private float timeCounter;
+    public float time;
+    public float timeCounter;
     private bool stage2Triggered = false;
     private bool stage3Triggered = false;
     #endregion
