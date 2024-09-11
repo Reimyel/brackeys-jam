@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/UpgradeScene.unity
     guid: c525b9a446ce63a42b2b562a5307e08e
+  - enabled: 1
+    path: Assets/_Game/Scenes/Duca Scene 1.unity
+    guid: 7c7959519a9d6d9429c7c55c562c7763
   m_configObjects: {}

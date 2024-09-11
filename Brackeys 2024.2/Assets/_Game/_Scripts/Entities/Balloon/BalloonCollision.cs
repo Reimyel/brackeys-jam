@@ -1,3 +1,4 @@
+using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
@@ -8,7 +9,7 @@ public class BalloonCollision : MonoBehaviour
 {
     #region Variáveis
     [Header("Configurações:")]
-    [SerializeField] private string upgradeScene;
+    [SerializeField] private float gameOverInterval;
 
     [Header("Layers:")]
     [SerializeField] private int layerObstacle;
@@ -20,11 +21,20 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private Transform rightSidePoint;
     [SerializeField] private float resetCanMoveInterval;
 
+    [Header("Referências:")]
+    [SerializeField] private GameObject musicPlayer;
+
+    [Header("Transição Game Over:")]
+    [SerializeField] private string upgradeSceneName;
+    [SerializeField] private TransitionSettings transitionSettings;
+
     // Componentes:
     private Rigidbody2D _rb;
     private BalloonMovement _balloonMovement;
 
     private int _initialDurability;
+
+    private bool _IsGameOver = false;
     #endregion
 
     #region Funções Unity
@@ -34,9 +44,20 @@ public class BalloonCollision : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _balloonMovement = GetComponent<BalloonMovement>();
+
+        Invoke("Teste", 4f);
     }
+
+    private void Teste() 
+    {
+        ReduceDurability(BalloonStats.Durability);
+    }
+
     private void OnCollisionEnter2D(Collision2D col) 
     {
+        // Não detecctar mais nada, caso estiver no Game Over
+        if (_IsGameOver) return;
+
         if (col.gameObject.layer == layerObstacle)
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BallonDamage);
         else if (col.gameObject.layer == layerChangeSide)
@@ -52,14 +73,23 @@ public class BalloonCollision : MonoBehaviour
         if (newValue <= 0) 
         {
             // GameOver
+            _IsGameOver = true;
+            
             // Balão Parar
+            _balloonMovement.enabled = false;
+            
             // Parar Música
+            if (musicPlayer != null) Destroy(musicPlayer);
+            
             // Efeito Sonoro do Balão Murchando
-            // Tela Escurecer
             BalloonStats.Durability = _initialDurability;
+            
+            // Balão Cair
             _rb.velocity = Vector2.zero;
-            _balloonMovement.CanMove = false;
-            SceneManager.LoadScene(upgradeScene);
+            _rb.gravityScale = 4f;
+
+            // Tela Escurecer
+            ExitGameOver();
         }
         else 
         {
@@ -86,5 +116,7 @@ public class BalloonCollision : MonoBehaviour
     }
 
     private void ResetCanMove() => _balloonMovement.CanMove = true;
+
+    private void ExitGameOver() => TransitionManager.Instance().Transition(upgradeSceneName, transitionSettings, gameOverInterval);
     #endregion
 }
