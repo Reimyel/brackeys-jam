@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class FuelBehaviourScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Variáveis
+    private TimerManager _timerManager;
+    #endregion
+
+    #region Funções Unity
+    void Awake()
     {
-        
+        _timerManager = FindObjectOfType<TimerManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+    #endregion
+
+    #region Funções Próprias
+    #endregion
 }

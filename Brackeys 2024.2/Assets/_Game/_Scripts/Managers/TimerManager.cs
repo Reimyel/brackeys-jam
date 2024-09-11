@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TimerManager : MonoBehaviour
 {
+    #region Variáveis
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float timeToStage2;
     [SerializeField] private float timeToStage3;
@@ -12,7 +13,9 @@ public class TimerManager : MonoBehaviour
     private float timeCounter;
     private bool stage2Triggered = false;
     private bool stage3Triggered = false;
+    #endregion
 
+    #region Funções Unity
     void Update()
     {
         time = Time.deltaTime;
@@ -34,7 +37,9 @@ public class TimerManager : MonoBehaviour
             stage3Triggered = true;
         }
     }
+    #endregion
 
+    #region Funções Próprias
     void Stage2Begin()
     {
         Debug.Log("FASE 2");
@@ -44,4 +49,5 @@ public class TimerManager : MonoBehaviour
     {
         Debug.Log("FASE 3");
     }
+    #endregion
 }
