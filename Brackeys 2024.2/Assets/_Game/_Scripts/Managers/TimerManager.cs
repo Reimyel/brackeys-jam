@@ -19,7 +19,7 @@ public class TimerManager : MonoBehaviour
     void Update()
     {
         time = Time.deltaTime;
-        timeCounter += time;
+        timeCounter += time * BalloonStats.Speed;
         timerText.text = ((int)timeCounter).ToString();
 
         float tolerance = 0.1f;
