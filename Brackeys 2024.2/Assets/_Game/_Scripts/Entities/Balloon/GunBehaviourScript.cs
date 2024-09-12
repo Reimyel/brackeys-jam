@@ -13,6 +13,9 @@ public class GunBehaviourScript : MonoBehaviour
     {
         if (other.CompareTag("Cow") && BalloonStats.HasGun)
         {
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFX("Shoot");
+
             for (int i = 0; i <  projectileCount; i++) 
             {
                 GameObject projectile = Instantiate(projectilePrefab, projectileSpawnpoint.position, Quaternion.identity);

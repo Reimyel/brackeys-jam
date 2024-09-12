@@ -54,10 +54,15 @@ public class BalloonStats : MonoBehaviour
     {
         var newValue = Mathf.Clamp(Speed + value, minSpeed, maxSpeed);
 
-        if (newValue < Speed)
+        if (newValue < Speed) 
+        {
             SpeedLevel--;
-        else
+        }
+        else 
+        {
             SpeedLevel++;
+            UpgradeSFX();
+        }
 
         Speed = newValue;
     }
@@ -66,10 +71,15 @@ public class BalloonStats : MonoBehaviour
     {
         var newValue = Mathf.Clamp(Stability + value, minStability, maxStability);
 
-        if (newValue < Stability)
+        if (newValue < Stability) 
+        {
             StabilityLevel--;
-        else
+        }
+        else 
+        {
             StabilityLevel++;
+            UpgradeSFX();
+        }
 
         Stability = newValue;
     }
@@ -78,24 +88,37 @@ public class BalloonStats : MonoBehaviour
     {
         var newValue = Mathf.Clamp(Durability + value, minDurability, maxDurability);
 
-        if (newValue < Durability)
+        if (newValue < Durability) 
+        {
             DurabilityLevel--;
-        else
+        }
+        else 
+        {
             DurabilityLevel++;
+            UpgradeSFX();
+        }
 
         Durability = newValue;
     }
 
-    public void EnableGun() 
+    public void EnableGun()
     {
         HasGun = true;
-        //TODO: ATIVAR ARMA DEPOIS
+        UpgradeSFX();
     }
 
-    public void EnableChicken() 
+    public void EnableChicken()
     {
         HasChicken = true;
-        //TODO: ATIVAR OBJETO DEPOIS
+    }
+
+    private void UpgradeSFX() 
+    {
+        if (AudioManager.Instance != null) 
+        {
+            AudioManager.Instance.PlaySFX("Upgrade");
+            AudioManager.Instance.PlaySFX("Upgrade" + Random.Range(1, 3));
+        }
     }
     #endregion
 }

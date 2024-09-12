@@ -70,10 +70,17 @@ public class BalloonCollision : MonoBehaviour
 
             // Parar Música
             Destroy(GameObject.FindGameObjectWithTag("Music"));
-            
+
             // Efeito Sonoro do Balão Murchando
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFX("Morte");
+                AudioManager.Instance.PlaySFX("Death");
+            }
+
             BalloonStats.Durability = _initialDurability;
             
+
             // Balão Cair
             _rb.velocity = Vector2.zero;
             _rb.gravityScale = 4f;
@@ -83,7 +90,18 @@ public class BalloonCollision : MonoBehaviour
         }
         else 
         {
-            BalloonStats.Durability -= damage;   
+            BalloonStats.Durability -= damage;
+
+
+            if (AudioManager.Instance != null) 
+            {
+                AudioManager.Instance.PlaySFX("Dano" + Random.Range(1, 5));
+
+                if (Random.Range(0, 100) < 50)
+                    AudioManager.Instance.PlaySFX("Hitsound");
+                else
+                    AudioManager.Instance.PlaySFX("Damage");
+            }
         }
     }
 
