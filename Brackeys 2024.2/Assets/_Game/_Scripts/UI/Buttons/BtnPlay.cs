@@ -14,9 +14,36 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private TransitionSettings transitionSettings;
     [SerializeField] private float loadTime;
 
-    public void Play() => TransitionManager.Instance().Transition(nextSceneName, transitionSettings, loadTime);
-   
-    public void OnPointerEnter(PointerEventData pointerEventData) => panelInputs.SetActive(true);
+    public void Play()
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("Rebuilding");
 
-    public void OnPointerExit(PointerEventData pointerEventData) => panelInputs.SetActive(false);
+        Invoke("StartToFillUp", 5.25f);
+
+        // 7.25f
+        TransitionManager.Instance().Transition(nextSceneName, transitionSettings, loadTime);
+    }
+
+    public void OnPointerEnter(PointerEventData pointerEventData)
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("Select");
+
+        panelInputs.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData pointerEventData)
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("Deselect");
+
+        panelInputs.SetActive(false);
+    }
+
+    private void StartToFillUp() 
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("Fill up");
+    }
 }

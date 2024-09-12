@@ -9,12 +9,12 @@ public class BalloonStats : MonoBehaviour
     public static BalloonStats Instance;
 
     [Header("Configurações:")]
-    [SerializeField] private float minSpeed;
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float minStability;
-    [SerializeField] private float maxStability;
-    [SerializeField] private int minDurability;
-    [SerializeField] private int maxDurability;
+    public float MinSpeed;
+    public float MaxSpeed;
+    public float MinStability;
+    public float MaxStability;
+    public int MinDurability;
+    public int MaxDurability;
 
     // Atributos atuais do Balão
     public static float Speed;
@@ -52,73 +52,42 @@ public class BalloonStats : MonoBehaviour
     #region Funções Próprias
     public void ChangeSpeed(float value=0) 
     {
-        var newValue = Mathf.Clamp(Speed + value, minSpeed, maxSpeed);
+        var newValue = Mathf.Clamp(Speed + value, MinSpeed, MaxSpeed);
 
         if (newValue < Speed) 
-        {
             SpeedLevel--;
-        }
         else 
-        {
             SpeedLevel++;
-            UpgradeSFX();
-        }
 
         Speed = newValue;
     }
 
     public void ChangeStability(float value=0)
     {
-        var newValue = Mathf.Clamp(Stability + value, minStability, maxStability);
+        var newValue = Mathf.Clamp(Stability + value, MinStability, MaxStability);
 
         if (newValue < Stability) 
-        {
             StabilityLevel--;
-        }
         else 
-        {
             StabilityLevel++;
-            UpgradeSFX();
-        }
 
         Stability = newValue;
     }
 
     public void ChangeDurability(int value=0) 
     {
-        var newValue = Mathf.Clamp(Durability + value, minDurability, maxDurability);
+        var newValue = Mathf.Clamp(Durability + value, MinDurability, MaxDurability);
 
         if (newValue < Durability) 
-        {
             DurabilityLevel--;
-        }
         else 
-        {
             DurabilityLevel++;
-            UpgradeSFX();
-        }
 
         Durability = newValue;
     }
 
-    public void EnableGun()
-    {
-        HasGun = true;
-        UpgradeSFX();
-    }
+    public void EnableGun() => HasGun = true;
 
-    public void EnableChicken()
-    {
-        HasChicken = true;
-    }
-
-    private void UpgradeSFX() 
-    {
-        if (AudioManager.Instance != null) 
-        {
-            AudioManager.Instance.PlaySFX("Upgrade");
-            AudioManager.Instance.PlaySFX("Upgrade" + Random.Range(1, 3));
-        }
-    }
+    public void EnableChicken() => HasChicken = true;
     #endregion
 }
