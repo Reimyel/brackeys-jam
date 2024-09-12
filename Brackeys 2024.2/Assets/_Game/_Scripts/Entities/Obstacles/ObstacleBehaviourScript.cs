@@ -6,6 +6,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
 {
     #region Variáveis Globais
     [Header("Configurações:")]
+    [SerializeField] private float jumpForce;
     [SerializeField] private float minRot, maxRot;
     [SerializeField] private float minVel, maxVel;
     public int BallonDamage;
@@ -52,7 +53,9 @@ public class ObstacleBehaviourScript : MonoBehaviour
     {
         if (col.gameObject.layer == layerPlayer)
         {
-            //pulo do objeto
+            _rb.AddForce(transform.up * jumpForce);
+
+            return;
         }
     }
 

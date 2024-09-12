@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8118315536774929235}
   - component: {fileID: 676750260687903878}
-  - component: {fileID: 4509002212130167903}
   - component: {fileID: -4355945196099065498}
+  - component: {fileID: 4509002212130167903}
+  - component: {fileID: -3536779390804055348}
   m_Layer: 11
   m_Name: Circle
   m_TagString: Untagged
@@ -86,6 +87,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4355945196099065498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878332863736183165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 10
+  minRot: 0.5
+  maxRot: 1
+  minVel: 800
+  maxVel: 1000
+  BallonDamage: 0
+  fadeColor: {r: 0.16064437, g: 0.3584906, b: 0.16270061, a: 1}
+  layerPlayer: 6
+  fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &4509002212130167903
 Rigidbody2D:
   serializedVersion: 4
@@ -113,22 +135,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4355945196099065498
-MonoBehaviour:
+--- !u!58 &-3536779390804055348
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4878332863736183165}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minRot: 0.5
-  maxRot: 1
-  minVel: 800
-  maxVel: 1000
-  BallonDamage: 0
-  fadeColor: {r: 0.16064437, g: 0.3584906, b: 0.16270061, a: 1}
-  fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

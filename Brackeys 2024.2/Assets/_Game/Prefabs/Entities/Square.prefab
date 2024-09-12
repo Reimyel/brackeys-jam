@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3782264875385075694}
   - component: {fileID: 3701984542506163371}
-  - component: {fileID: -7055936950960812844}
   - component: {fileID: -8518930152413411368}
+  - component: {fileID: -7055936950960812844}
+  - component: {fileID: -617785101119467287}
   m_Layer: 11
   m_Name: Square
   m_TagString: Untagged
@@ -86,6 +87,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8518930152413411368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003807624242062095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 10
+  minRot: 0.5
+  maxRot: 1
+  minVel: 800
+  maxVel: 1000
+  BallonDamage: 0
+  fadeColor: {r: 0.509434, g: 0.4971886, b: 0.1321645, a: 1}
+  layerPlayer: 6
+  fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &-7055936950960812844
 Rigidbody2D:
   serializedVersion: 4
@@ -113,22 +135,48 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8518930152413411368
-MonoBehaviour:
+--- !u!61 &-617785101119467287
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3003807624242062095}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minRot: 0.5
-  maxRot: 1
-  minVel: 800
-  maxVel: 1000
-  BallonDamage: 0
-  fadeColor: {r: 0.509434, g: 0.4971886, b: 0.1321645, a: 1}
-  fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

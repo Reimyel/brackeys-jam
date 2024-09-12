@@ -99,12 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 10
   minRot: 0.5
   maxRot: 1
   minVel: 800
   maxVel: 1000
   BallonDamage: 0
   fadeColor: {r: 0.31132078, g: 0.16006587, b: 0.16006587, a: 1}
+  layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &8737085579847127753
 Rigidbody2D:
