@@ -56,7 +56,7 @@ public class BalloonCollision : MonoBehaviour
     #endregion
 
     #region Funções Próprias
-    private void ReduceDurability(int damage) 
+    public void ReduceDurability(int damage) 
     {
         var newValue = BalloonStats.Durability - damage;
 

@@ -14,12 +14,14 @@ public class FuelBehaviourScript : MonoBehaviour
     private bool isFilling = false;
     private float fillDelayTimer = 0f;
     private TimerManager _timerManager;
+    private BalloonCollision _balloonCollision;
     #endregion
 
     #region Funções Unity
     void Awake()
     {
         _timerManager = FindObjectOfType<TimerManager>();
+        _balloonCollision = FindObjectOfType<BalloonCollision>();
     }
 
     void Update()
@@ -41,7 +43,7 @@ public class FuelBehaviourScript : MonoBehaviour
 
             if (chargeBar.value >= chargeBar.maxValue)
             {
-                //lógica pra ele explodir (morrer)
+                _balloonCollision.ReduceDurability(BalloonStats.Durability);
                 Debug.Log("MORREU");
                 chargeBar.value = chargeBar.maxValue;
                 isFilling = false;

@@ -2020,39 +2020,39 @@ PrefabInstance:
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 963115008}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 281531470}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 543540940}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 585753578}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1682552835}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 121037983}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[6]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 124829633}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 590129492}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: spawnPoint.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 261984315}
     - target: {fileID: 6893313894869777163, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: m_Name
       value: ObstacleManager
@@ -3104,10 +3104,10 @@ SceneRoots:
   - {fileID: 6379730404075501032}
   - {fileID: 1676861307}
   - {fileID: 1460731837}
+  - {fileID: 1417457042}
   - {fileID: 4706839325253231046}
   - {fileID: 315183644}
   - {fileID: 3566886851210506868}
-  - {fileID: 1417457042}
   - {fileID: 150863046}
   - {fileID: 278357416}
   - {fileID: 177737397}

@@ -12,6 +12,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
     [SerializeField] private Color fadeColor;
 
     [Header("Referências:")]
+    [SerializeField] private int layerPlayer;
     [SerializeField] private FadeVFX fadePrefab;
 
     private float _rotationSpeed;
@@ -45,6 +46,14 @@ public class ObstacleBehaviourScript : MonoBehaviour
         _rotationSpeed = Random.Range(minRot, maxRot);
 
         transform.Rotate(0, 0, _rotationSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.layer == layerPlayer)
+        {
+            //pulo do objeto
+        }
     }
 
     private IEnumerator ApplyEffect(float t) 
