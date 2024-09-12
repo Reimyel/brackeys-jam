@@ -32,7 +32,6 @@ public class BalloonStats : MonoBehaviour
     public static int CurrentMoney;
 
     private static bool _isFirstTime = true;
-
     #endregion
 
     #region Funções Unity
