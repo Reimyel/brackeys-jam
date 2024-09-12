@@ -30,6 +30,11 @@ public class FuelBehaviourScript : MonoBehaviour
             fillDelayTimer = 0f;
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            _timerManager.timeCounter += _timerManager.time;
+        }
+
         if (isFilling)
         {
             chargeBar.value += fillRate * Time.deltaTime;
@@ -61,11 +66,11 @@ public class FuelBehaviourScript : MonoBehaviour
             isFilling = false;
         }
 
-        if (chargeBar.value > chargeBar.minValue)
+        /*if (chargeBar.value > chargeBar.minValue)
         {
             //lógica pro timer ir mais rápido
             _timerManager.timeCounter += _timerManager.time;
-        }
+        }*/
     }
     #endregion
 
