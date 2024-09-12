@@ -23,6 +23,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+
     }
 
     private void Start()
@@ -32,6 +33,9 @@ public class ObstacleBehaviourScript : MonoBehaviour
         _rb.AddForce(-transform.right * _velocity);
 
         StartCoroutine(ApplyEffect(0.01f));
+
+        if (gameObject.CompareTag("Cow") && AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("Cow" + Random.Range(1, 6));
 
         Destroy(gameObject, 8f);
     }
@@ -58,6 +62,12 @@ public class ObstacleBehaviourScript : MonoBehaviour
         effect.GetComponent<FadeVFX>().RotationParent = gameObject.transform;
 
         StartCoroutine(ApplyEffect(0.01f));
+    }
+
+    private void OnDestroy()
+    {
+        if (gameObject.CompareTag("Cow") && AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("Vaca");
     }
     #endregion
 }
