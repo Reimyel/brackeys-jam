@@ -8,6 +8,8 @@ TagManager:
   - RightSide
   - LeftSide
   - Music
+  - Car
+  - Chicken
   layers:
   - Default
   - TransparentFX

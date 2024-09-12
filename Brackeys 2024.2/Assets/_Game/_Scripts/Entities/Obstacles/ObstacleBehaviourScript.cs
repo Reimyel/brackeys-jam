@@ -38,8 +38,15 @@ public class ObstacleBehaviourScript : MonoBehaviour
 
         StartCoroutine(ApplyEffect(0.01f));
 
-        if (gameObject.CompareTag("Cow") && AudioManager.Instance != null)
-            AudioManager.Instance.PlaySFX("Cow" + Random.Range(1, 6));
+        if (AudioManager.Instance != null) 
+        {
+            if (gameObject.CompareTag("Cow"))
+                AudioManager.Instance.PlaySFX("Cow" + Random.Range(1, 6));
+            else if (gameObject.CompareTag("Car"))
+                AudioManager.Instance.PlaySFX("Carro");
+            else if (gameObject.CompareTag("Chicken"))
+                AudioManager.Instance.PlaySFX("Galinha");
+        }
 
         Destroy(gameObject, 8f);
     }
