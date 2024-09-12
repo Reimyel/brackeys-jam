@@ -10,7 +10,7 @@ public class GunBehaviourScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Cow"))
+        if (other.CompareTag("Cow") && BalloonStats.HasGun)
         {
             GameObject projectile = Instantiate(projectilePrefab, projectileSpawnpoint.position, Quaternion.identity);
 
