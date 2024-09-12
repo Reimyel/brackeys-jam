@@ -16,11 +16,13 @@ public class BalloonStats : MonoBehaviour
     [SerializeField] private int minDurability;
     [SerializeField] private int maxDurability;
 
+    [Header("Referências:")]
+    [SerializeField] private GameObject gunObject;
     // Atributos atuais do Balão
     public static float Speed;
     public static float Stability;
     public static int Durability;
-    public static bool HasGun;
+    public static bool HasGun = true;
     public static bool HasChicken;
 
     public static int SpeedLevel;
@@ -103,6 +105,7 @@ public class BalloonStats : MonoBehaviour
 
     public void EnableGun()
     {
+        gunObject.SetActive(true);
         HasGun = true;
         UpgradeSFX();
     }

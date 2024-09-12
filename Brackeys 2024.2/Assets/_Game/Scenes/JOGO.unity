@@ -661,6 +661,7 @@ MonoBehaviour:
   resetCanMoveInterval: 2
   upgradeSceneName: UpgradeScene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
+  _IsGameOver: 0
 --- !u!60 &278357419
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1174,6 +1175,10 @@ PrefabInstance:
       propertyPath: minSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: gunObject
+      value: 
+      objectReference: {fileID: 1916039555}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: minStability
       value: 1
@@ -2206,6 +2211,14 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1013897253}
+    - target: {fileID: 8227675546511917121, guid: a6056b36a4c7b0d4290933f9652dec32, type: 3}
+      propertyPath: timeToStage2
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227675546511917121, guid: a6056b36a4c7b0d4290933f9652dec32, type: 3}
+      propertyPath: timeToStage3
+      value: 360
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2255,12 +2268,12 @@ GameObject:
   - component: {fileID: 1916039558}
   - component: {fileID: 1916039557}
   m_Layer: 6
-  m_Name: Gun
-  m_TagString: Cow
+  m_Name: GunObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1916039556
 Transform:
   m_ObjectHideFlags: 0

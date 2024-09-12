@@ -6,26 +6,28 @@ public class ObstacleBehaviourScript : MonoBehaviour
 {
     #region Variáveis Globais
     [Header("Configurações:")]
+    [SerializeField] public int BalloonDamage;
     [SerializeField] private float jumpForce;
     [SerializeField] private float minRot, maxRot;
     [SerializeField] private float minVel, maxVel;
-    public int BallonDamage;
     [SerializeField] private Color fadeColor;
 
     [Header("Referências:")]
+    [SerializeField] private BalloonCollision balloonCollision;
     [SerializeField] private int layerPlayer;
     [SerializeField] private FadeVFX fadePrefab;
 
     private float _rotationSpeed;
     private float _velocity;
     private Rigidbody2D _rb;
+    private Collider2D _collider;
     #endregion
 
     #region Funções Unity
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-
+        _collider = GetComponent<Collider2D>();
     }
 
     private void Start()
@@ -55,7 +57,8 @@ public class ObstacleBehaviourScript : MonoBehaviour
         {
             _rb.AddForce(transform.up * jumpForce);
 
-            return;
+            _collider.enabled = false;
+            _rb.isKinematic = false;
         }
     }
 
@@ -78,8 +81,12 @@ public class ObstacleBehaviourScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (gameObject.CompareTag("Cow") && AudioManager.Instance != null)
-            AudioManager.Instance.PlaySFX("Vaca");
+        if (!balloonCollision._IsGameOver)
+        {
+            //TESTAR
+            if (gameObject.CompareTag("Cow") && AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFX("Vaca");
+        }
     }
     #endregion
 }

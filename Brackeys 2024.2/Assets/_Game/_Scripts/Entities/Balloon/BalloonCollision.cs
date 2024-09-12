@@ -31,7 +31,7 @@ public class BalloonCollision : MonoBehaviour
 
     private int _initialDurability;
 
-    private bool _IsGameOver = false;
+    public bool _IsGameOver = false;
     #endregion
 
     #region Funções Unity
@@ -49,7 +49,7 @@ public class BalloonCollision : MonoBehaviour
         if (_IsGameOver) return;
 
         if (col.gameObject.layer == layerObstacle)
-            ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BallonDamage);
+            ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BalloonDamage);
         else if (col.gameObject.layer == layerChangeSide)
             ChangeSide(col.gameObject.tag);
     }
@@ -84,7 +84,7 @@ public class BalloonCollision : MonoBehaviour
             Invoke("StartToScream", 4.25f);
 
             // Cair e Começa GameOver
-            Invoke("StartToFall", 6.25f);
+            Invoke("StartToFall", 4.75f);
         }
         else 
         {

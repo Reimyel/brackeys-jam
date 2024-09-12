@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
+  BalloonDamage: 1
+  jumpForce: 1000
   minRot: 0.5
   maxRot: 1
   minVel: 800
   maxVel: 1000
-  BallonDamage: 0
   fadeColor: {r: 0.46226418, g: 0.3495695, b: 0.22895159, a: 1}
   layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
@@ -154,7 +154,7 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -164,7 +164,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
