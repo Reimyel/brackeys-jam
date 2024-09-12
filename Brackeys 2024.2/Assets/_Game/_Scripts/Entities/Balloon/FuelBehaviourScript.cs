@@ -32,7 +32,7 @@ public class FuelBehaviourScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            _timerManager.timeCounter += _timerManager.time;
+            _timerManager.timeCounter += _timerManager.time * BalloonStats.Speed;
         }
 
         if (isFilling)
