@@ -90,13 +90,20 @@ public class UpgradesStatus : MonoBehaviour
 
     public void ChangeDecimalStats(float value)
     {
-        if (BalloonStats.CurrentMoney >= _currentCost) // Paga o Upgrade
-            BalloonStats.CurrentMoney -= _currentCost;
-        else // Ignore o Upgrade
+        // Ignore o Upgrade
+        if (IsMaximized() || BalloonStats.CurrentMoney <= _currentCost) 
+        {
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFX("Locked");
             return;
+        }
+        else 
+        {
+            BalloonStats.CurrentMoney -= _currentCost;
+            UpgradeSFX();
+        }
 
         // Aplica o Upgrade
-
         switch (stats)
         {
             case TargetStats.Speed:
@@ -111,10 +118,18 @@ public class UpgradesStatus : MonoBehaviour
 
     public void ChangeIntegerStats(int value)
     {
-        if (BalloonStats.CurrentMoney >= _currentCost) // Paga o Upgrade
-            BalloonStats.CurrentMoney -= _currentCost;
-        else // Ignore o Upgrade
+        // Ignore o Upgrade
+        if (IsMaximized() || BalloonStats.CurrentMoney <= _currentCost)
+        {
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFX("Locked");
             return;
+        }
+        else
+        {
+            BalloonStats.CurrentMoney -= _currentCost;
+            UpgradeSFX();
+        }
 
         // Aplica o Upgrade
 
@@ -123,11 +138,19 @@ public class UpgradesStatus : MonoBehaviour
 
     public void EnableConsumable() 
     {
-        if (BalloonStats.CurrentMoney >= _currentCost) // Paga o Upgrade
-            BalloonStats.CurrentMoney -= _currentCost;
-        else // Ignore o Upgrade
+        // Ignore o Upgrade
+        if (IsMaximized() || BalloonStats.CurrentMoney <= _currentCost)
+        {
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFX("Locked");
             return;
-        
+        }
+        else
+        {
+            BalloonStats.CurrentMoney -= _currentCost;
+            UpgradeSFX();
+        }
+
         // Aplica o Upgrade
         switch (stats)
         {
@@ -142,5 +165,48 @@ public class UpgradesStatus : MonoBehaviour
     }
 
     private void SetCurrentCost() => _currentCost = _currentLevel * baseCostModifier * baseCost;
+    
+    private bool IsMaximized() 
+    {
+        // Verificando
+        switch (stats)
+        {
+            case TargetStats.Speed:
+                if (BalloonStats.Speed >= BalloonStats.Instance.MaxSpeed)
+                    return true;
+                break;
+
+            case TargetStats.Stability:
+                if (BalloonStats.Stability >= BalloonStats.Instance.MaxStability)
+                    return true;
+                break;
+
+            case TargetStats.Durability:
+                if (BalloonStats.Durability >= BalloonStats.Instance.MaxDurability)
+                    return true;
+                break;
+
+            case TargetStats.Chicken:
+                if (BalloonStats.HasChicken)
+                    return true;
+                break;
+
+            case TargetStats.Gun:
+                if (BalloonStats.HasGun)
+                    return true;
+                break;
+        }
+
+        return false;
+    }
+
+    private void UpgradeSFX() 
+    {
+        if (AudioManager.Instance != null) 
+        {
+            AudioManager.Instance.PlaySFX("Upgrade");
+            AudioManager.Instance.PlaySFX("Upgrade" + Random.Range(1, 3));
+        }
+    }
     #endregion
 }
