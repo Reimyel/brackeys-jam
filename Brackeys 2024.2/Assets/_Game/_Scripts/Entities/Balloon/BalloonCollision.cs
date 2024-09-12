@@ -50,8 +50,8 @@ public class BalloonCollision : MonoBehaviour
 
         if (col.gameObject.layer == layerObstacle)
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BallonDamage);
-        /*else if (col.gameObject.layer == layerChangeSide)
-            ChangeSide(col.gameObject.tag);*/
+        else if (col.gameObject.layer == layerChangeSide)
+            ChangeSide(col.gameObject.tag);
     }
     #endregion
 
