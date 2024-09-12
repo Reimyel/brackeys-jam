@@ -24,7 +24,6 @@ public class TimerManager : MonoBehaviour
 
         float tolerance = 0.1f;
 
-        //lógicas pros pontos de transição
         if (!stage2Triggered && Mathf.Abs(timeCounter - timeToStage2) <= tolerance)
         {
             Stage2Begin();
@@ -43,11 +42,13 @@ public class TimerManager : MonoBehaviour
     void Stage2Begin()
     {
         Debug.Log("FASE 2");
+        //lógica de transição de fases
     }
 
     void Stage3Begin()
     {
         Debug.Log("FASE 3");
+        //lógica de transição de fases
     }
     #endregion
 }
