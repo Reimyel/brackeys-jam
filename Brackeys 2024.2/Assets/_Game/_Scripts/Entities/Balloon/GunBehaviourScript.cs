@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GunBehaviourScript : MonoBehaviour
 {
+    [SerializeField] private int projectileCount = 3;
     [SerializeField] private int projectileSpeed;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawnpoint;
@@ -12,11 +13,12 @@ public class GunBehaviourScript : MonoBehaviour
     {
         if (other.CompareTag("Cow") && BalloonStats.HasGun)
         {
-            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnpoint.position, Quaternion.identity);
-
-            Vector3 direction = (other.transform.position - transform.position).normalized;
-
-            projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+            for (int i = 0; i <  projectileCount; i++) 
+            {
+                GameObject projectile = Instantiate(projectilePrefab, projectileSpawnpoint.position, Quaternion.identity);
+                Vector3 direction = (other.transform.position - transform.position).normalized;
+                projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+            }
         }
     }
 }
