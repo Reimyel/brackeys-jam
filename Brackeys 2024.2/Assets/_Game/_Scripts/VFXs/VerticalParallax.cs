@@ -12,7 +12,7 @@ public class VerticalParallax : MonoBehaviour
 
     private void Start() => _startPos = gameObject.transform.position;
     
-    private void Update() => transform.position += verticalSpeed * Vector3.up * Time.deltaTime;
+    private void Update() => transform.position += verticalSpeed * Vector3.down * Time.deltaTime;
 
     private void OnTriggerEnter2D(Collider2D collision) => gameObject.transform.position = _startPos;
 }
