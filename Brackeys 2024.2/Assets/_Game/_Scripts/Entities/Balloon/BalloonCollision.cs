@@ -73,20 +73,18 @@ public class BalloonCollision : MonoBehaviour
 
             // Efeito Sonoro do Balão Murchando
             if (AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlaySFX("Morte");
                 AudioManager.Instance.PlaySFX("Death");
-            }
 
-            BalloonStats.Durability = _initialDurability;
-            
 
             // Balão Cair
             _rb.velocity = Vector2.zero;
-            _rb.gravityScale = 4f;
 
-            // Tela Escurecer
-            ExitGameOver();
+
+            // Mais SFXs 
+            Invoke("StartToScream", 4.25f);
+
+            // Cair e Começa GameOver
+            Invoke("StartToFall", 6.25f);
         }
         else 
         {
@@ -125,6 +123,27 @@ public class BalloonCollision : MonoBehaviour
 
     private void ResetCanMove() => _balloonMovement.CanMove = true;
 
-    private void ExitGameOver() => TransitionManager.Instance().Transition(upgradeSceneName, transitionSettings, gameOverInterval);
+    private void StartToScream()
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("Morte");
+    }
+
+    private void StartToFall() 
+    {
+        _rb.gravityScale = 4f;
+
+        if (AudioManager.Instance != null) 
+            AudioManager.Instance.PlaySFX("Fall");
+
+        // Tela Escurecer
+        ExitGameOver();
+    }
+
+    private void ExitGameOver()
+    {
+        BalloonStats.Durability = _initialDurability;
+        TransitionManager.Instance().Transition(upgradeSceneName, transitionSettings, gameOverInterval);
+    }
     #endregion
 }
