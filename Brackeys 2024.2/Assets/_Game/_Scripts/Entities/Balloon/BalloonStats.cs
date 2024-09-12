@@ -16,11 +16,13 @@ public class BalloonStats : MonoBehaviour
     public int MinDurability;
     public int MaxDurability;
 
+    [SerializeField] private GameObject gunObject;
+
     // Atributos atuais do Balão
     public static float Speed;
     public static float Stability;
     public static int Durability;
-    public static bool HasGun;
+    public static bool HasGun; //botar = true pra testes com a arma
     public static bool HasChicken;
 
     public static int SpeedLevel;
@@ -86,7 +88,11 @@ public class BalloonStats : MonoBehaviour
         Durability = newValue;
     }
 
-    public void EnableGun() => HasGun = true;
+    public void EnableGun()
+    {
+        gunObject.SetActive(true);
+        HasGun = true;
+    }
 
     public void EnableChicken() => HasChicken = true;
     #endregion
