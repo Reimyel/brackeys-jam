@@ -11,8 +11,10 @@ public class UpgradesDescription : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
+        /*
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Select");
+        */
 
         panelDescription.SetActive(true);
         arrowParent.SetActive(true);
@@ -20,8 +22,10 @@ public class UpgradesDescription : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
+        /*
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Deselect");
+        */
 
         panelDescription.SetActive(false);
         arrowParent.SetActive(false);

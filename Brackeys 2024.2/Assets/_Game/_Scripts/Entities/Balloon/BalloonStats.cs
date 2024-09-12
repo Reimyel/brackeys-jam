@@ -9,6 +9,7 @@ public class BalloonStats : MonoBehaviour
     public static BalloonStats Instance;
 
     [Header("Configurações:")]
+    public int InitialMoney;
     public float MinSpeed;
     public float MaxSpeed;
     public float MinStability;
@@ -29,6 +30,9 @@ public class BalloonStats : MonoBehaviour
     public static int StabilityLevel;
     public static int DurabilityLevel;
     public static int CurrentMoney;
+
+    private static bool _isFirstTime = true;
+
     #endregion
 
     #region Funções Unity
@@ -36,9 +40,15 @@ public class BalloonStats : MonoBehaviour
 
     private void Start()
     {
-        ChangeSpeed();
-        ChangeStability();
-        ChangeDurability();
+        if (_isFirstTime) 
+        {
+            CurrentMoney = InitialMoney;
+            _isFirstTime = false;
+        }
+
+        ChangeSpeed(MinSpeed);
+        ChangeStability(MinStability);
+        ChangeDurability(MinDurability);
     }
 
     private void Update()

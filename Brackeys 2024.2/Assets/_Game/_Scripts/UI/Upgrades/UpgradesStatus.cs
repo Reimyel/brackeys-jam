@@ -25,6 +25,9 @@ public class UpgradesStatus : MonoBehaviour
     private int _currentLevel;
     private int _currentCost;
 
+    // SFX:
+    private static int _upgradeSFXindex = 1;
+
     private enum TargetStats 
     {
         Speed,
@@ -205,7 +208,11 @@ public class UpgradesStatus : MonoBehaviour
         if (AudioManager.Instance != null) 
         {
             AudioManager.Instance.PlaySFX("Upgrade");
-            AudioManager.Instance.PlaySFX("Upgrade" + Random.Range(1, 3));
+
+            AudioManager.Instance.PlaySFX("Upgrade" + _upgradeSFXindex);
+
+            if (_upgradeSFXindex == 1) _upgradeSFXindex = 2;
+            else _upgradeSFXindex = 1;
         }
     }
     #endregion

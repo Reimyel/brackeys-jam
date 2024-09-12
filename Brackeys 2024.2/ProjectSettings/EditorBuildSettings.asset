@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Duca Scene 1.unity
     guid: 7c7959519a9d6d9429c7c55c562c7763
+  - enabled: 1
+    path: Assets/_Game/Scenes/JOGO.unity
+    guid: b8a36fa7746ea314e963e50de8f1ed3e
   m_configObjects: {}

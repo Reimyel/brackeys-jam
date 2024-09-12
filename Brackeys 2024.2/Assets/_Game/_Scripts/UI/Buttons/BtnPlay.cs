@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    #region Variáveis
     [Header("Referências:")]
     [SerializeField] private GameObject panelInputs;
 
@@ -13,7 +14,9 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private string nextSceneName;
     [SerializeField] private TransitionSettings transitionSettings;
     [SerializeField] private float loadTime;
+    #endregion
 
+    #region Funções Próprias
     public void Play()
     {
         if (AudioManager.Instance != null)
@@ -27,16 +30,20 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
+        /*
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Select");
+        */
 
         panelInputs.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
+        /*
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Deselect");
+        */
 
         panelInputs.SetActive(false);
     }
@@ -46,4 +53,5 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Fill up");
     }
+    #endregion
 }
