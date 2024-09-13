@@ -18,6 +18,7 @@ public class BalloonStats : MonoBehaviour
     public int MaxDurability;
 
     [SerializeField] private GameObject gunObject;
+    [SerializeField] private GameObject chickenObject;
 
     // Atributos atuais do Balão
     public static float Speed;
@@ -103,6 +104,10 @@ public class BalloonStats : MonoBehaviour
         HasGun = true;
     }
 
-    public void EnableChicken() => HasChicken = true;
+    public void EnableChicken()
+    {
+        chickenObject.SetActive(true);
+        HasChicken = true;
+    }
     #endregion
 }
