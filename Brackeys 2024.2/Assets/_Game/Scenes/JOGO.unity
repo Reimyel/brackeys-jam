@@ -2074,6 +2074,22 @@ PrefabInstance:
       propertyPath: spawnPoint.Array.data[8]
       value: 
       objectReference: {fileID: 261984315}
+    - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
+      propertyPath: obstaclesPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
+      propertyPath: obstaclesPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4878332863736183165, guid: 4fa67c3413c432e47ad07fa83d782e32, type: 3}
+    - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
+      propertyPath: obstaclesPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
+      propertyPath: obstaclesPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6893313894869777163, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: m_Name
       value: ObstacleManager
@@ -2229,11 +2245,11 @@ PrefabInstance:
       objectReference: {fileID: 1013897253}
     - target: {fileID: 8227675546511917121, guid: a6056b36a4c7b0d4290933f9652dec32, type: 3}
       propertyPath: timeToStage2
-      value: 180
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8227675546511917121, guid: a6056b36a4c7b0d4290933f9652dec32, type: 3}
       propertyPath: timeToStage3
-      value: 360
+      value: 1200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
