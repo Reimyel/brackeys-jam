@@ -68,7 +68,7 @@ public class BalloonStats : MonoBehaviour
 
         if (newValue < Speed) 
             SpeedLevel--;
-        else 
+        else if (newValue != MinSpeed)
             SpeedLevel++;
 
         Speed = newValue;
@@ -80,7 +80,7 @@ public class BalloonStats : MonoBehaviour
 
         if (newValue < Stability) 
             StabilityLevel--;
-        else 
+        else if (newValue != MinStability)
             StabilityLevel++;
 
         Stability = newValue;
@@ -92,7 +92,7 @@ public class BalloonStats : MonoBehaviour
 
         if (newValue < Durability) 
             DurabilityLevel--;
-        else 
+        else if (newValue != MinDurability)
             DurabilityLevel++;
 
         Durability = newValue;

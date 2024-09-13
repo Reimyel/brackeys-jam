@@ -219,21 +219,21 @@ public class UpgradesStatus : MonoBehaviour
             switch (stats)
             {
                 case TargetStats.Speed:
-                    if (_currentLevel < 3)
+                    if (_currentLevel < 2)
                         AudioManager.Instance.PlaySFX("Upgrade1");
                     else
                         AudioManager.Instance.PlaySFX("Upgrade2");
                     break;
 
                 case TargetStats.Stability:
-                    if (_currentLevel < 3)
+                    if (_currentLevel < 2)
                         AudioManager.Instance.PlaySFX("Upgrade1");
                     else
                         AudioManager.Instance.PlaySFX("Upgrade2");
                     break;
 
                 case TargetStats.Durability:
-                    if (_currentLevel < 3)
+                    if (_currentLevel < 2)
                         AudioManager.Instance.PlaySFX("Upgrade1");
                     else
                         AudioManager.Instance.PlaySFX("Upgrade2");

@@ -47,9 +47,9 @@ public class BalloonChanger : MonoBehaviour
         }
         else
         {
-            imgDurability.sprite = spritesDurability[BalloonStats.DurabilityLevel-1];
-            imgSpeed.sprite = spritesSpeed[BalloonStats.SpeedLevel-1];
-            imgStability.sprite = spritesStability[BalloonStats.StabilityLevel-1];
+            imgDurability.sprite = spritesDurability[BalloonStats.DurabilityLevel];
+            imgSpeed.sprite = spritesSpeed[BalloonStats.SpeedLevel];
+            imgStability.sprite = spritesStability[BalloonStats.StabilityLevel];
         }
     }
     #endregion
