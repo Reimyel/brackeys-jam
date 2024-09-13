@@ -22,6 +22,8 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Rebuilding");
 
+        GameObject.FindGameObjectWithTag("Garage FG").GetComponent<Animator>().Play("Foreground Upgrade Play Animation");
+
         Invoke("StartToFillUp", 5.25f);
 
         // 7.25f
