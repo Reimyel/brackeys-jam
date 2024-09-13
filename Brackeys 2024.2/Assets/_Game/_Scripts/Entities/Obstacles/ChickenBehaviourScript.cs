@@ -10,8 +10,8 @@ public class ChickenCowManagerScript : MonoBehaviour
     [SerializeField] private Sprite[] chickenSpriteVariations;
     [SerializeField] private Sprite[] cowSpriteVariations;
     [SerializeField] private int instantiateQuantity;
-    private SpriteRenderer _chickenSpriteRenderer;
-    private SpriteRenderer _cowSpriteRenderer;
+    [SerializeField] private SpriteRenderer _chickenSpriteRenderer;
+    [SerializeField] private SpriteRenderer _cowSpriteRenderer;
     private ObstacleManagerScript _obstacleManagerScript;
     private int[] weightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, //14 vezes pra 14%

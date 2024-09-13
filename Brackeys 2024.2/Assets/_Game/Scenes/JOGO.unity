@@ -2357,6 +2357,8 @@ MonoBehaviour:
   - {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   - {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
   instantiateQuantity: 1
+  _chickenSpriteRenderer: {fileID: 6348563168611429004, guid: 59b7b2aea63781042a692c1589344dae, type: 3}
+  _cowSpriteRenderer: {fileID: 6417133083181434418, guid: 368fdf1cc4058724082fd87344dfb60a, type: 3}
 --- !u!4 &1871359499
 Transform:
   m_ObjectHideFlags: 0
