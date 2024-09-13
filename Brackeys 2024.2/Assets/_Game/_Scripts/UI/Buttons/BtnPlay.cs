@@ -2,6 +2,7 @@ using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -54,6 +55,13 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Fill up");
+    }
+
+    private void StopAnimation() 
+    {
+        GetComponent<Animator>().enabled = false;
+        GetComponent<Image>().enabled = false;
+        GetComponent<Button>().enabled = false;
     }
     #endregion
 }

@@ -219,21 +219,21 @@ public class UpgradesStatus : MonoBehaviour
             switch (stats)
             {
                 case TargetStats.Speed:
-                    if (BalloonStats.Speed < BalloonStats.Instance.MaxSpeed - BalloonStats.Instance.MinSpeed)
+                    if (_currentLevel < 3)
                         AudioManager.Instance.PlaySFX("Upgrade1");
                     else
                         AudioManager.Instance.PlaySFX("Upgrade2");
                     break;
 
                 case TargetStats.Stability:
-                    if (BalloonStats.Stability < BalloonStats.Instance.MaxStability - BalloonStats.Instance.MinStability)
+                    if (_currentLevel < 3)
                         AudioManager.Instance.PlaySFX("Upgrade1");
                     else
                         AudioManager.Instance.PlaySFX("Upgrade2");
                     break;
 
                 case TargetStats.Durability:
-                    if (BalloonStats.Durability < BalloonStats.Instance.MaxDurability - BalloonStats.Instance.MinDurability)
+                    if (_currentLevel < 3)
                         AudioManager.Instance.PlaySFX("Upgrade1");
                     else
                         AudioManager.Instance.PlaySFX("Upgrade2");
