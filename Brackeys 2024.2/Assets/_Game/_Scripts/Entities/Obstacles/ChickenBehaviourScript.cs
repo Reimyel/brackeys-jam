@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenBehaviourScript : MonoBehaviour
+public class ChickenCowManagerScript : MonoBehaviour
 {
     #region Referências
-    [SerializeField] private int instantiateQuantity;
     [SerializeField] private GameObject chickenObject;
-    [SerializeField] private Sprite[] spriteVariations;
+    [SerializeField] private GameObject cowObject;
+    [SerializeField] private Sprite[] chickenSpriteVariations;
+    [SerializeField] private Sprite[] cowSpriteVariations;
+    [SerializeField] private int instantiateQuantity;
+    private SpriteRenderer _chickenSpriteRenderer;
+    private SpriteRenderer _cowSpriteRenderer;
     private ObstacleManagerScript _obstacleManagerScript;
-    private SpriteRenderer _spriteRenderer;
     private int[] weightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, //14 vezes pra 14%
         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, //14 vezes pra 14%
@@ -24,7 +27,6 @@ public class ChickenBehaviourScript : MonoBehaviour
     void Awake()
     {
         _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         ChangeSpriteVariation();
     }
     #endregion
@@ -33,7 +35,7 @@ public class ChickenBehaviourScript : MonoBehaviour
     void ChangeSpriteVariation()
     {
         int randomIndex = weightedIndices[Random.Range(0, weightedIndices.Length)];
-        _spriteRenderer.sprite = spriteVariations[randomIndex];
+        _chickenSpriteRenderer.sprite = chickenSpriteVariations[randomIndex];
 
         if (randomIndex == 0 | randomIndex == 1 | randomIndex == 2 | randomIndex == 3 | randomIndex == 4 | randomIndex == 5 | randomIndex == 6)
         {

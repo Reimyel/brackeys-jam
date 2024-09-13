@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3980408094002598823}
   - component: {fileID: 400393843927421987}
   - component: {fileID: 4065894291221645713}
-  - component: {fileID: 3212931343243449525}
   m_Layer: 11
   m_Name: Chicken
   m_TagString: Untagged
@@ -172,25 +171,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &3212931343243449525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5182889435193454201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d26979f5550304da42b22c16005e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateQuantity: 0
-  chickenObject: {fileID: 5182889435193454201}
-  spriteVariations:
-  - {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  - {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  - {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  - {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
