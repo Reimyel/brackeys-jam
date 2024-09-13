@@ -105,7 +105,7 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
-  fadeColor: {r: 0.31132078, g: 0.16006587, b: 0.16006587, a: 1}
+  fadeColor: {r: 1, g: 1, b: 1, a: 1}
   balloonCollision: {fileID: 0}
   layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
