@@ -5,7 +5,9 @@ using UnityEngine;
 public class ChickenBehaviourScript : MonoBehaviour
 {
     #region Referências
+    [SerializeField] private GameObject chickenObject;
     [SerializeField] private Sprite[] spriteVariations;
+    private ObstacleManagerScript _obstacleManagerScript;
     private SpriteRenderer _spriteRenderer;
     private int[] weightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, //14 vezes pra 14%
@@ -20,6 +22,7 @@ public class ChickenBehaviourScript : MonoBehaviour
     #region Funções Unity
     void Awake()
     {
+        _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         ChangeSpriteVariation();
     }
@@ -30,6 +33,20 @@ public class ChickenBehaviourScript : MonoBehaviour
     {
         int randomIndex = weightedIndices[Random.Range(0, weightedIndices.Length)];
         _spriteRenderer.sprite = spriteVariations[randomIndex];
+
+        if (randomIndex == 0 | randomIndex == 1 | randomIndex == 2 | randomIndex == 3 | randomIndex == 4 | randomIndex == 5 | randomIndex == 6)
+        {
+            ChickenMoment();
+        }
+    }
+
+    void ChickenMoment()
+    {
+        for (int i = 0; i < _obstacleManagerScript.spawnPoint.Length; i++)
+        {
+            // Instancia o chickenObject em cada posição do array spawnPoint
+            Instantiate(chickenObject, _obstacleManagerScript.spawnPoint[i].position, chickenObject.transform.rotation);
+        }
     }
     #endregion
 }
