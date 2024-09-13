@@ -8,7 +8,7 @@ public class GunBehaviourScript : MonoBehaviour
     [SerializeField] private int projectileSpeed;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawnpoint;
-    private Vector3 offset = new Vector3(0f, 0.5f, 0f);
+    [SerializeField] private Vector3 offset = new Vector3(0f, 0.5f, 0f);
 
     private void OnTriggerEnter2D(Collider2D other)
     {

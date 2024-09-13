@@ -604,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 278357413}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 0.2821021, y: 0.2821021, z: 0.2821021}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1168,6 +1168,14 @@ PrefabInstance:
       value: BaloonStats
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: MaxSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: MinSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: maxSpeed
       value: 30
       objectReference: {fileID: 0}
@@ -1182,6 +1190,14 @@ PrefabInstance:
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: minStability
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: MaxDurability
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: MinDurability
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1685,7 +1701,7 @@ Transform:
   m_GameObject: {fileID: 1166305564}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.74, y: 0, z: 0}
+  m_LocalPosition: {x: 26.74, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2273,7 +2289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1916039556
 Transform:
   m_ObjectHideFlags: 0
@@ -2283,7 +2299,7 @@ Transform:
   m_GameObject: {fileID: 1916039555}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.112689, y: -6.8219333, z: 0}
+  m_LocalPosition: {x: 0, y: -6.5, z: 0}
   m_LocalScale: {x: 5, y: 0.49999627, z: 3.000013}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2307,6 +2323,7 @@ MonoBehaviour:
   projectileSpeed: 200
   projectilePrefab: {fileID: 1888065499314421501, guid: befee28643d9d6347be86521326e6685, type: 3}
   projectileSpawnpoint: {fileID: 1520532044}
+  offset: {x: 0, y: 0.5, z: 0}
 --- !u!61 &1916039558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2720,7 +2737,7 @@ Transform:
   m_GameObject: {fileID: 2020730152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.66, y: 0, z: 0}
+  m_LocalPosition: {x: -26.66, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
