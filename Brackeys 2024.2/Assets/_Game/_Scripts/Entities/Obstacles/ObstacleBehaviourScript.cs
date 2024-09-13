@@ -46,7 +46,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
                 AudioManager.Instance.PlaySFX("Carro");
             else if (gameObject.CompareTag("Chicken")) 
             {
-                if (Random.Range(0, 100) < 45)
+                if (!ChickenBehaviourScript.IsChickenMoment  && Random.Range(0, 100) < 45)
                     AudioManager.Instance.PlaySFX("Galinha");
 
                 AudioManager.Instance.PlaySFX("Galinha" + Random.Range(1, 3));

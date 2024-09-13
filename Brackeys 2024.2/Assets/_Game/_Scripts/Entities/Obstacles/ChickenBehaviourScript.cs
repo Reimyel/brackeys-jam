@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenCowManagerScript : MonoBehaviour
+public class ChickenBehaviourScript : MonoBehaviour
 {
+    public static bool IsChickenMoment = false;
+
     #region Referências
     [SerializeField] private GameObject chickenObject;
     [SerializeField] private GameObject cowObject;
@@ -24,11 +26,14 @@ public class ChickenCowManagerScript : MonoBehaviour
     #endregion
 
     #region Funções Unity
-    void Awake()
+    private void Awake()
     {
         _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
         ChangeSpriteVariation();
     }
+
+    private void Start() => IsChickenMoment = false;
+
     #endregion
 
     #region Funções Próprias
@@ -45,12 +50,16 @@ public class ChickenCowManagerScript : MonoBehaviour
 
     void ChickenMoment()
     {
+        IsChickenMoment = true;
+
         for (int i = 0; i < instantiateQuantity; i++)
         {
             int randomIndex = Random.Range(0, _obstacleManagerScript.spawnPoint.Length);
 
             Instantiate(chickenObject, _obstacleManagerScript.spawnPoint[randomIndex].position, chickenObject.transform.rotation);
         }
+
+        IsChickenMoment = false;
     }
     #endregion
 }
