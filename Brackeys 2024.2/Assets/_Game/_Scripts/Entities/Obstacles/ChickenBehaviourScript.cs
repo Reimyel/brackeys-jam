@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChickenBehaviourScript : MonoBehaviour
 {
     #region Referências
+    [SerializeField] private int instantiateQuantity;
     [SerializeField] private GameObject chickenObject;
     [SerializeField] private Sprite[] spriteVariations;
     private ObstacleManagerScript _obstacleManagerScript;
@@ -42,10 +43,11 @@ public class ChickenBehaviourScript : MonoBehaviour
 
     void ChickenMoment()
     {
-        for (int i = 0; i < _obstacleManagerScript.spawnPoint.Length; i++)
+        for (int i = 0; i < instantiateQuantity; i++)
         {
-            // Instancia o chickenObject em cada posição do array spawnPoint
-            Instantiate(chickenObject, _obstacleManagerScript.spawnPoint[i].position, chickenObject.transform.rotation);
+            int randomIndex = Random.Range(0, _obstacleManagerScript.spawnPoint.Length);
+
+            Instantiate(chickenObject, _obstacleManagerScript.spawnPoint[randomIndex].position, chickenObject.transform.rotation);
         }
     }
     #endregion

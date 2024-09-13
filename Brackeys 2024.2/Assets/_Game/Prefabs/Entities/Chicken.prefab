@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d26979f5550304da42b22c16005e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantiateQuantity: 0
   chickenObject: {fileID: 5182889435193454201}
   spriteVariations:
   - {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
