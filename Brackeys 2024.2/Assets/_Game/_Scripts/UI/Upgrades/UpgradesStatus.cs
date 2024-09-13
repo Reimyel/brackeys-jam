@@ -20,7 +20,6 @@ public class UpgradesStatus : MonoBehaviour
     [SerializeField] private Sprite disactiveSprite;
 
     [Header("Referências:")]
-    [SerializeField] private Sprite unselectedImage;
     [SerializeField] private Image[] levelImages;
     [SerializeField] private GameObject btnMaximized;
 
@@ -183,58 +182,28 @@ public class UpgradesStatus : MonoBehaviour
         switch (stats)
         {
             case TargetStats.Speed:
-                if (BalloonStats.Speed >= BalloonStats.Instance.MaxSpeed) 
-                {
-                    var button = GetComponent<Button>();
-                    button.transition = Selectable.Transition.None;
-                    GetComponent<Image>().enabled = false;
-                    //GetComponent<Image>().sprite = unselectedImage;
+                if (BalloonStats.Speed >= BalloonStats.Instance.MaxSpeed)
                     return true;
-                }
-
                 break;
 
             case TargetStats.Stability:
                 if (BalloonStats.Stability >= BalloonStats.Instance.MaxStability)
-                {
-                    var button = GetComponent<Button>();
-                    button.transition = Selectable.Transition.None;
-                    GetComponent<Image>().sprite = unselectedImage;
                     return true;
-                }
-
                 break;
 
             case TargetStats.Durability:
                 if (BalloonStats.Durability >= BalloonStats.Instance.MaxDurability)
-                {
-                    var button = GetComponent<Button>();
-                    button.transition = Selectable.Transition.None;
-                    GetComponent<Image>().sprite = unselectedImage;
                     return true;
-                }
-
                 break;
 
             case TargetStats.Chicken:
                 if (BalloonStats.HasChicken)
-                {
-                    var button = GetComponent<Button>();
-                    button.transition = Selectable.Transition.None;
-                    GetComponent<Image>().sprite = unselectedImage;
                     return true;
-                }
-
                 break;
 
             case TargetStats.Gun:
                 if (BalloonStats.HasGun)
-                {
-                    var button = GetComponent<Button>();
-                    button.transition = Selectable.Transition.None;
-                    GetComponent<Image>().sprite = unselectedImage;
                     return true;
-                }
                 break;
         }
 
