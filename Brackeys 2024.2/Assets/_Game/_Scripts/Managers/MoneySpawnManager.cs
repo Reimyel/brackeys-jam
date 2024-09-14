@@ -5,10 +5,12 @@ using UnityEngine;
 public class MoneySpawnManager : MonoBehaviour
 {
     #region Referências
-    [SerializeField] private float minTime;
-    [SerializeField] private float maxTime;
+    [SerializeField] private float minTime = 5f;
+    [SerializeField] private float maxTime = 10f;
+    [SerializeField] private int moneyCount = 4;
     [SerializeField] private GameObject moneyObject;
     private ObstacleManagerScript _obstacleManagerScript;
+    private float _nextSpawnTime;
     #endregion
 
     #region Funções Unity
@@ -17,26 +19,37 @@ public class MoneySpawnManager : MonoBehaviour
         _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
     }
 
+    private void Start()
+    {
+        DefineNextSpawn();
+    }
+
     private void Update()
     {
-        StartCoroutine(SpawnMoney(minTime, maxTime));
+        if (Time.time >= _nextSpawnTime)
+        {
+            SpawnMoney();
+            DefineNextSpawn();
+        }
     }
     #endregion
 
-    #region Funções Próprias
-    private IEnumerator SpawnMoney(float minTime, float maxTime)
+    void DefineNextSpawn()
     {
-        yield return new WaitForSeconds(Random.Range(minTime, maxTime));
+        _nextSpawnTime = Time.time + Random.Range(minTime, maxTime);
+    }
 
-        var instance = Instantiate(moneyObject, _obstacleManagerScript.UspawnPoint[Random.Range(0, _obstacleManagerScript.UspawnPoint.Length)].position, moneyObject.transform.rotation);
+    #region Funções Próprias
+    void SpawnMoney()
+    {
+        int randomIndex = Random.Range(0, _obstacleManagerScript.UspawnPoint.Length);
+        Vector3 spawnPosition = _obstacleManagerScript.UspawnPoint[randomIndex].position; //posição aleatória dos spawnpoints
 
-        MoneyBehaviourScript moneyBehaviourScript = instance.GetComponent<MoneyBehaviourScript>();
-        if (moneyBehaviourScript != null)
+        for (int i = 0; i < moneyCount; i++)
         {
-            moneyBehaviourScript.SetDirection(Vector2.down);
+            Vector3 offset = new Vector3(0, i * 1.5f, 0); //distancia entre moedas
+            Instantiate(moneyObject, spawnPosition + offset, moneyObject.transform.rotation);
         }
-
-        StartCoroutine(SpawnMoney(minTime, maxTime));
     }
     #endregion
 }
