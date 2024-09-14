@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenBehaviourScript : MonoBehaviour
+public class ChickenCowManager : MonoBehaviour
 {
 
     #region Referências
