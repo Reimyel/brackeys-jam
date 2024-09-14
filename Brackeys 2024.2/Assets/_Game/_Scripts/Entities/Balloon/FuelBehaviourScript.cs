@@ -8,7 +8,7 @@ public class FuelBehaviourScript : MonoBehaviour
 {
     #region Variáveis
     [SerializeField] private Slider chargeBar;
-    [SerializeField] private float fillRate = 0.1f;
+    [SerializeField] private float fillRate = 0.5f;
     [SerializeField] private float drainRate = 0.05f;
     [SerializeField] private float delayBeforeDraining = 1f;
     private bool isFilling = false;

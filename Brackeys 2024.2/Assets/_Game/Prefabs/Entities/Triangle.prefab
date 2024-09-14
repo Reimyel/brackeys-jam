@@ -106,6 +106,7 @@ MonoBehaviour:
   minVel: 800
   maxVel: 1000
   fadeColor: {r: 0.4245283, g: 0.122152, b: 0.29745108, a: 1}
+  balloonCollision: {fileID: 0}
   layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &-8722390251696238764
@@ -123,7 +124,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

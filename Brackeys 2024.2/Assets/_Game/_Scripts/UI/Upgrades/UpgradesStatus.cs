@@ -21,12 +21,10 @@ public class UpgradesStatus : MonoBehaviour
 
     [Header("Referências:")]
     [SerializeField] private Image[] levelImages;
+    [SerializeField] private GameObject btnMaximized;
 
     private int _currentLevel;
     private int _currentCost;
-
-    // SFX:
-    private static int _upgradeSFXindex = 1;
 
     private enum TargetStats 
     {
@@ -39,8 +37,17 @@ public class UpgradesStatus : MonoBehaviour
     #endregion
 
     #region Funções Unity
+    private void Start()
+    {
+        if (IsMaximized())
+            DisableBtn();
+    }
+
     private void Update() 
     {
+        if (IsMaximized())
+            DisableBtn();
+
         SelectStats();
         SetUpgradeLevel();
         SetCurrentCost();
@@ -94,7 +101,7 @@ public class UpgradesStatus : MonoBehaviour
     public void ChangeDecimalStats(float value)
     {
         // Ignore o Upgrade
-        if (IsMaximized() || BalloonStats.CurrentMoney <= _currentCost) 
+        if (BalloonStats.CurrentMoney <= _currentCost) 
         {
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Locked");
@@ -122,7 +129,7 @@ public class UpgradesStatus : MonoBehaviour
     public void ChangeIntegerStats(int value)
     {
         // Ignore o Upgrade
-        if (IsMaximized() || BalloonStats.CurrentMoney <= _currentCost)
+        if (BalloonStats.CurrentMoney <= _currentCost)
         {
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Locked");
@@ -142,7 +149,7 @@ public class UpgradesStatus : MonoBehaviour
     public void EnableConsumable() 
     {
         // Ignore o Upgrade
-        if (IsMaximized() || BalloonStats.CurrentMoney <= _currentCost)
+        if (BalloonStats.CurrentMoney <= _currentCost)
         {
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Locked");
@@ -209,11 +216,44 @@ public class UpgradesStatus : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX("Upgrade");
 
-            AudioManager.Instance.PlaySFX("Upgrade" + _upgradeSFXindex);
+            switch (stats)
+            {
+                case TargetStats.Speed:
+                    if (_currentLevel < 2)
+                        AudioManager.Instance.PlaySFX("Upgrade1");
+                    else
+                        AudioManager.Instance.PlaySFX("Upgrade2");
+                    break;
 
-            if (_upgradeSFXindex == 1) _upgradeSFXindex = 2;
-            else _upgradeSFXindex = 1;
+                case TargetStats.Stability:
+                    if (_currentLevel < 2)
+                        AudioManager.Instance.PlaySFX("Upgrade1");
+                    else
+                        AudioManager.Instance.PlaySFX("Upgrade2");
+                    break;
+
+                case TargetStats.Durability:
+                    if (_currentLevel < 2)
+                        AudioManager.Instance.PlaySFX("Upgrade1");
+                    else
+                        AudioManager.Instance.PlaySFX("Upgrade2");
+                    break;
+
+                case TargetStats.Chicken:
+                    AudioManager.Instance.PlaySFX("Upgrade2");
+                    break;
+
+                case TargetStats.Gun:
+                    AudioManager.Instance.PlaySFX("Upgrade2");
+                    break;
+            }
         }
+    }
+
+    private void DisableBtn() 
+    {
+        btnMaximized.SetActive(true);
+        gameObject.SetActive(false);
     }
     #endregion
 }

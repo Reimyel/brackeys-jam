@@ -9,7 +9,7 @@ public class ObstacleManagerScript : MonoBehaviour
     [SerializeField] private float minTime;
     [SerializeField] private float maxTime;
     [SerializeField] private GameObject[] obstaclesPrefabs;
-    [SerializeField] private Transform[] spawnPoint;
+    [SerializeField] public Transform[] spawnPoint;
     #endregion
 
     #region Funções Unity

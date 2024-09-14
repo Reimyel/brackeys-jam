@@ -18,6 +18,7 @@ public class BalloonStats : MonoBehaviour
     public int MaxDurability;
 
     [SerializeField] private GameObject gunObject;
+    [SerializeField] private GameObject chickenObject;
 
     // Atributos atuais do Balão
     public static float Speed;
@@ -67,7 +68,7 @@ public class BalloonStats : MonoBehaviour
 
         if (newValue < Speed) 
             SpeedLevel--;
-        else 
+        else if (newValue != MinSpeed)
             SpeedLevel++;
 
         Speed = newValue;
@@ -79,7 +80,7 @@ public class BalloonStats : MonoBehaviour
 
         if (newValue < Stability) 
             StabilityLevel--;
-        else 
+        else if (newValue != MinStability)
             StabilityLevel++;
 
         Stability = newValue;
@@ -91,7 +92,7 @@ public class BalloonStats : MonoBehaviour
 
         if (newValue < Durability) 
             DurabilityLevel--;
-        else 
+        else if (newValue != MinDurability)
             DurabilityLevel++;
 
         Durability = newValue;
@@ -103,6 +104,10 @@ public class BalloonStats : MonoBehaviour
         HasGun = true;
     }
 
-    public void EnableChicken() => HasChicken = true;
+    public void EnableChicken()
+    {
+        chickenObject.SetActive(true);
+        HasChicken = true;
+    }
     #endregion
 }

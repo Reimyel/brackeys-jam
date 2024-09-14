@@ -8,7 +8,7 @@ public class GunBehaviourScript : MonoBehaviour
     [SerializeField] private int projectileSpeed;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawnpoint;
-    private Vector3 offset = new Vector3(0f, 0.5f, 0f);
+    [SerializeField] private Vector3 offset = new Vector3(0f, 0.5f, 0f);
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +18,8 @@ public class GunBehaviourScript : MonoBehaviour
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Shoot");
 
+            Invoke("ReloadSFX", 0.5f);
+
             for (int i = 0; i <  projectileCount; i++) 
             {
                 GameObject projectile = Instantiate(projectilePrefab, projectileSpawnpoint.position + offset, Quaternion.identity);
@@ -25,5 +27,11 @@ public class GunBehaviourScript : MonoBehaviour
                 projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
             }
         }
+    }
+
+    private void ReloadSFX()
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX("reload");
     }
 }

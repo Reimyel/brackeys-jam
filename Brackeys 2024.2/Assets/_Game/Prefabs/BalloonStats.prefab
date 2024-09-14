@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848556800756624251}
   - component: {fileID: 4179946512755133414}
+  - component: {fileID: 7964655583097153985}
   m_Layer: 0
   m_Name: BalloonStats
   m_TagString: Untagged
@@ -44,10 +45,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0d95adbd23bb44f9f4133710e627df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 1
-  maxSpeed: 5
-  minStability: 1
-  maxStability: 5
-  minDurability: 1
-  maxDurability: 5
-  maxArmor: 5
+  InitialMoney: 100000
+  MinSpeed: 10
+  MaxSpeed: 30
+  MinStability: 10
+  MaxStability: 30
+  MinDurability: 10
+  MaxDurability: 30
+  gunObject: {fileID: 0}
+--- !u!114 &7964655583097153985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348291717794159863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2401351e36ef6884ea22bdc41522a35b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeSceneName: Upgrade Scene
+  isUI: 1
+  imgDurability: {fileID: 0}
+  imgSpeed: {fileID: 0}
+  imgStability: {fileID: 0}
+  sprDurability: {fileID: 0}
+  sprSpeed: {fileID: 0}
+  sprStability: {fileID: 0}
+  spritesDurability:
+  - {fileID: 21300000, guid: 6605a15879cc12643b00a15460a9d5ed, type: 3}
+  - {fileID: 21300000, guid: ccb96c92098a1b74db7a50d03ff831de, type: 3}
+  - {fileID: 21300000, guid: 1f868a2235562144c8aca95ee522a1d7, type: 3}
+  - {fileID: 21300000, guid: 98be492a8d9addf4d89389c49635b66e, type: 3}
+  spritesSpeed:
+  - {fileID: 21300000, guid: 72141c8ab0b07804bb8fc81ede8ef247, type: 3}
+  - {fileID: 21300000, guid: 3e72d77fa53de4043a8896cedcc13c8c, type: 3}
+  - {fileID: 21300000, guid: 2e59305538797414ba901911b920becf, type: 3}
+  - {fileID: 21300000, guid: 81404b6c18cd56649b4c26c2fafcd037, type: 3}
+  spritesStability:
+  - {fileID: 21300000, guid: ba2a2518aa590ed449ac0d6bcf230358, type: 3}
+  - {fileID: 21300000, guid: 1d5bb711748545245aa2731efe21c19a, type: 3}
+  - {fileID: 21300000, guid: 9e003f5bb645ab5468f1faae70bd5560, type: 3}
+  - {fileID: 21300000, guid: 9d3ca1eac2c780b489671f81377163ca, type: 3}
