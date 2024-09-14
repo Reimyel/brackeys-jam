@@ -18,7 +18,7 @@ public class BalloonChanger : MonoBehaviour
 
     [Header("In Game:")]
     [SerializeField] private SpriteRenderer sprDurability;
-    [SerializeField] private SpriteRenderer sprSpeed;
+    [SerializeField] private SpriteRenderer[] sprSpeed;
     [SerializeField] private SpriteRenderer sprStability;
 
     [Header("Sprites:")]
@@ -42,13 +42,18 @@ public class BalloonChanger : MonoBehaviour
         if (!isUI)
         {
             sprDurability.sprite = spritesDurability[BalloonStats.DurabilityLevel];
-            sprSpeed.sprite = spritesSpeed[BalloonStats.SpeedLevel];
+            
+            for (int i = 0; i < sprSpeed.Length; i++)
+                sprSpeed[i].sprite = spritesSpeed[BalloonStats.SpeedLevel];
+
             sprStability.sprite = spritesStability[BalloonStats.StabilityLevel];
         }
         else
         {
             imgDurability.sprite = spritesDurability[BalloonStats.DurabilityLevel];
+
             imgSpeed.sprite = spritesSpeed[BalloonStats.SpeedLevel];
+
             imgStability.sprite = spritesStability[BalloonStats.StabilityLevel];
         }
     }
