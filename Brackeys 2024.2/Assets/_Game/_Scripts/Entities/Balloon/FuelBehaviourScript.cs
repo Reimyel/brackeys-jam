@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class FuelBehaviourScript : MonoBehaviour
     private float fillDelayTimer = 0f;
     private TimerManager _timerManager;
     private BalloonCollision _balloonCollision;
+    private BackgroundScroller _backgroundScroller;
     #endregion
 
     #region Funções Unity
@@ -22,6 +24,7 @@ public class FuelBehaviourScript : MonoBehaviour
     {
         _timerManager = FindObjectOfType<TimerManager>();
         _balloonCollision = FindObjectOfType<BalloonCollision>();
+        _backgroundScroller = FindObjectOfType<BackgroundScroller>();
     }
 
     void Update()
@@ -30,6 +33,7 @@ public class FuelBehaviourScript : MonoBehaviour
         {
             isFilling = true;
             fillDelayTimer = 0f;
+            _backgroundScroller.ySpeed *= 2f;
         }
 
         if (Input.GetKey(KeyCode.Space))

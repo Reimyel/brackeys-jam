@@ -459,8 +459,8 @@ Transform:
   m_Children:
   - {fileID: 1426255239}
   - {fileID: 1284216950}
-  - {fileID: 1166305565}
   - {fileID: 346898747}
+  - {fileID: 1166305565}
   - {fileID: 2020730153}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -508,8 +508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff6bfd50e4630f468445072dd01a716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 5
-  maxTime: 10
+  minTime: 2
+  maxTime: 5
+  moneyCount: 3
   moneyObject: {fileID: 4878332863736183165, guid: 4c7b8a847afe69045912ed8818c0cbac, type: 3}
 --- !u!1 &177737396
 GameObject:
@@ -733,6 +734,7 @@ MonoBehaviour:
   gameOverInterval: 3
   layerObstacle: 11
   layerChangeSide: 10
+  layerMoney: 0
   changeSideForce: 160
   leftSidePoint: {fileID: 2020730153}
   rightSidePoint: {fileID: 1166305565}
@@ -1353,6 +1355,10 @@ PrefabInstance:
       propertyPath: gunObject
       value: 
       objectReference: {fileID: 1916039555}
+    - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: InitialMoney
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxStability
       value: 50
@@ -2095,7 +2101,7 @@ Transform:
   m_GameObject: {fileID: 1166305564}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.74, y: -5, z: 0}
+  m_LocalPosition: {x: 17, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2341,6 +2347,10 @@ PrefabInstance:
       propertyPath: windAlert
       value: 
       objectReference: {fileID: 263751706}
+    - target: {fileID: 1407596536126038628, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: layerMoney
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1407596536126038628, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
       propertyPath: leftSidePoint
       value: 
@@ -2811,23 +2821,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LmaxTime
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LminTime
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: RmaxTime
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: RminTime
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: UmaxTime
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: UminTime
@@ -3608,6 +3618,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4239375390018362486, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
+      propertyPath: xSpeed
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239375390018362486, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
+      propertyPath: ySpeed
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7004703956064226496, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
       propertyPath: m_RenderMode
       value: 2
@@ -4187,7 +4205,7 @@ Transform:
   m_GameObject: {fileID: 2020730152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.66, y: -5, z: 0}
+  m_LocalPosition: {x: -17, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4441,9 +4459,6 @@ SceneRoots:
   - {fileID: 1947542617}
   - {fileID: 1894943872}
   - {fileID: 1973767271}
-  - {fileID: 2794956360987331688}
-  - {fileID: 177737397}
-  - {fileID: 198297686}
   - {fileID: 150863046}
   - {fileID: 5855497275450512110}
   - {fileID: 1576902784}
@@ -4461,3 +4476,6 @@ SceneRoots:
   - {fileID: 1358939954}
   - {fileID: 1672035877}
   - {fileID: 315183644}
+  - {fileID: 2794956360987331688}
+  - {fileID: 177737397}
+  - {fileID: 198297686}
