@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class BalloonRagdoll : MonoBehaviour
 {
-    public Transform balloon;  // Referência ao balão
-    public Transform basket;   // Referência ao cesto
-    public Transform leftRopeAnchor;  // Ponto de ancoragem da corda esquerda no balão
-    public Transform rightRopeAnchor; // Ponto de ancoragem da corda direita no balão
-    public GameObject leftRopeSprite;  // Sprite da corda esquerda
-    public GameObject rightRopeSprite; // Sprite da corda direita
+    public Transform[] balloonAnchors; 
+    public Transform[] basketAnchors; 
+    public Transform[] ropeSprites; 
 
     void Update()
     {
-        UpdateRope(leftRopeAnchor, leftRopeSprite);
-        UpdateRope(rightRopeAnchor, rightRopeSprite);
-    }
+        for (int i = 0; i < ropeSprites.Length; i++)
+        {
+            //Ajusta a posição da corda para estar entre os pontos de ancoragem
+            ropeSprites[i].position = (balloonAnchors[i].position + basketAnchors[i].position) / 2;
 
-    void UpdateRope(Transform ropeAnchor, GameObject ropeSprite)
-    {
-        Vector3 direction = basket.position - ropeAnchor.position;  // Direção da corda
-        float distance = direction.magnitude;  // Comprimento da corda
+            //Calcula a direção entre os pontos de ancoragem
+            Vector2 direction = (basketAnchors[i].position - balloonAnchors[i].position).normalized;
 
-        ropeSprite.transform.position = ropeAnchor.position + direction / 2f; // Posicionar a corda entre balão e cesto
-        ropeSprite.transform.localScale = new Vector3(1, distance, 1); // Ajustar o comprimento da sprite
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;  // Calcular o ângulo da corda
-        ropeSprite.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);  // Rotacionar a sprite para seguir a corda
+            //Ajusta a rotação da corda para apontar na direção correta
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            ropeSprites[i].rotation = Quaternion.Euler(0, 0, angle - 90); // Subtrai 90 para alinhar corretamente
+        }
     }
 }
