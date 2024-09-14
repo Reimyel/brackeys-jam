@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ChickenBehaviourScript : MonoBehaviour
 {
-    public static bool IsChickenMoment = false;
 
     #region Referências
+    [SerializeField] private Vector3 offset = new Vector3(0f, 0.5f, 0f);
     [SerializeField] private GameObject chickenObject;
     [SerializeField] private GameObject cowObject;
     [SerializeField] private Sprite[] chickenSpriteVariations;
@@ -14,7 +14,7 @@ public class ChickenBehaviourScript : MonoBehaviour
     [SerializeField] private int instantiateQuantity;
     [SerializeField] private SpriteRenderer _chickenSpriteRenderer;
     [SerializeField] private SpriteRenderer _cowSpriteRenderer;
-    private ObstacleManagerScript _obstacleManagerScript;
+    [SerializeField] public Transform[] spawnPoint;
     private int[] weightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, //14 vezes pra 14%
         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, //14 vezes pra 14%
@@ -23,12 +23,12 @@ public class ChickenBehaviourScript : MonoBehaviour
         5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //14 vezes pra 14%
         6, 6  //2 vezes pra 2%
     };
+    public static bool IsChickenMoment = false;
     #endregion
 
     #region Funções Unity
     private void Awake()
     {
-        _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
         ChangeSpriteVariation();
     }
 
@@ -44,22 +44,44 @@ public class ChickenBehaviourScript : MonoBehaviour
 
         if (randomIndex == 0 | randomIndex == 1 | randomIndex == 2 | randomIndex == 3 | randomIndex == 4 | randomIndex == 5 | randomIndex == 6)
         {
-            ChickenMoment();
+            InvokeRepeating("StartChickenMoment", 0f, 1f);
+
+            Invoke("StopChickenMoment", 5f);
         }
     }
 
-    void ChickenMoment()
+    void StartChickenMoment()
     {
         IsChickenMoment = true;
 
-        for (int i = 0; i < instantiateQuantity; i++)
-        {
-            int randomIndex = Random.Range(0, _obstacleManagerScript.spawnPoint.Length);
+        int spawnCount = Random.Range(1, spawnPoint.Length + 1);
 
-            Instantiate(chickenObject, _obstacleManagerScript.spawnPoint[randomIndex].position, chickenObject.transform.rotation);
+        //spawn points usados
+        List<int> usedSpawnPoints = new List<int>();
+
+        for (int i = 0; i < spawnCount; i++)
+        {
+            int randomIndex;
+
+            do
+            {
+                randomIndex = Random.Range(0, spawnPoint.Length);
+            }
+            while (usedSpawnPoints.Contains(randomIndex));
+
+            //lista de usados
+            usedSpawnPoints.Add(randomIndex);
+
+            Debug.Log("MOMENTO GALINHA");
+            Instantiate(chickenObject, spawnPoint[randomIndex].position + offset, chickenObject.transform.rotation);
         }
 
         IsChickenMoment = false;
+    }
+
+    void StopChickenMoment()
+    {
+        CancelInvoke("StartChickenMoment");
     }
     #endregion
 }
