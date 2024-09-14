@@ -17,17 +17,13 @@ public class GunBehaviourScript : MonoBehaviour
     [SerializeField] private Transform projectileSpawnpoint;
     
     [SerializeField] private Vector3 offset = new Vector3(0f, 0.5f, 0f);
-
-    // Referências:
-    private SpriteRenderer _sprPlayerHead;
-    private Sprite _defaultSprite;
     #endregion
 
     #region Funções Unity
     private void Start()
     {
-        _sprPlayerHead = playerHeadTransform.gameObject.GetComponent<SpriteRenderer>();
-        _defaultSprite = _sprPlayerHead.sprite;
+        if (BalloonStats.HasGun) 
+            playerHeadTransform.gameObject.GetComponent<SpriteRenderer>().sprite = shootSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,7 +36,6 @@ public class GunBehaviourScript : MonoBehaviour
 
             Invoke("ReloadSFX", 0.5f);
             Invoke("ResetSprite", 1f);
-            _sprPlayerHead.sprite = shootSprite;
 
             for (int i = 0; i <  projectileCount; i++) 
             {
@@ -61,10 +56,6 @@ public class GunBehaviourScript : MonoBehaviour
             AudioManager.Instance.PlaySFX("reload");
     }
 
-    private void ResetSprite()
-    {
-        playerHeadTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        _sprPlayerHead.sprite = _defaultSprite;
-    }
+    private void ResetSprite() => playerHeadTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
     #endregion
 }
