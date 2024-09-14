@@ -2820,7 +2820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d26979f5550304da42b22c16005e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 1, z: 0}
   chickenObject: {fileID: 5182889435193454201, guid: 59b7b2aea63781042a692c1589344dae, type: 3}
   cowObject: {fileID: 2012646898506410731, guid: 368fdf1cc4058724082fd87344dfb60a, type: 3}
   chickenSpriteVariations:
@@ -2840,12 +2839,6 @@ MonoBehaviour:
   instantiateQuantity: 1
   _chickenSpriteRenderer: {fileID: 6348563168611429004, guid: 59b7b2aea63781042a692c1589344dae, type: 3}
   _cowSpriteRenderer: {fileID: 6417133083181434418, guid: 368fdf1cc4058724082fd87344dfb60a, type: 3}
-  spawnPoint:
-  - {fileID: 261984315}
-  - {fileID: 1846493694}
-  - {fileID: 1619788468}
-  - {fileID: 1020304322}
-  - {fileID: 1158624228}
 --- !u!4 &1871359499
 Transform:
   m_ObjectHideFlags: 0
@@ -3904,9 +3897,9 @@ SceneRoots:
   - {fileID: 1217098741199083714}
   - {fileID: 3378592347375641526}
   - {fileID: 7106425598230509248}
-  - {fileID: 114152315}
-  - {fileID: 1228898600}
   - {fileID: 3272641982359102692}
+  - {fileID: 1228898600}
+  - {fileID: 114152315}
   - {fileID: 315183644}
   - {fileID: 3566886851210506868}
   - {fileID: 150863046}
