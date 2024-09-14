@@ -6,27 +6,83 @@ public class ObstacleManagerScript : MonoBehaviour
 {
     #region Variáveis Globais
     [SerializeField] private float windForce;
-    [SerializeField] private float minTime;
-    [SerializeField] private float maxTime;
     [SerializeField] private GameObject[] obstaclesPrefabs;
-    [SerializeField] public Transform[] spawnPoint;
+    [SerializeField] public Transform[] RspawnPoint;
+    [SerializeField] public Transform[] LspawnPoint;
+    [SerializeField] public Transform[] UspawnPoint;
+
+    [Header("Right Side:")]
+    [SerializeField] private float RminTime;
+    [SerializeField] private float RmaxTime;
+
+    [Header("Left Side:")]
+    [SerializeField] private float LminTime;
+    [SerializeField] private float LmaxTime;
+
+    [Header("Up Side:")]
+    [SerializeField] private float UminTime;
+    [SerializeField] private float UmaxTime;
     #endregion
 
     #region Funções Unity
-    private void Start() => StartCoroutine(SpawnNextObstacle(minTime, maxTime));
+    private void Start()
+    {
+        StartCoroutine(SpawnRightObstacle(RminTime, RmaxTime));
+        StartCoroutine(SpawnLeftObstacle(LminTime, LmaxTime));
+        StartCoroutine(SpawnUpObstacle(UminTime, UmaxTime));
+    }
     #endregion
 
     #region Funções Próprias
-    private IEnumerator SpawnNextObstacle(float minTime, float maxTime)
+    private IEnumerator SpawnRightObstacle(float minTime, float maxTime)
     {
         yield return new WaitForSeconds(Random.Range(minTime, maxTime));
 
         var obstacle = obstaclesPrefabs[Random.Range(0, obstaclesPrefabs.Length)];
 
-        Instantiate(obstacle, spawnPoint[Random.Range(0, spawnPoint.Length)].position,
-        obstacle.transform.rotation);
+        var instance = Instantiate(obstacle, RspawnPoint[Random.Range(0, RspawnPoint.Length)].position, obstacle.transform.rotation);
 
-        StartCoroutine(SpawnNextObstacle(minTime, maxTime));
+        ObstacleBehaviourScript behaviourScript = instance.GetComponent<ObstacleBehaviourScript>();
+        if (behaviourScript != null)
+        {
+            behaviourScript.SetDirection(Vector2.left);
+        }
+
+        StartCoroutine(SpawnRightObstacle(minTime, maxTime));
+    }
+
+    private IEnumerator SpawnLeftObstacle(float minTime, float maxTime)
+    {
+        yield return new WaitForSeconds(Random.Range(minTime, maxTime));
+
+        var obstacle = obstaclesPrefabs[Random.Range(0, obstaclesPrefabs.Length)];
+
+        var instance = Instantiate(obstacle, LspawnPoint[Random.Range(0, LspawnPoint.Length)].position, obstacle.transform.rotation);
+
+        ObstacleBehaviourScript behaviourScript = instance.GetComponent<ObstacleBehaviourScript>();
+        if (behaviourScript != null)
+        {
+            behaviourScript.SetDirection(Vector2.right);
+        }
+
+        StartCoroutine(SpawnLeftObstacle(minTime, maxTime));
+    }
+
+    private IEnumerator SpawnUpObstacle(float minTime, float maxTime)
+    {
+        yield return new WaitForSeconds(Random.Range(minTime, maxTime));
+
+        var obstacle = obstaclesPrefabs[Random.Range(0, obstaclesPrefabs.Length)];
+
+        var instance = Instantiate(obstacle, UspawnPoint[Random.Range(0, UspawnPoint.Length)].position, obstacle.transform.rotation);
+
+        ObstacleBehaviourScript behaviourScript = instance.GetComponent<ObstacleBehaviourScript>();
+        if (behaviourScript != null)
+        {
+            behaviourScript.SetDirection(Vector2.down);
+        }
+
+        StartCoroutine(SpawnUpObstacle(minTime, maxTime));
     }
     #endregion
 }

@@ -21,6 +21,8 @@ public class ObstacleBehaviourScript : MonoBehaviour
     private float _velocity;
     private Rigidbody2D _rb;
     private Collider2D _collider;
+
+    private Vector2 _direction;
     #endregion
 
     #region Funções Unity
@@ -34,7 +36,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
     {
         _velocity = Random.Range(minVel, maxVel);
 
-        _rb.AddForce(-transform.right * _velocity);
+        _rb.AddForce(_direction * _velocity);
 
         StartCoroutine(ApplyEffect(0.01f));
 
@@ -53,7 +55,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
             }
         }
 
-        Destroy(gameObject, 8f);
+        Destroy(gameObject, 5f);
     }
 
     private void Update()
@@ -72,6 +74,11 @@ public class ObstacleBehaviourScript : MonoBehaviour
             _collider.enabled = false;
             _rb.isKinematic = false;
         }
+    }
+
+    public void SetDirection(Vector2 direction)
+    {
+        _direction = direction;
     }
 
     private IEnumerator ApplyEffect(float t) 
