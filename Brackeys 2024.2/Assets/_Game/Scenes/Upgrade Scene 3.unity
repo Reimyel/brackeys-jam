@@ -663,6 +663,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7004703956064226496, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7713133631128441647, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
       propertyPath: m_Name
       value: Canvas Parallax
@@ -920,6 +924,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 4161055492549768488}
   - {fileID: 6082293329744864516}
   - {fileID: 1440605321}
   - {fileID: 4897277555333784940}
@@ -928,4 +933,3 @@ SceneRoots:
   - {fileID: 1004930229}
   - {fileID: 158250443}
   - {fileID: 7607901566607462922}
-  - {fileID: 4161055492549768488}
