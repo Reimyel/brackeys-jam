@@ -112,12 +112,12 @@ public class BalloonCollision : MonoBehaviour
         if (tag == "LeftSide") 
         {
             gameObject.transform.position = rightSidePoint.position;
-            _rb.AddForce(Vector2.left * changeSideForce, ForceMode2D.Impulse);
+            //_rb.AddForce(Vector2.left * changeSideForce, ForceMode2D.Impulse);
         }
         else // RightSide
         {
             gameObject.transform.position = leftSidePoint.position;
-            _rb.AddForce(Vector2.right * changeSideForce, ForceMode2D.Impulse);
+            //_rb.AddForce(Vector2.right * changeSideForce, ForceMode2D.Impulse);
         }
     }
 

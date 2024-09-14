@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,11 @@ public class UpgradesStatus : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] private Image[] levelImages;
     [SerializeField] private GameObject btnMaximized;
+
+    [Header("Descrição:")]
+    [SerializeField] private TextMeshProUGUI txtCurrentUpgrade;
+    [SerializeField] private TextMeshProUGUI txtNextUpgrade;
+    [SerializeField] private string[] txtUpgrades;
 
     private int _currentLevel;
     private int _currentCost;
@@ -51,6 +57,7 @@ public class UpgradesStatus : MonoBehaviour
         SelectStats();
         SetUpgradeLevel();
         SetCurrentCost();
+        SetUpgradeTexts();
     }
     #endregion
 
@@ -245,6 +252,38 @@ public class UpgradesStatus : MonoBehaviour
 
                 case TargetStats.Gun:
                     AudioManager.Instance.PlaySFX("Upgrade2");
+                    break;
+            }
+        }
+    }
+
+    private void SetUpgradeTexts() 
+    {
+        if (stats == TargetStats.Gun || stats == TargetStats.Chicken) return;
+
+        if (txtCurrentUpgrade.enabled && txtNextUpgrade.enabled) 
+        {
+            switch (stats)
+            {
+                case TargetStats.Speed:
+                    txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.SpeedLevel];
+
+                    if (BalloonStats.SpeedLevel < 3)
+                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.SpeedLevel + 1];
+                    break;
+
+                case TargetStats.Stability:
+                    txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.StabilityLevel];
+                    
+                    if (BalloonStats.StabilityLevel < 3)
+                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.StabilityLevel + 1];
+                    break;
+
+                case TargetStats.Durability:
+                    txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.DurabilityLevel];
+
+                    if (BalloonStats.DurabilityLevel < 3)
+                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.DurabilityLevel + 1];
                     break;
             }
         }
