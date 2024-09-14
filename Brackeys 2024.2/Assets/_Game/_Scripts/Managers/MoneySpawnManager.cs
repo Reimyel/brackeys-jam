@@ -30,10 +30,10 @@ public class MoneySpawnManager : MonoBehaviour
 
         var instance = Instantiate(moneyObject, _obstacleManagerScript.UspawnPoint[Random.Range(0, _obstacleManagerScript.UspawnPoint.Length)].position, moneyObject.transform.rotation);
 
-        ObstacleBehaviourScript behaviourScript = instance.GetComponent<ObstacleBehaviourScript>();
-        if (behaviourScript != null)
+        MoneyBehaviourScript moneyBehaviourScript = instance.GetComponent<MoneyBehaviourScript>();
+        if (moneyBehaviourScript != null)
         {
-            behaviourScript.SetDirection(Vector2.down);
+            moneyBehaviourScript.SetDirection(Vector2.down);
         }
 
         StartCoroutine(SpawnMoney(minTime, maxTime));

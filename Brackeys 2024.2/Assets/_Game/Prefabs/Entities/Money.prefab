@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8118315536774929235}
   - component: {fileID: 676750260687903878}
   - component: {fileID: 6809006518850201562}
-  - component: {fileID: -4355945196099065498}
   - component: {fileID: 4509002212130167903}
   - component: {fileID: -3536779390804055348}
   m_Layer: 11
@@ -100,27 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada0c483094cee6428340ba687aeb071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4355945196099065498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4878332863736183165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d485c8fcf9c2fb1458a0355aab7aff87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BalloonDamage: 1
-  jumpForce: 1000
-  minRot: 0.5
-  maxRot: 1
-  minVel: 800
-  maxVel: 1000
-  fadeColor: {r: 0.16064437, g: 0.3584906, b: 0.16270061, a: 1}
-  layerPlayer: 6
-  fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
+  layerPlayer: 0
+  velocity: 800
 --- !u!50 &4509002212130167903
 Rigidbody2D:
   serializedVersion: 4
@@ -136,7 +116,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
