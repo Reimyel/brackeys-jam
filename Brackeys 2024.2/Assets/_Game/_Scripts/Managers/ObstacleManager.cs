@@ -40,8 +40,13 @@ public class ObstacleManagerScript : MonoBehaviour
 
         var obstacle = obstaclesPrefabs[Random.Range(0, obstaclesPrefabs.Length)];
 
-        Instantiate(obstacle, RspawnPoint[Random.Range(0, RspawnPoint.Length)].position,
-        obstacle.transform.rotation);
+        var instance = Instantiate(obstacle, RspawnPoint[Random.Range(0, RspawnPoint.Length)].position, obstacle.transform.rotation);
+
+        ObstacleBehaviourScript behaviourScript = instance.GetComponent<ObstacleBehaviourScript>();
+        if (behaviourScript != null)
+        {
+            behaviourScript.SetDirection(Vector2.left);
+        }
 
         StartCoroutine(SpawnRightObstacle(minTime, maxTime));
     }
@@ -52,8 +57,13 @@ public class ObstacleManagerScript : MonoBehaviour
 
         var obstacle = obstaclesPrefabs[Random.Range(0, obstaclesPrefabs.Length)];
 
-        Instantiate(obstacle, LspawnPoint[Random.Range(0, LspawnPoint.Length)].position,
-        obstacle.transform.rotation);
+        var instance = Instantiate(obstacle, LspawnPoint[Random.Range(0, LspawnPoint.Length)].position, obstacle.transform.rotation);
+
+        ObstacleBehaviourScript behaviourScript = instance.GetComponent<ObstacleBehaviourScript>();
+        if (behaviourScript != null)
+        {
+            behaviourScript.SetDirection(Vector2.right);
+        }
 
         StartCoroutine(SpawnLeftObstacle(minTime, maxTime));
     }
@@ -64,8 +74,13 @@ public class ObstacleManagerScript : MonoBehaviour
 
         var obstacle = obstaclesPrefabs[Random.Range(0, obstaclesPrefabs.Length)];
 
-        Instantiate(obstacle, UspawnPoint[Random.Range(0, UspawnPoint.Length)].position,
-        obstacle.transform.rotation);
+        var instance = Instantiate(obstacle, UspawnPoint[Random.Range(0, UspawnPoint.Length)].position, obstacle.transform.rotation);
+
+        ObstacleBehaviourScript behaviourScript = instance.GetComponent<ObstacleBehaviourScript>();
+        if (behaviourScript != null)
+        {
+            behaviourScript.SetDirection(Vector2.down);
+        }
 
         StartCoroutine(SpawnUpObstacle(minTime, maxTime));
     }

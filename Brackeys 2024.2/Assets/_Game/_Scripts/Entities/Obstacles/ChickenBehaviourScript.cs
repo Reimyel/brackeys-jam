@@ -6,7 +6,6 @@ public class ChickenBehaviourScript : MonoBehaviour
 {
 
     #region Referências
-    [SerializeField] private Vector3 offset = new Vector3(0f, 0.5f, 0f);
     [SerializeField] private GameObject chickenObject;
     [SerializeField] private GameObject cowObject;
     [SerializeField] private Sprite[] chickenSpriteVariations;
@@ -45,6 +44,8 @@ public class ChickenBehaviourScript : MonoBehaviour
 
         if (randomIndex == 6)
         {
+            //SOM DO MOMENTO GALINHA PRO DUCA VER
+
             InvokeRepeating("StartChickenMoment", 0f, 1f);
 
             Invoke("StopChickenMoment", 5f);
@@ -73,8 +74,15 @@ public class ChickenBehaviourScript : MonoBehaviour
             //lista de usados
             usedSpawnPoints.Add(randomIndex);
 
+            //variação ao redor do spawn
+            Vector3 randomOffset = new Vector3(
+                Random.Range(-3f, 3f),
+                Random.Range(-3f, 3f),
+                0f
+            );
+
             Debug.Log("MOMENTO GALINHA");
-            Instantiate(chickenObject, _obstacleManagerScript.UspawnPoint[randomIndex].position + offset, chickenObject.transform.rotation);
+            Instantiate(chickenObject, _obstacleManagerScript.UspawnPoint[randomIndex].position + randomOffset, chickenObject.transform.rotation);
         }
 
         IsChickenMoment = false;
