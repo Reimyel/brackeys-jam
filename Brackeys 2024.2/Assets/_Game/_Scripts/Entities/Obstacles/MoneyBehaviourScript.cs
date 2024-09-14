@@ -20,16 +20,15 @@ public class MoneyBehaviourScript : MonoBehaviour
 
         _rb.AddForce(_direction * velocity);
 
-        AudioManager.Instance.PlaySFX("Money get");
-
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 10f);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.layer == layerPlayer)
         {
-            BalloonStats.CurrentMoney += 1;
+            AudioManager.Instance.PlaySFX("Money get");
+            Debug.Log(BalloonStats.CurrentMoney);
             Destroy(gameObject);
         }
     }

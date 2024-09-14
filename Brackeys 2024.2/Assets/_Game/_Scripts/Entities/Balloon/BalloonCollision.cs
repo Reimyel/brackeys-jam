@@ -14,6 +14,7 @@ public class BalloonCollision : MonoBehaviour
     [Header("Layers:")]
     [SerializeField] private int layerObstacle;
     [SerializeField] private int layerChangeSide;
+    [SerializeField] private int layerMoney;
 
     [Header("Trocando Lados:")]
     [SerializeField] private float changeSideForce;
@@ -52,6 +53,8 @@ public class BalloonCollision : MonoBehaviour
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BalloonDamage);
         else if (col.gameObject.layer == layerChangeSide)
             ChangeSide(col.gameObject.tag);
+        else if (col.gameObject.layer == layerMoney)
+            BalloonStats.CurrentMoney += 1;
     }
     #endregion
 

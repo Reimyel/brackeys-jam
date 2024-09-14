@@ -8,7 +8,7 @@ public class BackgroundScroller : MonoBehaviour
     #region Variáveis
     [Header("Configuração:")]
     [SerializeField] private float xSpeed;
-    [SerializeField] private float ySpeed;
+    [SerializeField] public float ySpeed;
 
 
     // Componentes:
