@@ -1266,11 +1266,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b48733dce08012a4cb9bf4bae65f72e7, type: 3}
---- !u!212 &309652079 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4160852343260011839, guid: b48733dce08012a4cb9bf4bae65f72e7, type: 3}
-  m_PrefabInstance: {fileID: 309652078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &309652080 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6938694402309091377, guid: b48733dce08012a4cb9bf4bae65f72e7, type: 3}
@@ -1360,11 +1355,11 @@ PrefabInstance:
       objectReference: {fileID: 1916039555}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxStability
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MinStability
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: minStability
@@ -1372,11 +1367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxDurability
-      value: 5
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MinDurability
-      value: 2
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: isUI
@@ -1385,11 +1380,11 @@ PrefabInstance:
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: sprStability
       value: 
-      objectReference: {fileID: 309652079}
+      objectReference: {fileID: 1632871327}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: sprDurability
       value: 
-      objectReference: {fileID: 1304536825}
+      objectReference: {fileID: 1789900722}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: sprSpeed.Array.size
       value: 3
@@ -2346,22 +2341,6 @@ PrefabInstance:
       propertyPath: windAlert
       value: 
       objectReference: {fileID: 263751706}
-    - target: {fileID: 214297332356745499, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
-      propertyPath: windForce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 214297332356745499, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
-      propertyPath: maxInterval
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 214297332356745499, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
-      propertyPath: minInterval
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 214297332356745499, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
-      propertyPath: windDuration
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1407596536126038628, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
       propertyPath: leftSidePoint
       value: 
@@ -2370,6 +2349,22 @@ PrefabInstance:
       propertyPath: rightSidePoint
       value: 
       objectReference: {fileID: 1166305565}
+    - target: {fileID: 2570537789303196926, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570537789303196926, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570537789303196926, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570537789303196926, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4954693333579074121, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
       propertyPath: m_Name
       value: Ballon
@@ -2418,20 +2413,11 @@ PrefabInstance:
       propertyPath: chargeBar
       value: 
       objectReference: {fileID: 1255655656}
-    - target: {fileID: 5523085677124646171, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
---- !u!212 &1304536825 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2570537789303196926, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
-  m_PrefabInstance: {fileID: 1304536824}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1304536826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3758442084459796474, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
@@ -3159,6 +3145,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1417457042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1632871327 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3907981936301918843, guid: b48733dce08012a4cb9bf4bae65f72e7, type: 3}
+  m_PrefabInstance: {fileID: 309652078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1648360159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,6 +3436,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1417457042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1789900722 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5725499644170972481, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+  m_PrefabInstance: {fileID: 1304536824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1871359497
 GameObject:
   m_ObjectHideFlags: 0
