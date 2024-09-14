@@ -11,6 +11,7 @@ TagManager:
   - Car
   - Chicken
   - Garage FG
+  - Menu FG
   layers:
   - Default
   - TransparentFX

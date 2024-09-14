@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -21,10 +22,14 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     #region Funções Próprias
     public void Play()
     {
-        if (AudioManager.Instance != null)
+        if (AudioManager.Instance != null && SceneManager.GetActiveScene().name == "Upgrade Scene")
             AudioManager.Instance.PlaySFX("Rebuilding");
 
-        GameObject.FindGameObjectWithTag("Garage FG").GetComponent<Animator>().Play("Foreground Upgrade Play Animation");
+        if (GameObject.FindGameObjectWithTag("Garage FG").GetComponent<Animator>() != null)
+            GameObject.FindGameObjectWithTag("Garage FG").GetComponent<Animator>().Play("Foreground Upgrade Play Animation");
+
+        if (SceneManager.GetActiveScene().name == "Main Menu Scene")
+            GameObject.FindGameObjectWithTag("Menu FG").GetComponent<Image>().enabled = true;
 
         Invoke("StartToFillUp", 5.25f);
         Invoke("ActivateBalloonPlay", 5f);
@@ -39,8 +44,8 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Select");
         */
-
-        panelInputs.SetActive(true);
+        if (panelInputs != null)
+            panelInputs.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
@@ -49,8 +54,8 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Deselect");
         */
-
-        panelInputs.SetActive(false);
+        if (panelInputs != null)
+            panelInputs.SetActive(false);
     }
 
     private void StartToFillUp() 
