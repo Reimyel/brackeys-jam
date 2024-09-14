@@ -10,6 +10,7 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     #region Variáveis
     [Header("Referências:")]
     [SerializeField] private GameObject panelInputs;
+    [SerializeField] private GameObject balloonPlay;
 
     [Header("Transição:")]
     [SerializeField] private string nextSceneName;
@@ -26,6 +27,7 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         GameObject.FindGameObjectWithTag("Garage FG").GetComponent<Animator>().Play("Foreground Upgrade Play Animation");
 
         Invoke("StartToFillUp", 5.25f);
+        Invoke("ActivateBalloonPlay", 5f);
 
         // 7.25f
         TransitionManager.Instance().Transition(nextSceneName, transitionSettings, loadTime);
@@ -63,5 +65,7 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         GetComponent<Image>().enabled = false;
         GetComponent<Button>().enabled = false;
     }
+
+    private void ActivateBalloonPlay() => balloonPlay.SetActive(true);
     #endregion
 }

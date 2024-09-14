@@ -14,6 +14,8 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private float timeToEnd;
     [SerializeField] private Texture2D spriteStage2;
     [SerializeField] private Texture2D spriteStage3;
+    [SerializeField] private string musicStage2;
+    [SerializeField] private string musicStage3;
     [SerializeField] private float endForce;
 
     [Header("Transição:")]
@@ -64,6 +66,8 @@ public class TimerManager : MonoBehaviour
         Debug.Log("FASE 2");
         //lógica de transição de fases
         imgParallax.texture = spriteStage2;
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMusic(musicStage2);
     }
 
     void Stage3Begin()
@@ -71,6 +75,8 @@ public class TimerManager : MonoBehaviour
         Debug.Log("FASE 3");
         //lógica de transição de fases
         imgParallax.texture = spriteStage3;
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMusic(musicStage3);
     }
 
     void EndGame() 
