@@ -259,7 +259,7 @@ public class UpgradesStatus : MonoBehaviour
 
     private void SetUpgradeTexts() 
     {
-        if (txtCurrentUpgrade != null && txtNextUpgrade != null) return;
+        if (stats == TargetStats.Gun || stats == TargetStats.Chicken) return;
 
         if (txtCurrentUpgrade.enabled && txtNextUpgrade.enabled) 
         {
@@ -267,17 +267,23 @@ public class UpgradesStatus : MonoBehaviour
             {
                 case TargetStats.Speed:
                     txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.SpeedLevel];
-                    txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.SpeedLevel + 1];
+
+                    if (BalloonStats.SpeedLevel < 3)
+                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.SpeedLevel + 1];
                     break;
 
                 case TargetStats.Stability:
                     txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.StabilityLevel];
-                    txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.StabilityLevel + 1];
+                    
+                    if (BalloonStats.StabilityLevel < 3)
+                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.StabilityLevel + 1];
                     break;
 
                 case TargetStats.Durability:
                     txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.DurabilityLevel];
-                    txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.DurabilityLevel + 1];
+
+                    if (BalloonStats.DurabilityLevel < 3)
+                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.DurabilityLevel + 1];
                     break;
             }
         }
