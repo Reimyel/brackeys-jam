@@ -13,7 +13,6 @@ public class ObstacleBehaviourScript : MonoBehaviour
     [SerializeField] private Color fadeColor;
 
     [Header("Referências:")]
-    [SerializeField] private BalloonCollision balloonCollision;
     [SerializeField] private int layerPlayer;
     [SerializeField] private FadeVFX fadePrefab;
 
@@ -21,19 +20,18 @@ public class ObstacleBehaviourScript : MonoBehaviour
     private float _velocity;
     private Rigidbody2D _rb;
     private Collider2D _collider;
+    private BalloonCollision _balloonCollision;
 
     private Vector2 _direction;
     #endregion
 
     #region Funções Unity
-    private void Awake()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
-    }
+        _balloonCollision = FindObjectOfType<BalloonCollision>();
 
-    private void Start()
-    {
         _velocity = Random.Range(minVel, maxVel);
 
         _rb.AddForce(_direction * _velocity);
@@ -48,7 +46,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
                 AudioManager.Instance.PlaySFX("Carro");
             else if (gameObject.CompareTag("Chicken")) 
             {
-                if (!ChickenBehaviourScript.IsChickenMoment  && Random.Range(0, 100) < 45)
+                if (!ChickenCowManager.IsChickenMoment  && Random.Range(0, 100) < 45)
                     AudioManager.Instance.PlaySFX("Galinha");
 
                 AudioManager.Instance.PlaySFX("Galinha" + Random.Range(1, 3));
@@ -100,7 +98,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (!balloonCollision._IsGameOver)
+        if (!_balloonCollision._IsGameOver)
         {
             //TESTAR
             if (gameObject.CompareTag("Cow") && AudioManager.Instance != null)
