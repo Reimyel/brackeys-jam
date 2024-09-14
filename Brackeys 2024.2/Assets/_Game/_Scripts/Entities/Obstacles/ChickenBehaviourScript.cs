@@ -14,7 +14,7 @@ public class ChickenBehaviourScript : MonoBehaviour
     [SerializeField] private int instantiateQuantity;
     [SerializeField] private SpriteRenderer _chickenSpriteRenderer;
     [SerializeField] private SpriteRenderer _cowSpriteRenderer;
-    [SerializeField] public Transform[] spawnPoint;
+    private ObstacleManagerScript _obstacleManagerScript;
     private int[] weightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, //14 vezes pra 14%
         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, //14 vezes pra 14%
@@ -29,6 +29,7 @@ public class ChickenBehaviourScript : MonoBehaviour
     #region Funções Unity
     private void Awake()
     {
+        _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
         ChangeSpriteVariation();
     }
 
@@ -42,7 +43,7 @@ public class ChickenBehaviourScript : MonoBehaviour
         int randomIndex = weightedIndices[Random.Range(0, weightedIndices.Length)];
         _chickenSpriteRenderer.sprite = chickenSpriteVariations[randomIndex];
 
-        if (randomIndex == 0 | randomIndex == 1 | randomIndex == 2 | randomIndex == 3 | randomIndex == 4 | randomIndex == 5 | randomIndex == 6)
+        if (randomIndex == 6)
         {
             InvokeRepeating("StartChickenMoment", 0f, 1f);
 
@@ -54,7 +55,7 @@ public class ChickenBehaviourScript : MonoBehaviour
     {
         IsChickenMoment = true;
 
-        int spawnCount = Random.Range(1, spawnPoint.Length + 1);
+        int spawnCount = Random.Range(1, _obstacleManagerScript.UspawnPoint.Length + 1);
 
         //spawn points usados
         List<int> usedSpawnPoints = new List<int>();
@@ -65,7 +66,7 @@ public class ChickenBehaviourScript : MonoBehaviour
 
             do
             {
-                randomIndex = Random.Range(0, spawnPoint.Length);
+                randomIndex = Random.Range(0, _obstacleManagerScript.UspawnPoint.Length);
             }
             while (usedSpawnPoints.Contains(randomIndex));
 
@@ -73,7 +74,7 @@ public class ChickenBehaviourScript : MonoBehaviour
             usedSpawnPoints.Add(randomIndex);
 
             Debug.Log("MOMENTO GALINHA");
-            Instantiate(chickenObject, spawnPoint[randomIndex].position + offset, chickenObject.transform.rotation);
+            Instantiate(chickenObject, _obstacleManagerScript.UspawnPoint[randomIndex].position + offset, chickenObject.transform.rotation);
         }
 
         IsChickenMoment = false;

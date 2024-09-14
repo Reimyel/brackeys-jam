@@ -53,7 +53,7 @@ public class ObstacleBehaviourScript : MonoBehaviour
             }
         }
 
-        Destroy(gameObject, 8f);
+        Destroy(gameObject, 5f);
     }
 
     private void Update()
