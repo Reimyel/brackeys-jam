@@ -1843,12 +1843,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e324e4c3eb95686418f03ffa41d137ec, type: 3}
   - {fileID: 21300000, guid: a5cccc0a317e7494bb8f405d879ddec0, type: 3}
   - {fileID: 21300000, guid: c139a5ff4b2200b4e8cfaf1762759f1c, type: 3}
-  - {fileID: 21300000, guid: d9e4b779f6c1c814a96dd95bf4751b67, type: 3}
+  - {fileID: 21300000, guid: 8006b5add004ab94bbb78caa6fdf3734, type: 3}
   spritesSpeed:
   - {fileID: 21300000, guid: 8c2e105f8eddea3498c390fcbe69615f, type: 3}
   - {fileID: 21300000, guid: 41d7ee369b8a6a945a3c916461501001, type: 3}
   - {fileID: 21300000, guid: 33b49516c1e2b4b4eb18d5052f7f1733, type: 3}
-  - {fileID: 21300000, guid: d69b95365a44a344d964368f366e1bba, type: 3}
+  - {fileID: 21300000, guid: 844602092ca1cd846bae404bcb5f838b, type: 3}
   spritesStability:
   - {fileID: 21300000, guid: ba2a2518aa590ed449ac0d6bcf230358, type: 3}
   - {fileID: 21300000, guid: 1d5bb711748545245aa2731efe21c19a, type: 3}
@@ -1856,7 +1856,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9d3ca1eac2c780b489671f81377163ca, type: 3}
   spritesPlayerHead:
   - {fileID: 21300000, guid: 09b2d5819f0f00945bd2e7b1c132fb14, type: 3}
-  - {fileID: 21300000, guid: 4e78381cae0508545a178fec86031752, type: 3}
+  - {fileID: 21300000, guid: 15869f99252397f4ba9b59ce218af119, type: 3}
 --- !u!95 &604230914
 Animator:
   serializedVersion: 5
@@ -6052,15 +6052,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxStability
-      value: 40
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MinStability
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxDurability
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MinDurability
@@ -6086,6 +6086,10 @@ PrefabInstance:
       propertyPath: sprSpeed.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: spritesDurability.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 56a0af0d3bc66dc419346b877cbbe518, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6197,7 +6201,7 @@ PrefabInstance:
       objectReference: {fileID: 292050439}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCostModifier
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtCurrentUpgrade
@@ -6253,12 +6257,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5211558634168335054, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5403627521145831947, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5441718522374711328, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: chicken
+      value: 
+      objectReference: {fileID: 228157136}
     - target: {fileID: 5441718522374711328, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCost
       value: 30
@@ -6293,7 +6301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5780666808011049607, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCost
@@ -6309,7 +6317,7 @@ PrefabInstance:
       objectReference: {fileID: 519838361}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCostModifier
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtCurrentUpgrade
@@ -6335,6 +6343,10 @@ PrefabInstance:
       propertyPath: txtUpgrades.Array.data[3]
       value: Carbon Fiber
       objectReference: {fileID: 0}
+    - target: {fileID: 7717221937995043177, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 2095164029}
     - target: {fileID: 7717221937995043177, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCost
       value: 50
@@ -6425,7 +6437,7 @@ PrefabInstance:
       objectReference: {fileID: 1250616835}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCostModifier
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtCurrentUpgrade

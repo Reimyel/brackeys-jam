@@ -2,6 +2,7 @@ using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using static UnityEngine.EventSystems.StandaloneInputModule;
 
@@ -23,17 +24,21 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private float resetCanMoveInterval;
 
     [Header("Transição Game Over:")]
+    [SerializeField] private Color damageColor;
     [SerializeField] private string upgradeSceneName;
     [SerializeField] private TransitionSettings transitionSettings;
     [SerializeField] SpriteRenderer _spriteRenderer;
 
     [Header("Referências:")]
     [SerializeField] private Rigidbody2D rbBasket;
+    [SerializeField] private SpriteRenderer sprDurability;
+    [SerializeField] private SpriteRenderer sprDamageDurability;
+    [SerializeField] private Sprite[] spritesDamageDurability;
 
     // Componentes:
     private Rigidbody2D _rb;
 
-    private int _initialDurability;
+    public static int InitialDurability;
 
     public bool _IsGameOver = false;
 
@@ -43,10 +48,9 @@ public class BalloonCollision : MonoBehaviour
     #endregion
 
     #region Funções Unity
-    private void Awake() => _initialDurability = BalloonStats.Durability;
-
     private void Start()
     {
+        InitialDurability = BalloonStats.Durability;
         _rb = GetComponent<Rigidbody2D>();
         _balloonMovement = GetComponent<BalloonMovement>();
     }
@@ -57,7 +61,6 @@ public class BalloonCollision : MonoBehaviour
             transform.position += 25f * Vector3.down * Time.fixedDeltaTime * 1.5f;
     }
 
-
     private void OnCollisionEnter2D(Collision2D col) 
     {
         // Não detecctar mais nada, caso estiver no Game Over
@@ -65,12 +68,14 @@ public class BalloonCollision : MonoBehaviour
 
         if (col.gameObject.layer == layerObstacle)
         {
+            if (col.gameObject.CompareTag("Cow") || col.gameObject.CompareTag("Chicken") && BalloonStats.HasGun) return;
+
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BalloonDamage);
             StartCoroutine(Blink());
         }
-        //else if (col.gameObject.layer == layerChangeSide)
-            //ChangeSide(col.gameObject.tag);
-        else if (col.gameObject.layer == layerMoney)
+        else if (col.gameObject.layer == layerChangeSide)
+            ChangeSide(col.gameObject.tag);
+        else if (col.gameObject.layer == layerMoney && !_IsGameOver)
             BalloonStats.CurrentMoney += 1;
     }
     #endregion
@@ -82,6 +87,16 @@ public class BalloonCollision : MonoBehaviour
 
         if (newValue <= 0) 
         {
+            if (BalloonStats.DurabilityLevel > 0) 
+            {
+                sprDurability.gameObject.SetActive(false);
+                sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
+            }
+            else 
+            {
+                sprDurability.color = damageColor;
+            }
+
             // GameOver
             _IsGameOver = true;
             
@@ -110,6 +125,8 @@ public class BalloonCollision : MonoBehaviour
         {
             BalloonStats.Durability -= damage;
 
+            if (BalloonStats.DurabilityLevel > 0 && BalloonStats.Durability - 1 <= 0)
+                sprDurability.color = damageColor;
 
             if (AudioManager.Instance != null) 
             {
@@ -179,7 +196,6 @@ public class BalloonCollision : MonoBehaviour
 
     private void ExitGameOver()
     {
-        BalloonStats.Durability = _initialDurability;
         TransitionManager.Instance().Transition(upgradeSceneName, transitionSettings, gameOverInterval);
     }
     #endregion

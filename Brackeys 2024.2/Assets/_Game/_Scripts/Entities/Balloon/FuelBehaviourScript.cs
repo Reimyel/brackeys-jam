@@ -17,6 +17,8 @@ public class FuelBehaviourScript : MonoBehaviour
     private TimerManager _timerManager;
     private BalloonCollision _balloonCollision;
     private BackgroundScroller _backgroundScroller;
+
+    private bool _canFill = true;
     #endregion
 
     #region Funções Unity
@@ -29,6 +31,8 @@ public class FuelBehaviourScript : MonoBehaviour
 
     void Update()
     {
+        if (!_canFill) return;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isFilling = true;
@@ -51,6 +55,7 @@ public class FuelBehaviourScript : MonoBehaviour
                 Debug.Log("MORREU");
                 chargeBar.value = chargeBar.maxValue;
                 isFilling = false;
+                _canFill = false;
             }
         }
         else

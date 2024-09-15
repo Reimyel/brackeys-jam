@@ -6,6 +6,7 @@ public class GunBehaviourScript : MonoBehaviour
 {
     #region Variáveis
     [Header("Shoot Sprite:")]
+    [SerializeField] private SpriteRenderer playerHeadSpr;
     [SerializeField] private Sprite shootSprite;
     [SerializeField] private Transform playerHeadTransform;
 
@@ -23,27 +24,41 @@ public class GunBehaviourScript : MonoBehaviour
     private void Start()
     {
         if (BalloonStats.HasGun) 
-            playerHeadTransform.gameObject.GetComponent<SpriteRenderer>().sprite = shootSprite;
+            playerHeadSpr.sprite = shootSprite;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Cow") && BalloonStats.HasGun)
+        if (other.gameObject.CompareTag("Cow") || other.gameObject.CompareTag("Chicken") && BalloonStats.HasGun)
         {
             Debug.Log("BALA NA AGULHA");
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Shoot");
 
+            var direction = ((Vector2)other.gameObject.transform.position - (Vector2)playerHeadTransform.position).normalized;
+
+            var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            playerHeadTransform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
             Invoke("ReloadSFX", 0.5f);
             Invoke("ResetSprite", 1f);
 
+            /*
+            if (other.gameObject.transform.position.x > gameObject.transform.position.x)
+                playerHeadSpr.flipX = false;
+            else
+                playerHeadSpr.flipX = true;
+            */
+
+            //Destroy(other.gameObject);
+
+            
             for (int i = 0; i <  projectileCount; i++) 
             {
                 GameObject projectile = Instantiate(projectilePrefab, projectileSpawnpoint.position + offset, Quaternion.identity);
-                Vector3 direction = (other.transform.position - transform.position).normalized;
-                playerHeadTransform.rotation = Quaternion.LookRotation(direction);
+                Vector3 directionBullet = (other.transform.position - transform.position).normalized;
 
-                projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+                projectile.GetComponent<Rigidbody2D>().velocity = directionBullet * projectileSpeed;
             }
         }
     }
@@ -56,6 +71,10 @@ public class GunBehaviourScript : MonoBehaviour
             AudioManager.Instance.PlaySFX("reload");
     }
 
-    private void ResetSprite() => playerHeadTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
+    private void ResetSprite()
+    {
+        playerHeadSpr.flipX = false;
+        playerHeadTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
+    }
     #endregion
 }

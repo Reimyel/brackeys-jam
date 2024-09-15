@@ -23,6 +23,8 @@ public class UpgradesStatus : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] private Image[] levelImages;
     [SerializeField] private GameObject btnMaximized;
+    [SerializeField] private GameObject chicken;
+    [SerializeField] private GameObject gun;
 
     [Header("Descrição:")]
     [SerializeField] private TextMeshProUGUI txtCurrentUpgrade;
@@ -47,7 +49,14 @@ public class UpgradesStatus : MonoBehaviour
     private void Start()
     {
         if (IsMaximized())
+        {
+            if (stats == TargetStats.Chicken)
+                chicken.SetActive(true);
+            else if (stats == TargetStats.Gun)
+                gun.SetActive(true);
+         
             DisableBtn();
+        }
     }
 
     private void Update() 

@@ -174,6 +174,8 @@ public class BalloonMovement : MonoBehaviour
 
     private void SetNewChickenRotationY(float dir) 
     {
+        if (!BalloonStats.HasChicken) return;
+
         if (dir > 0)
             _chickenAnimator.Play("Chicken Turning Right Animation");       
         else

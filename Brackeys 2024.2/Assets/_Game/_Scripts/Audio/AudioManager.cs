@@ -98,5 +98,34 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    public GameObject PlayMusicGet(string name, bool loopable = true)
+    {
+        // Procure pela música desejada
+        foreach (Music m in musics)
+        {
+            if (m.Clip.name == name) // Caso achar, instancie um objeto com o componente de audio
+            {
+                var mObj = new GameObject("Music " + m.Clip.name);
+                var mAudioSource = mObj.AddComponent<AudioSource>();
+                mAudioSource.clip = m.Clip;
+                mAudioSource.volume = m.Volume;
+
+                mObj.tag = "Music";
+                musicCurObj = mObj;
+                musicCurName = m.Clip.name;
+                mAudioSource.Play();
+
+                if (loopable)
+                    mAudioSource.loop = true;
+
+                curMusicAudioSource = mAudioSource;
+
+                return mObj;
+            }
+        }
+
+        return null;
+    }
     #endregion
 }

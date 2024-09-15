@@ -44,19 +44,23 @@ public class BalloonStats : MonoBehaviour
         {
             ChangeSpeed(MinSpeed);
             ChangeStability(MinStability);
-            ChangeDurability(MinDurability);
+            //ChangeDurability(MinDurability);
+            Durability = 1;
 
             CurrentMoney = InitialMoney;
             _isFirstTime = false;
         }
-
+        else 
+        {
+            Durability = BalloonCollision.InitialDurability;
+        }
     }
 
     private void Update()
     {
         //Debug.Log("Speed: " + Speed);
         //Debug.Log("Stability: " + Stability);
-        //Debug.Log("Durability: " + Durability);
+        Debug.Log("Durability: " + Durability);
         //Debug.Log("Gun: " + HasGun);
         //Debug.Log("HasChicken: " + HasChicken);
     }
@@ -93,10 +97,11 @@ public class BalloonStats : MonoBehaviour
 
         if (newValue < Durability) 
             DurabilityLevel--;
-        else if (newValue != MinDurability)
+        else
             DurabilityLevel++;
 
         Durability = newValue;
+        BalloonCollision.InitialDurability = Durability;
     }
 
     public void EnableGun()
