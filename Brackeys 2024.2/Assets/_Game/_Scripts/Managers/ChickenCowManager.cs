@@ -14,13 +14,19 @@ public class ChickenCowManager : MonoBehaviour
     [SerializeField] private SpriteRenderer _chickenSpriteRenderer;
     [SerializeField] private SpriteRenderer _cowSpriteRenderer;
     private ObstacleManagerScript _obstacleManagerScript;
-    private int[] weightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
+    private int[] chickenWeightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, //14 vezes pra 14%
         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, //14 vezes pra 14%
         3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, //14 vezes pra 14%
         4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, //14 vezes pra 14%
         5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //14 vezes pra 14%
         6, 6  //2 vezes pra 2%
+    };
+    private int[] cowWeightedIndices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //14 vezes pra 14%
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, //24 vezes pra 24%
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, //24 vezes pra 24%
+        3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, //24 vezes pra 24%
+        4, 4, 4, 4 //4 vezes pra 4%
     };
     public static bool IsChickenMoment = false;
     #endregion
@@ -29,7 +35,8 @@ public class ChickenCowManager : MonoBehaviour
     private void Awake()
     {
         _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
-        ChangeSpriteVariation();
+        ChangeChickenSpriteVariation();
+        ChangeCowSpriteVariation();
     }
 
     private void Start() => IsChickenMoment = false;
@@ -37,9 +44,9 @@ public class ChickenCowManager : MonoBehaviour
     #endregion
 
     #region Funções Próprias
-    void ChangeSpriteVariation()
+    void ChangeChickenSpriteVariation()
     {
-        int randomIndex = weightedIndices[Random.Range(0, weightedIndices.Length)];
+        int randomIndex = chickenWeightedIndices[Random.Range(0, chickenWeightedIndices.Length)];
         _chickenSpriteRenderer.sprite = chickenSpriteVariations[randomIndex];
 
         if (randomIndex == 6)
@@ -50,6 +57,12 @@ public class ChickenCowManager : MonoBehaviour
 
             Invoke("StopChickenMoment", 5f);
         }
+    }
+
+    void ChangeCowSpriteVariation()
+    {
+        int randomIndex = cowWeightedIndices[Random.Range(0, cowWeightedIndices.Length)];
+        _cowSpriteRenderer.sprite = cowSpriteVariations[randomIndex];
     }
 
     void StartChickenMoment()
