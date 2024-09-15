@@ -9,7 +9,7 @@ public class BalloonMovement : MonoBehaviour
 
     [Header("Movimentação:")]
     //[SerializeField] private float upSpeed = 8f;
-    [SerializeField] private float horizontalSpeed;
+    //[SerializeField] private float horizontalSpeed;
     [SerializeField] private float tiltAmount = 15f;
     private float tiltSpeed = 5f;
     private float targetRotation = 0f; //Rotação Atual
@@ -58,7 +58,7 @@ public class BalloonMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         StartCoroutine(WindEffect());
 
-        horizontalSpeed = BalloonStats.Speed;
+        //horizontalSpeed = BalloonStats.Speed;
     }
 
     private void Update()
@@ -93,7 +93,7 @@ public class BalloonMovement : MonoBehaviour
         */
 
         dirX = Input.GetAxisRaw("Horizontal");
-        _rb.velocity = new Vector2(dirX * horizontalSpeed + windDirection * BalloonStats.Stability, _rb.velocity.y);
+        _rb.velocity = new Vector2(dirX * BalloonStats.Speed + windDirection * BalloonStats.Stability, _rb.velocity.y);
  
     }
     #endregion
