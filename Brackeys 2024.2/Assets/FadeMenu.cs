@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class FadeMenu : MonoBehaviour
 {
-    private void EndAnimation() 
+    [SerializeField] private GameObject imgBtnPlay;
+    [SerializeField] private GameObject btnPlayParent;
+
+    private void EndAnimation()
     {
-        FindObjectOfType<BtnPlay>().transform.parent = null;
-        GetComponent<Animator>().enabled = false;
+        imgBtnPlay.SetActive(false);
+        btnPlayParent.SetActive(true);
     }
 }
