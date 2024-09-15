@@ -20,11 +20,13 @@ public class BalloonChanger : MonoBehaviour
     [SerializeField] private SpriteRenderer sprDurability;
     [SerializeField] private SpriteRenderer[] sprSpeed;
     [SerializeField] private SpriteRenderer sprStability;
+    [SerializeField] private SpriteRenderer sprDamageDurability;
 
     [Header("Sprites:")]
     [SerializeField] private Sprite[] spritesDurability;
     [SerializeField] private Sprite[] spritesSpeed;
     [SerializeField] private Sprite[] spritesStability;
+    [SerializeField] private Sprite[] spritesDamageDurability;
     #endregion
 
     #region Funções Unity
@@ -55,6 +57,9 @@ public class BalloonChanger : MonoBehaviour
             imgSpeed.sprite = spritesSpeed[BalloonStats.SpeedLevel];
 
             imgStability.sprite = spritesStability[BalloonStats.StabilityLevel];
+
+            if (BalloonStats.DurabilityLevel != 0 && BalloonStats.Durability - 1 <= 0)
+                sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
         }
     }
     #endregion
