@@ -512,6 +512,7 @@ MonoBehaviour:
   maxTime: 5
   moneyCount: 3
   moneyObject: {fileID: 4878332863736183165, guid: 4c7b8a847afe69045912ed8818c0cbac, type: 3}
+  distanceBetweenMoney: 1.5
 --- !u!1 &177737396
 GameObject:
   m_ObjectHideFlags: 0
