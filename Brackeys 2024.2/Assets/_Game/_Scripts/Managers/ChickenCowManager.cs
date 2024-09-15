@@ -55,7 +55,14 @@ public class ChickenCowManager : MonoBehaviour
 
         if (randomIndex == 6)
         {
-            //SOM DO MOMENTO GALINHA PRO DUCA VER
+            if (AudioManager.Instance != null)
+            {
+                string[] sfxOptions = { "Galinha1", "Galinha2" };
+                string chicKenSounds = sfxOptions[Random.Range(0, sfxOptions.Length)];
+
+                AudioManager.Instance.PlaySFX("Galinha");
+                AudioManager.Instance.PlaySFX(chicKenSounds);
+            }
 
             InvokeRepeating("StartChickenMoment", 0f, 1f);
 

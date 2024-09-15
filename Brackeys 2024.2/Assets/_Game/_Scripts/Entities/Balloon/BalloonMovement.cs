@@ -17,7 +17,6 @@ public class BalloonMovement : MonoBehaviour
 
     // Variáveis do vento
     [Header("Ventania")]
-    private float windInterval = 5f;
     public float minInterval = 3f;
     public float maxInterval = 5f;
     public float windForce = 10f; 

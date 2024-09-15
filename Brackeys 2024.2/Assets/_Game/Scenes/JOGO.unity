@@ -745,6 +745,7 @@ MonoBehaviour:
   resetCanMoveInterval: 2
   upgradeSceneName: Upgrade Scene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
+  _spriteRenderer: {fileID: 0}
   _IsGameOver: 0
 --- !u!60 &278357419
 PolygonCollider2D:
@@ -1281,7 +1282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MinStability
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: minStability
@@ -1332,6 +1333,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1358939955}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: spritesSpeed.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: spritesSpeed.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 8c2e105f8eddea3498c390fcbe69615f, type: 3}
@@ -1345,6 +1350,10 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 33b49516c1e2b4b4eb18d5052f7f1733, type: 3}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: spritesSpeed.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 844602092ca1cd846bae404bcb5f838b, type: 3}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: spritesSpeed.Array.data[4]
       value: 
       objectReference: {fileID: 21300000, guid: d69b95365a44a344d964368f366e1bba, type: 3}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
@@ -1362,7 +1371,7 @@ PrefabInstance:
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: spritesDurability.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: c139a5ff4b2200b4e8cfaf1762759f1c, type: 3}
+      objectReference: {fileID: 21300000, guid: 8006b5add004ab94bbb78caa6fdf3734, type: 3}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: spritesDamageDurability.Array.size
       value: 4
@@ -3153,11 +3162,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LmaxTime
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LminTime
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: RmaxTime
@@ -3169,11 +3178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: UmaxTime
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: UminTime
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LspawnPoint.Array.size
@@ -3633,7 +3642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1653286569
 Transform:
   m_ObjectHideFlags: 0
@@ -4171,7 +4180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1771145684
 Transform:
   m_ObjectHideFlags: 0
@@ -5121,6 +5130,7 @@ MonoBehaviour:
   resetCanMoveInterval: 2
   upgradeSceneName: Upgrade Scene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
+  _spriteRenderer: {fileID: 5725499643185204153}
   _IsGameOver: 0
 --- !u!4 &1470760018904737205
 Transform:
@@ -10942,7 +10952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &7632034718449482954
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,14 +24,16 @@ public class BalloonCollision : MonoBehaviour
     [Header("Transição Game Over:")]
     [SerializeField] private string upgradeSceneName;
     [SerializeField] private TransitionSettings transitionSettings;
+    [SerializeField] SpriteRenderer _spriteRenderer;
 
     // Componentes:
     private Rigidbody2D _rb;
-    private BalloonMovement _balloonMovement;
 
     private int _initialDurability;
 
     public bool _IsGameOver = false;
+
+    private BalloonMovement _balloonMovement;
     #endregion
 
     #region Funções Unity
@@ -50,7 +51,10 @@ public class BalloonCollision : MonoBehaviour
         if (_IsGameOver) return;
 
         if (col.gameObject.layer == layerObstacle)
+        {
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BalloonDamage);
+            StartCoroutine(Blink());
+        }
         else if (col.gameObject.layer == layerChangeSide)
             ChangeSide(col.gameObject.tag);
         else if (col.gameObject.layer == layerMoney)
@@ -81,6 +85,7 @@ public class BalloonCollision : MonoBehaviour
 
             // Balão Cair
             _rb.velocity = Vector2.zero;
+            Invoke("UnfreezeY", 4.75f);
 
 
             // Mais SFXs 
@@ -103,6 +108,25 @@ public class BalloonCollision : MonoBehaviour
                 else
                     AudioManager.Instance.PlaySFX("Damage");
             }
+        }
+    }
+
+    void UnfreezeY()
+    {
+        _rb.constraints = RigidbodyConstraints2D.None;
+    }
+
+    private IEnumerator Blink()
+    {
+        int blinkTimes = 3;
+        float blinkDuration = 0.1f;
+
+        for (int i = 0; i < blinkTimes; i++)
+        {
+            _spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(blinkDuration);
+            _spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(blinkDuration);
         }
     }
 
