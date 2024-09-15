@@ -1341,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MinSpeed
-      value: 500
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: maxSpeed
@@ -2222,6 +2222,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1407596536126038628, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407596536126038628, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
       propertyPath: layerMoney
       value: 12
       objectReference: {fileID: 0}
@@ -2298,12 +2302,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1255655656}
     - target: {fileID: 5523085677124646171, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
-      propertyPath: m_Mass
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5523085677124646171, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
       propertyPath: m_LinearDrag
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

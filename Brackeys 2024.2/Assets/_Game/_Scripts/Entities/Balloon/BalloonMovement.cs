@@ -97,7 +97,11 @@ public class BalloonMovement : MonoBehaviour
 
         var inputMove = dirX * BalloonStats.Speed;
         var windMove = windDirection * windForce / BalloonStats.Stability;
-        _rb.velocity = new Vector2(inputMove + windMove, _rb.velocity.y);
+
+        if (dirX != 0)
+            _rb.AddForce((inputMove + windMove) * Vector2.right * Time.fixedDeltaTime, ForceMode2D.Force);
+        else
+            _rb.velocity = Vector2.zero * windMove;
     }
     #endregion
 
