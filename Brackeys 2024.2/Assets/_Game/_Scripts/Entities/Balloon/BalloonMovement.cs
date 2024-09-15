@@ -96,7 +96,7 @@ public class BalloonMovement : MonoBehaviour
         */
 
         var inputMove = dirX * BalloonStats.Speed;
-        var windMove = windDirection * windForce;
+        var windMove = windDirection * windForce / BalloonStats.Stability;
         _rb.velocity = new Vector2(inputMove + windMove, _rb.velocity.y);
     }
     #endregion
