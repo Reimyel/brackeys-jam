@@ -1337,11 +1337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxSpeed
-      value: 25
+      value: 12500
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MinSpeed
-      value: 10
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: maxSpeed
@@ -2213,6 +2213,10 @@ PrefabInstance:
       propertyPath: windAlert
       value: 
       objectReference: {fileID: 263751706}
+    - target: {fileID: 214297332356745499, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: windForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1407596536126038628, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
       propertyPath: layerMoney
       value: 12
@@ -2289,6 +2293,14 @@ PrefabInstance:
       propertyPath: chargeBar
       value: 
       objectReference: {fileID: 1255655656}
+    - target: {fileID: 5523085677124646171, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: m_Mass
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523085677124646171, guid: f7644faa69dfe2d4eb4077338d4da7a6, type: 3}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
