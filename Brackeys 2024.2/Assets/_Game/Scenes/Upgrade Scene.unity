@@ -6239,7 +6239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5403627521145831947, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441718522374711328, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCost
