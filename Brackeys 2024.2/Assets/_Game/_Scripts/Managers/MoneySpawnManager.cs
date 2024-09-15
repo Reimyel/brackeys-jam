@@ -50,13 +50,13 @@ public class MoneySpawnManager : MonoBehaviour
 
         for (int i = 0; i < moneyCount; i++)
         {
+            ChangeMoneyAnimationVariation();
             Vector3 offset = new Vector3(0, i * distanceBetweenMoney, 0);
             GameObject spawnedMoney = Instantiate(moneyObject, spawnPosition + offset, moneyObject.transform.rotation);
 
             Collider2D moneyCollider = spawnedMoney.GetComponent<CircleCollider2D>();
             if (moneyCollider != null)
             {
-                ChangeMoneyAnimationVariation();
                 moneyCollider.enabled = false; // Desativa o colisor
                 StartCoroutine(EnableColliderAfterDelay(moneyCollider, 1f));
             }
