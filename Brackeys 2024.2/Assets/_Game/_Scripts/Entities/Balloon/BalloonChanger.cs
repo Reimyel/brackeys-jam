@@ -49,6 +49,9 @@ public class BalloonChanger : MonoBehaviour
                 sprSpeed[i].sprite = spritesSpeed[BalloonStats.SpeedLevel];
 
             sprStability.sprite = spritesStability[BalloonStats.StabilityLevel];
+
+            if (BalloonStats.DurabilityLevel != 0 && BalloonStats.Durability - 1 <= 0)
+                sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
         }
         else
         {
@@ -57,9 +60,6 @@ public class BalloonChanger : MonoBehaviour
             imgSpeed.sprite = spritesSpeed[BalloonStats.SpeedLevel];
 
             imgStability.sprite = spritesStability[BalloonStats.StabilityLevel];
-
-            if (BalloonStats.DurabilityLevel != 0 && BalloonStats.Durability - 1 <= 0)
-                sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
         }
     }
     #endregion

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class BalloonCollision : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private TransitionSettings transitionSettings;
     [SerializeField] SpriteRenderer _spriteRenderer;
 
+    [Header("Referências:")]
+    [SerializeField] private Rigidbody2D rbBasket;
+
     // Componentes:
     private Rigidbody2D _rb;
 
@@ -34,6 +38,8 @@ public class BalloonCollision : MonoBehaviour
     public bool _IsGameOver = false;
 
     private BalloonMovement _balloonMovement;
+
+    private bool _startToFall = false;
     #endregion
 
     #region Funções Unity
@@ -45,6 +51,13 @@ public class BalloonCollision : MonoBehaviour
         _balloonMovement = GetComponent<BalloonMovement>();
     }
 
+    private void FixedUpdate()
+    {
+        if (_startToFall)
+            transform.position += 25f * Vector3.down * Time.fixedDeltaTime * 1.5f;
+    }
+
+
     private void OnCollisionEnter2D(Collision2D col) 
     {
         // Não detecctar mais nada, caso estiver no Game Over
@@ -55,8 +68,8 @@ public class BalloonCollision : MonoBehaviour
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BalloonDamage);
             StartCoroutine(Blink());
         }
-        else if (col.gameObject.layer == layerChangeSide)
-            ChangeSide(col.gameObject.tag);
+        //else if (col.gameObject.layer == layerChangeSide)
+            //ChangeSide(col.gameObject.tag);
         else if (col.gameObject.layer == layerMoney)
             BalloonStats.CurrentMoney += 1;
     }
@@ -84,7 +97,6 @@ public class BalloonCollision : MonoBehaviour
 
 
             // Balão Cair
-            _rb.velocity = Vector2.zero;
             Invoke("UnfreezeY", 4.75f);
 
 
@@ -113,7 +125,9 @@ public class BalloonCollision : MonoBehaviour
 
     void UnfreezeY()
     {
+        rbBasket.constraints = RigidbodyConstraints2D.None;
         _rb.constraints = RigidbodyConstraints2D.None;
+        _startToFall = true;
     }
 
     private IEnumerator Blink()
@@ -132,10 +146,6 @@ public class BalloonCollision : MonoBehaviour
 
     private void ChangeSide(string tag) 
     {
-        _balloonMovement.CanMove = false;
-        _rb.velocity = Vector2.zero;
-        Invoke("ResetCanMove", resetCanMoveInterval);
-
         if (tag == "LeftSide") 
         {
             gameObject.transform.position = rightSidePoint.position;

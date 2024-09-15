@@ -49,7 +49,8 @@ public class TimerManager : MonoBehaviour
     {
         time = Time.deltaTime;
         timeCounter += time * BalloonStats.Speed;
-        timerText.text = Mathf.Floor(timeCounter / 100f).ToString() + "ft";
+        var txt = (int)timeCounter;
+        timerText.text = txt + "ft";
 
         float tolerance = 0.1f;
 

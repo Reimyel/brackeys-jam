@@ -42,13 +42,14 @@ public class BalloonStats : MonoBehaviour
     {
         if (_isFirstTime) 
         {
+            ChangeSpeed(MinSpeed);
+            ChangeStability(MinStability);
+            ChangeDurability(MinDurability);
+
             CurrentMoney = InitialMoney;
             _isFirstTime = false;
         }
 
-        ChangeSpeed(MinSpeed);
-        ChangeStability(MinStability);
-        ChangeDurability(MinDurability);
     }
 
     private void Update()

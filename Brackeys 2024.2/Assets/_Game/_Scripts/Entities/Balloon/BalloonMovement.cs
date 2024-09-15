@@ -19,13 +19,14 @@ public class BalloonMovement : MonoBehaviour
     [Header("Ventania")]
     public float minInterval = 3f;
     public float maxInterval = 5f;
-    public float windForce = 10f; 
-    public float windDuration = 3f; 
+    public float windForce = 10f;
+    public float windDuration = 3f;
     private float windDirection = 0f;
 
     [Header("Referências:")]
     [SerializeField] private Transform chickenTransform;
     [SerializeField] private GameObject windAlert;
+    [SerializeField] private Rigidbody2D rbBasket;
 
     // Referências:
     private Animator _chickenAnimator;
@@ -33,13 +34,15 @@ public class BalloonMovement : MonoBehaviour
     // Componentes:
     private Rigidbody2D _rb;
 
+    private float windNewDirection = 0;
+
     [HideInInspector] public bool CanMove = true;
     #endregion
 
     #region Funções Unity
     private void Awake()
     {
-        if (BalloonStats.HasChicken) 
+        if (BalloonStats.HasChicken)
         {
             chickenTransform.gameObject.SetActive(true);
             _chickenAnimator = chickenTransform.gameObject.GetComponent<Animator>();
@@ -53,9 +56,13 @@ public class BalloonMovement : MonoBehaviour
 
     private void Start()
     {
+        var newWindTime = Random.Range(minInterval, maxInterval);
+        var alertTime = newWindTime - 1.5f;
+
+        Invoke("SetWindAlert", alertTime);
+        Invoke("SetWind", Random.Range(minInterval, maxInterval));
         windAlert.gameObject.SetActive(false);
         _rb = GetComponent<Rigidbody2D>();
-        StartCoroutine(SetWindInterval());
 
         //horizontalSpeed = BalloonStats.Speed;
     }
@@ -69,17 +76,17 @@ public class BalloonMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            targetRotation = -tiltAmount; 
+            targetRotation = -tiltAmount;
         }
-                    
+
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             targetRotation = tiltAmount;
         }
-        
+
         else
         {
-            targetRotation = 0f;           
+            targetRotation = 0f;
         }
         //Faz a girada
         float currentRotation = Mathf.LerpAngle(transform.eulerAngles.z, targetRotation, Time.deltaTime * tiltSpeed);
@@ -97,10 +104,8 @@ public class BalloonMovement : MonoBehaviour
         var inputMove = dirX * BalloonStats.Speed;
         var windMove = windDirection * windForce / BalloonStats.Stability;
 
-        if (dirX != 0)
-            _rb.AddForce((inputMove + windMove) * Vector2.right * Time.fixedDeltaTime, ForceMode2D.Force);
-        else
-            _rb.velocity = Vector2.zero * windMove;
+        transform.position += inputMove * Vector3.right * Time.fixedDeltaTime * 1.5f;
+        transform.position += windMove * Vector3.right * Time.fixedDeltaTime * 0.75f;
     }
     #endregion
 
@@ -137,22 +142,34 @@ public class BalloonMovement : MonoBehaviour
     }
     */
 
-    private IEnumerator SetWind() 
+    private void SetWindAlert()
     {
-        if (Random.Range(0, 100) < 50) windDirection = 1;
-        else windDirection = -1;
+        if (Random.Range(0, 100) < 50) windNewDirection = 1;
+        else windNewDirection = -1;
 
-        yield return new WaitForSeconds(windDuration);
+        SetNewChickenRotationY(windNewDirection);
 
-        StartCoroutine(SetWindInterval());
+        windAlert.gameObject.SetActive(true);
+    }
+    
+    private void SetWind() 
+    {
+        windDirection = windNewDirection;
+        
+        windAlert.gameObject.SetActive(false);
+
+        Invoke("StopWind", windDuration);
     }
 
-    private IEnumerator SetWindInterval() 
+    private void StopWind() 
     {
-        windDirection = 0;
-        yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
+        windDirection = 0f;
 
-        SetWind();
+        var newWindTime = Random.Range(minInterval, maxInterval);
+        var alertTime = newWindTime - 1.5f;
+
+        Invoke("SetWindAlert", alertTime);
+        Invoke("SetWind", Random.Range(minInterval, maxInterval));
     }
 
     private void SetNewChickenRotationY(float dir) 
