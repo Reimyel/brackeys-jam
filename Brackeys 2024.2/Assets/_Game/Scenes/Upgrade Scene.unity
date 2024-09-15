@@ -2632,8 +2632,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "your good ol' back scratcher can serve a bigger purpose! repair it to
-    know the way the wind blows.\r"
+  m_text: your pop's long gone, but he left you his most valuable asset! use it as
+    a last resort to stop those nasty cows from hittin' you!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15dd06a84a37fe74da7053dc7d1c3870, type: 2}
   m_sharedMaterial: {fileID: -2647719371205748776, guid: 15dd06a84a37fe74da7053dc7d1c3870, type: 2}
@@ -3529,8 +3529,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'your pop''s long gone, but he left you his most valuable asset! use it
-    as a last resort to stop fast moving objects from hitting you.
+  m_text: 'your good ol'' back scratcher can serve a bigger purpose! repair it to
+    know the way the wind blows.
 
 '
   m_isRightToLeft: 0
@@ -4612,9 +4612,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtNextUpgrade
       value: 
       objectReference: {fileID: 292050439}
+    - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCostModifier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtCurrentUpgrade
       value: 
@@ -4672,6 +4680,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441718522374711328, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCost
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441718522374711328, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtNextUpgrade
       value: 
       objectReference: {fileID: 0}
@@ -4692,9 +4704,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtNextUpgrade
       value: 
       objectReference: {fileID: 519838361}
+    - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCostModifier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtCurrentUpgrade
       value: 
@@ -4718,6 +4738,10 @@ PrefabInstance:
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[3]
       value: Carbon Fiber
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717221937995043177, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCost
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7717221937995043177, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtNextUpgrade
@@ -4788,9 +4812,17 @@ PrefabInstance:
       value: TRTWERAWRT
       objectReference: {fileID: 0}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtNextUpgrade
       value: 
       objectReference: {fileID: 1250616835}
+    - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: baseCostModifier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtCurrentUpgrade
       value: 

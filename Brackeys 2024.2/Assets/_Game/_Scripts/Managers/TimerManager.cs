@@ -42,7 +42,7 @@ public class TimerManager : MonoBehaviour
     {
         time = Time.deltaTime;
         timeCounter += time * BalloonStats.Speed;
-        timerText.text = ((int)timeCounter).ToString();
+        timerText.text = ((int)(timeCounter * 15f)).ToString() + "ft";
 
         float tolerance = 0.1f;
 

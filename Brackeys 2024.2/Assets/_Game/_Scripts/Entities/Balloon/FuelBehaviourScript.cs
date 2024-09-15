@@ -70,13 +70,8 @@ public class FuelBehaviourScript : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isFilling = false;
+            _backgroundScroller.ySpeed *= 0.5f;
         }
-
-        /*if (chargeBar.value > chargeBar.minValue)
-        {
-            //lógica pro timer ir mais rápido
-            _timerManager.timeCounter += _timerManager.time;
-        }*/
     }
     #endregion
 
