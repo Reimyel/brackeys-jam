@@ -66,7 +66,7 @@ public class TimerManager : MonoBehaviour
         var txt = (int)timeCounter;
         timerText.text = txt + "ft";
 
-        float tolerance = 0.1f;
+        float tolerance = 1f;
 
         if (!stage2Triggered && Mathf.Abs(timeCounter - timeToStage2) <= tolerance)
         {
