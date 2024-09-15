@@ -1794,6 +1794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rope (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2065850080287843519, guid: e0401774b71c682488bf93fde9407830, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4673973672788736753, guid: e0401774b71c682488bf93fde9407830, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.404
@@ -2430,6 +2434,10 @@ PrefabInstance:
     - target: {fileID: 790326998396877088, guid: e0401774b71c682488bf93fde9407830, type: 3}
       propertyPath: m_Name
       value: Rope (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065850080287843519, guid: e0401774b71c682488bf93fde9407830, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4673973672788736753, guid: e0401774b71c682488bf93fde9407830, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4136,6 +4144,10 @@ PrefabInstance:
     - target: {fileID: 790326998396877088, guid: e0401774b71c682488bf93fde9407830, type: 3}
       propertyPath: m_Name
       value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065850080287843519, guid: e0401774b71c682488bf93fde9407830, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4673973672788736753, guid: e0401774b71c682488bf93fde9407830, type: 3}
       propertyPath: m_LocalPosition.x
