@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestSFX : MonoBehaviour
 {
     #region Variáveis Globais
-    [SerializeField] private string name;
+    [SerializeField] private string Sname;
 
     private AudioManager _audioManager;
     #endregion
@@ -16,7 +16,7 @@ public class TestSFX : MonoBehaviour
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-            _audioManager.PlaySFX(name);
+            _audioManager.PlaySFX(Sname);
     }
     #endregion
 }
