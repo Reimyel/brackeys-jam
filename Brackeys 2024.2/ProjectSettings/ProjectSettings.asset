@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Brackeys 2024.2
+  companyName: 404 Studios
+  productName: Safe Travels
   defaultCursor: {fileID: 2800000, guid: 8339dbfc1268b534fbfa68d8cca6a539, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
