@@ -12,8 +12,6 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private float timeToStage2;
     [SerializeField] private float timeToStage3;
     [SerializeField] private float timeToEnd;
-    [SerializeField] private Texture2D spriteStage2;
-    [SerializeField] private Texture2D spriteStage3;
     [SerializeField] private string musicStage2;
     [SerializeField] private string musicStage3;
     [SerializeField] private float endForce;
@@ -28,7 +26,9 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private PolygonCollider2D polygonColliderBalloon;
     [SerializeField] private EdgeCollider2D edgeColliderBalloon;
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private RawImage imgParallax;
+    [SerializeField] private GameObject parallaxParent1;
+    [SerializeField] private GameObject parallaxParent2;
+    [SerializeField] private GameObject parallaxParent3;
 
 
     public float time;
@@ -38,6 +38,13 @@ public class TimerManager : MonoBehaviour
     #endregion
 
     #region Funções Unity
+    private void Start()
+    {
+        parallaxParent1.SetActive(true);
+        parallaxParent2.SetActive(false);
+        parallaxParent3.SetActive(false);
+    }
+
     void Update()
     {
         time = Time.deltaTime;
@@ -65,7 +72,11 @@ public class TimerManager : MonoBehaviour
     {
         Debug.Log("FASE 2");
         //lógica de transição de fases
-        imgParallax.texture = spriteStage2;
+
+        parallaxParent1.SetActive(false);
+        parallaxParent2.SetActive(true);
+        parallaxParent3.SetActive(false);
+
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusic(musicStage2);
     }
@@ -74,7 +85,10 @@ public class TimerManager : MonoBehaviour
     {
         Debug.Log("FASE 3");
         //lógica de transição de fases
-        imgParallax.texture = spriteStage3;
+        parallaxParent1.SetActive(false);
+        parallaxParent2.SetActive(false);
+        parallaxParent3.SetActive(true);
+
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusic(musicStage3);
     }
