@@ -7,8 +7,9 @@ public class MoneySpawnManager : MonoBehaviour
     #region Referências
     [SerializeField] private float minTime = 5f;
     [SerializeField] private float maxTime = 10f;
-    [SerializeField] private int moneyCount = 4;
+    [SerializeField] private int moneyCount = 3;
     [SerializeField] private GameObject moneyObject;
+    [SerializeField] private float distanceBetweenMoney = 1.5f;
     private ObstacleManagerScript _obstacleManagerScript;
     private float _nextSpawnTime;
     #endregion
@@ -47,9 +48,22 @@ public class MoneySpawnManager : MonoBehaviour
 
         for (int i = 0; i < moneyCount; i++)
         {
-            Vector3 offset = new Vector3(0, i * 1.5f, 0); //distancia entre moedas
-            Instantiate(moneyObject, spawnPosition + offset, moneyObject.transform.rotation);
+            Vector3 offset = new Vector3(0, i * distanceBetweenMoney, 0);
+            GameObject spawnedMoney = Instantiate(moneyObject, spawnPosition + offset, moneyObject.transform.rotation);
+
+            Collider2D moneyCollider = spawnedMoney.GetComponent<CircleCollider2D>();
+            if (moneyCollider != null)
+            {
+                moneyCollider.enabled = false; // Desativa o colisor
+                StartCoroutine(EnableColliderAfterDelay(moneyCollider, 1f));
+            }
         }
+    }
+
+    private IEnumerator EnableColliderAfterDelay(Collider2D collider, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        collider.enabled = true;
     }
     #endregion
 }
