@@ -27,6 +27,7 @@ public class UpgradesStatus : MonoBehaviour
     [Header("Descrição:")]
     [SerializeField] private TextMeshProUGUI txtCurrentUpgrade;
     [SerializeField] private TextMeshProUGUI txtNextUpgrade;
+    [SerializeField] private TextMeshProUGUI txtNextCost;
     [SerializeField] private string[] txtUpgrades;
 
     private int _currentLevel;
@@ -181,8 +182,10 @@ public class UpgradesStatus : MonoBehaviour
         }
     }
 
-    private void SetCurrentCost() => _currentCost = _currentLevel * baseCostModifier * baseCost;
-    
+    private void SetCurrentCost()
+    {
+        _currentCost = (_currentLevel + 1) * baseCostModifier * baseCost;
+    }
     private bool IsMaximized() 
     {
         // Verificando
@@ -259,6 +262,8 @@ public class UpgradesStatus : MonoBehaviour
 
     private void SetUpgradeTexts() 
     {
+        txtNextCost.text = _currentCost.ToString();
+
         if (stats == TargetStats.Gun || stats == TargetStats.Chicken) return;
 
         if (txtCurrentUpgrade.enabled && txtNextUpgrade.enabled) 

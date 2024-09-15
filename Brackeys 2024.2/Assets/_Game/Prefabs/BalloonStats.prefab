@@ -45,14 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0d95adbd23bb44f9f4133710e627df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialMoney: 100000
+  InitialMoney: 0
   MinSpeed: 10
-  MaxSpeed: 30
+  MaxSpeed: 25
   MinStability: 10
-  MaxStability: 30
+  MaxStability: 25
   MinDurability: 10
-  MaxDurability: 30
+  MaxDurability: 25
   gunObject: {fileID: 0}
+  chickenObject: {fileID: 0}
 --- !u!114 &7964655583097153985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +72,8 @@ MonoBehaviour:
   imgSpeed: {fileID: 0}
   imgStability: {fileID: 0}
   sprDurability: {fileID: 0}
-  sprSpeed: {fileID: 0}
+  sprSpeed:
+  - {fileID: 0}
   sprStability: {fileID: 0}
   spritesDurability:
   - {fileID: 21300000, guid: 6605a15879cc12643b00a15460a9d5ed, type: 3}
