@@ -10,6 +10,8 @@ public class MoneySpawnManager : MonoBehaviour
     [SerializeField] private int moneyCount = 3;
     [SerializeField] private GameObject moneyObject;
     [SerializeField] private float distanceBetweenMoney = 1.5f;
+    [SerializeField] public AnimationClip[] moneyAnimations;
+    [SerializeField] private Animator moneyAnimator;
     private ObstacleManagerScript _obstacleManagerScript;
     private float _nextSpawnTime;
     #endregion
@@ -54,6 +56,7 @@ public class MoneySpawnManager : MonoBehaviour
             Collider2D moneyCollider = spawnedMoney.GetComponent<CircleCollider2D>();
             if (moneyCollider != null)
             {
+                ChangeMoneyAnimationVariation();
                 moneyCollider.enabled = false; // Desativa o colisor
                 StartCoroutine(EnableColliderAfterDelay(moneyCollider, 1f));
             }
@@ -64,6 +67,12 @@ public class MoneySpawnManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         collider.enabled = true;
+    }
+
+    void ChangeMoneyAnimationVariation()
+    {
+        int randomIndex = Random.Range(0, moneyAnimations.Length);
+        moneyAnimator.Play(moneyAnimations[randomIndex].name);
     }
     #endregion
 }

@@ -513,6 +513,10 @@ MonoBehaviour:
   moneyCount: 3
   moneyObject: {fileID: 4878332863736183165, guid: 4c7b8a847afe69045912ed8818c0cbac, type: 3}
   distanceBetweenMoney: 1.5
+  moneyAnimations:
+  - {fileID: 7400000, guid: 84c8d408c3d8c334099243e0a98c7f8b, type: 2}
+  - {fileID: 7400000, guid: dc1cb051ad7ee764ea25488625e0698e, type: 2}
+  moneyAnimator: {fileID: 8785496292837031875, guid: 4c7b8a847afe69045912ed8818c0cbac, type: 3}
 --- !u!1 &177737396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,19 +3499,19 @@ MonoBehaviour:
   chickenObject: {fileID: 5182889435193454201, guid: 59b7b2aea63781042a692c1589344dae, type: 3}
   cowObject: {fileID: 2012646898506410731, guid: 368fdf1cc4058724082fd87344dfb60a, type: 3}
   chickenSpriteVariations:
-  - {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  - {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  - {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  - {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  - {fileID: 21300000, guid: f1953b63cabb85746a17103b71e64698, type: 3}
+  - {fileID: 21300000, guid: 00e61c971cbc5b34c92468dba9747542, type: 3}
+  - {fileID: 21300000, guid: d974763914859bd4881f83dfd15162c2, type: 3}
+  - {fileID: 21300000, guid: 59eba56ea2c0cb54bb4cfb95cd52bd5e, type: 3}
+  - {fileID: 21300000, guid: 1fafc94084566414ca308b0db76f2013, type: 3}
+  - {fileID: 21300000, guid: 2eeb34accbea90c48a9a6f669b966603, type: 3}
+  - {fileID: 21300000, guid: 4f82e512041715646bb531a3100b78fc, type: 3}
   cowSpriteVariations:
-  - {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  - {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  - {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  - {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  - {fileID: 21300000, guid: a6778df8b38e3f24da19aca945457f3e, type: 3}
+  - {fileID: 21300000, guid: 6b3b25b1beb691048a833d4ca8aa1470, type: 3}
+  - {fileID: 21300000, guid: 3e65c2c72a5f840418485f4e9a70fd65, type: 3}
+  - {fileID: 21300000, guid: 7779d42e3bb6c55498a33115d3e35797, type: 3}
+  - {fileID: 21300000, guid: 27d9ede575cc7b843864336a62d7eb2e, type: 3}
   instantiateQuantity: 1
   _chickenSpriteRenderer: {fileID: 6348563168611429004, guid: 59b7b2aea63781042a692c1589344dae, type: 3}
   _cowSpriteRenderer: {fileID: 6417133083181434418, guid: 368fdf1cc4058724082fd87344dfb60a, type: 3}
