@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2782610705478456254}
   - component: {fileID: 398003581049778010}
   - component: {fileID: -3330530550696124955}
+  - component: {fileID: -8413917411012542667}
   m_Layer: 11
   m_Name: typewriter
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
-  fadeColor: {r: 0.4245283, g: 0.122152, b: 0.29745108, a: 1}
+  fadeColor: {r: 1, g: 1, b: 1, a: 0.29411766}
   layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &-3330530550696124955
@@ -134,3 +135,53 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &-8413917411012542667
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542542902632772503}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.20653677, y: 0.20588325}
+      - {x: -0.14767118, y: 0.22294894}
+      - {x: -0.2832492, y: 0.010327027}
+      - {x: -0.34051597, y: -0.3831758}
+      - {x: 0.40844512, y: -0.38908222}
+  m_UseDelaunayMesh: 0

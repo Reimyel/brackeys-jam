@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3848853522975410024}
   - component: {fileID: 3185086914885875616}
   - component: {fileID: 8677534548240518737}
+  - component: {fileID: 3444026363315901813}
   m_Layer: 11
   m_Name: broken pot
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
-  fadeColor: {r: 0.4245283, g: 0.122152, b: 0.29745108, a: 1}
+  fadeColor: {r: 1, g: 1, b: 1, a: 0.29411766}
   layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &8677534548240518737
@@ -134,3 +135,53 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &3444026363315901813
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3825989248111870468}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.06430944, y: 0.24037683}
+      - {x: -0.110377565, y: 0.030296974}
+      - {x: -0.054979533, y: -0.12403493}
+      - {x: 0.10385588, y: -0.17805333}
+      - {x: 0.19903311, y: 0.06889449}
+  m_UseDelaunayMesh: 0

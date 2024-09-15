@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1194625189
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 59eba56ea2c0cb54bb4cfb95cd52bd5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f82e512041715646bb531a3100b78fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
-  fadeColor: {r: 1, g: 0.36320752, b: 0.36320752, a: 1}
+  fadeColor: {r: 1, g: 1, b: 1, a: 0.29411766}
   layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &400393843927421987

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 706425547073609051}
   - component: {fileID: 7707805388432569300}
   - component: {fileID: -4257706047171600086}
+  - component: {fileID: -5799891314358605084}
   m_Layer: 11
   m_Name: chair
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   maxRot: 1
   minVel: 800
   maxVel: 1000
-  fadeColor: {r: 0.4245283, g: 0.122152, b: 0.29745108, a: 1}
+  fadeColor: {r: 1, g: 1, b: 1, a: 0.29411766}
   layerPlayer: 6
   fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &-4257706047171600086
@@ -134,3 +135,59 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &-5799891314358605084
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693938561730086622}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.0046068877, y: -0.22958565}
+      - {x: 0.15188895, y: -0.14972281}
+      - {x: 0.23083836, y: -0.34310788}
+      - {x: 0.20228747, y: 0.21330601}
+      - {x: 0.0029542716, y: 0.42082682}
+      - {x: -0.017729446, y: 0.11489744}
+      - {x: -0.2976541, y: -0.120102756}
+      - {x: -0.29916674, y: -0.33887547}
+      - {x: -0.25071633, y: -0.12320854}
+      - {x: -0.061937552, y: -0.2529962}
+      - {x: -0.025709828, y: -0.45110387}
+  m_UseDelaunayMesh: 0
