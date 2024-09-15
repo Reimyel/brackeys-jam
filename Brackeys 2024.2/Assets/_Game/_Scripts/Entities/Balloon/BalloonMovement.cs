@@ -63,13 +63,16 @@ public class BalloonMovement : MonoBehaviour
 
     private void Update()
     {
+
+        dirX = Input.GetAxisRaw("Horizontal");
+
         if (!CanMove) return;
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             targetRotation = -tiltAmount; 
         }
-        
+                    
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             targetRotation = tiltAmount;
@@ -92,9 +95,9 @@ public class BalloonMovement : MonoBehaviour
         _rb.velocity = new Vector2(0, upSpeed);
         */
 
-        dirX = Input.GetAxisRaw("Horizontal");
-        _rb.velocity = new Vector2(dirX * BalloonStats.Speed + windDirection * BalloonStats.Stability, _rb.velocity.y);
- 
+        var wind = windForce * windDirection - BalloonStats.Stability;
+        _rb.velocity += wind * Vector2.right;
+        _rb.velocity += dirX * BalloonStats.Speed * Vector2.right;
     }
     #endregion
 
