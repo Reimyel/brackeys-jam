@@ -677,7 +677,7 @@ PrefabInstance:
     - target: {fileID: 1991525183963390814, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: c97c510f76b648347888343168a2e3c1, type: 3}
+      objectReference: {fileID: 2800000, guid: ffe6f925585685f4db5adcece87849ef, type: 3}
     - target: {fileID: 3200108814231070085, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b14021b72661ccf40b089441154e766c, type: 3}
+  m_Texture: {fileID: 2800000, guid: e1b902d7a217cb54f9a27f1be53054df, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4048,7 +4048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7713133631128441647, guid: c6103fb0c1979db4195549de4ec14a6c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
