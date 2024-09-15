@@ -56,7 +56,7 @@ public class BalloonMovement : MonoBehaviour
     {
         windAlert.gameObject.SetActive(false);
         _rb = GetComponent<Rigidbody2D>();
-        StartCoroutine(WindEffect());
+        StartCoroutine(SetWindInterval());
 
         //horizontalSpeed = BalloonStats.Speed;
     }
@@ -95,13 +95,14 @@ public class BalloonMovement : MonoBehaviour
         _rb.velocity = new Vector2(0, upSpeed);
         */
 
-        var wind = windForce * windDirection - BalloonStats.Stability;
-        _rb.AddForce(wind * Vector2.right * Time.fixedDeltaTime, ForceMode2D.Force);
-        _rb.AddForce(dirX * BalloonStats.Speed * Vector2.right * Time.fixedDeltaTime, ForceMode2D.Force);
+        var inputMove = dirX * BalloonStats.Speed;
+        var windMove = windDirection * windForce;
+        _rb.velocity = new Vector2(inputMove + windMove, _rb.velocity.y);
     }
     #endregion
 
     #region Funções Próprias
+    /*
     IEnumerator WindEffect()
     {
         while (true)
@@ -130,6 +131,25 @@ public class BalloonMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(interval);
         windAlert.gameObject.SetActive(false);
+    }
+    */
+
+    private IEnumerator SetWind() 
+    {
+        if (Random.Range(0, 100) < 50) windDirection = 1;
+        else windDirection = -1;
+
+        yield return new WaitForSeconds(windDuration);
+
+        StartCoroutine(SetWindInterval());
+    }
+
+    private IEnumerator SetWindInterval() 
+    {
+        windDirection = 0;
+        yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
+
+        SetWind();
     }
 
     private void SetNewChickenRotationY(float dir) 
