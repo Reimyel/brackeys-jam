@@ -2822,11 +2822,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LmaxTime
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LminTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: RmaxTime
@@ -2838,11 +2838,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: UmaxTime
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: UminTime
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6599177646518281985, guid: e9f9ff2bab2e10f45a02269dc55db54a, type: 3}
       propertyPath: LspawnPoint.Array.size
