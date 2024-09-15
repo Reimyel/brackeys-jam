@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChickenCowManager : MonoBehaviour
@@ -35,12 +36,15 @@ public class ChickenCowManager : MonoBehaviour
     private void Awake()
     {
         _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
+    }
+
+    private void Start()
+    {
+        IsChickenMoment = false;
+
         ChangeChickenSpriteVariation();
         ChangeCowSpriteVariation();
     }
-
-    private void Start() => IsChickenMoment = false;
-
     #endregion
 
     #region Funções Próprias
