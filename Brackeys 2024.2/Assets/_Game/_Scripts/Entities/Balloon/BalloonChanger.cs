@@ -18,12 +18,13 @@ public class BalloonChanger : MonoBehaviour
 
     [Header("In Game:")]
     [SerializeField] private SpriteRenderer sprDurability;
-    [SerializeField] private SpriteRenderer[] sprSpeed;
+    [SerializeField] private SpriteRenderer[] sprRopes;
     [SerializeField] private SpriteRenderer sprStability;
 
     [Header("Sprites:")]
     [SerializeField] private Sprite[] spritesDurability;
     [SerializeField] private Sprite[] spritesSpeed;
+    [SerializeField] private Sprite[] spritesRopes;
     [SerializeField] private Sprite[] spritesStability;
     #endregion
 
@@ -44,8 +45,8 @@ public class BalloonChanger : MonoBehaviour
             if (sprDurability.gameObject.active)
                 sprDurability.sprite = spritesDurability[BalloonStats.DurabilityLevel];
             
-            for (int i = 0; i < sprSpeed.Length; i++)
-                sprSpeed[i].sprite = spritesSpeed[BalloonStats.SpeedLevel];
+            for (int i = 0; i < sprRopes.Length; i++)
+                sprRopes[i].sprite = spritesRopes[BalloonStats.DurabilityLevel];
 
             sprStability.sprite = spritesStability[BalloonStats.StabilityLevel];
         }

@@ -89,6 +89,7 @@ public class BalloonCollision : MonoBehaviour
         {
             if (BalloonStats.DurabilityLevel > 0) 
             {
+                sprDurability.color = damageColor;
                 sprDurability.gameObject.SetActive(false);
                 sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
             }
@@ -102,6 +103,7 @@ public class BalloonCollision : MonoBehaviour
             
             // Balão Parar
             _balloonMovement.enabled = false;
+            GetComponent<FuelBehaviourScript>().enabled = false;
 
             // Parar Música
             Destroy(GameObject.FindGameObjectWithTag("Music"));

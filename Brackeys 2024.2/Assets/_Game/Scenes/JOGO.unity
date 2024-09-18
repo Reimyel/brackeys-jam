@@ -1550,29 +1550,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1358939955}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
-      propertyPath: spritesSpeed.Array.size
+      propertyPath: spritesRopes.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
-      propertyPath: spritesSpeed.Array.data[0]
+      propertyPath: spritesSpeed.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: spritesRopes.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 8c2e105f8eddea3498c390fcbe69615f, type: 3}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
-      propertyPath: spritesSpeed.Array.data[1]
+      propertyPath: spritesRopes.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: 41d7ee369b8a6a945a3c916461501001, type: 3}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
-      propertyPath: spritesSpeed.Array.data[2]
+      propertyPath: spritesRopes.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: 33b49516c1e2b4b4eb18d5052f7f1733, type: 3}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
-      propertyPath: spritesSpeed.Array.data[3]
+      propertyPath: spritesRopes.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: 844602092ca1cd846bae404bcb5f838b, type: 3}
-    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
-      propertyPath: spritesSpeed.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: d69b95365a44a344d964368f366e1bba, type: 3}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: spritesDurability.Array.data[0]
       value: 
@@ -2435,6 +2435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerManager (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8184590760405880451, guid: a6056b36a4c7b0d4290933f9652dec32, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8227675546511917121, guid: a6056b36a4c7b0d4290933f9652dec32, type: 3}
       propertyPath: endForce
       value: 10
@@ -2856,7 +2860,7 @@ Transform:
   m_GameObject: {fileID: 1166305564}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17, y: -5, z: 0}
+  m_LocalPosition: {x: 17, y: -2.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5453,7 +5457,7 @@ Transform:
   m_GameObject: {fileID: 2020730152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17, y: -5, z: 0}
+  m_LocalPosition: {x: -17, y: -2.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5912,7 +5916,7 @@ MonoBehaviour:
   leftSidePoint: {fileID: 2020730153}
   rightSidePoint: {fileID: 1166305565}
   resetCanMoveInterval: 2
-  damageColor: {r: 0.9528302, g: 0.31011927, b: 0.31011927, a: 0.84313726}
+  damageColor: {r: 0.9528302, g: 0.31011927, b: 0.31011927, a: 1}
   upgradeSceneName: Upgrade Scene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
   _spriteRenderer: {fileID: 5725499643185204153}

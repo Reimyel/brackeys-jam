@@ -22,6 +22,9 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     #region Funções Próprias
     public void Play()
     {
+        FindObjectOfType<StandaloneInputModule>().enabled = false;
+        FindObjectOfType<BaseInputModule>().enabled = false;
+
         if (AudioManager.Instance != null && SceneManager.GetActiveScene().name == "Upgrade Scene")
             AudioManager.Instance.PlaySFX("Rebuilding");
 

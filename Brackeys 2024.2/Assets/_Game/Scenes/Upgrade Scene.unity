@@ -6103,8 +6103,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242544806562517906, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606646026066719848, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 850014904740773234, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342405377589223878, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137834141968669390, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2260379241073606555, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
@@ -6187,6 +6203,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2850236226477130414, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCost
       value: 20
@@ -6227,6 +6247,10 @@ PrefabInstance:
       propertyPath: txtUpgrades.Array.data[3]
       value: ???
       objectReference: {fileID: 0}
+    - target: {fileID: 4346827805305411619, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4365742014841074247, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: balloonPlay
       value: 
@@ -6256,6 +6280,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5211558634168335054, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211558634168335054, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
       value: 5
       objectReference: {fileID: 0}
@@ -6283,6 +6311,10 @@ PrefabInstance:
       propertyPath: txtCurrentUpgrade
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5562950561936333408, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5621846168871748689, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtNextUpgrade
       value: 
@@ -6296,12 +6328,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5672800618200258687, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5672800618200258687, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775048796212225061, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780666808011049607, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5780666808011049607, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131388383183264649, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265970316959833159, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499830817422044488, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: baseCost
@@ -6481,19 +6537,19 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 981436261}
     - targetCorrespondingSourceObject: {fileID: 4190621823272771963, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 263633441}
     - targetCorrespondingSourceObject: {fileID: 7108131873613144401, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 1752335562}
     - targetCorrespondingSourceObject: {fileID: 2982525646150101629, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 1319116145}
     - targetCorrespondingSourceObject: {fileID: 4482759545463121443, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 402897314}
     - targetCorrespondingSourceObject: {fileID: 2646940870848412221, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 382510046}
     - targetCorrespondingSourceObject: {fileID: 4535506669908028453, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       insertIndex: 0

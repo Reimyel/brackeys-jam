@@ -118,7 +118,7 @@ public class UpgradesStatus : MonoBehaviour
     public void ChangeDecimalStats(float value)
     {
         // Ignore o Upgrade
-        if (BalloonStats.CurrentMoney <= _currentCost) 
+        if (BalloonStats.CurrentMoney < _currentCost) 
         {
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Locked");

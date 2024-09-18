@@ -106,7 +106,9 @@ public class ChickenCowManager : MonoBehaviour
             );
 
             Debug.Log("MOMENTO GALINHA");
-            Instantiate(chickenObject, _obstacleManagerScript.UspawnPoint[randomIndex].position + randomOffset, chickenObject.transform.rotation);
+            var chicken = Instantiate(chickenObject, _obstacleManagerScript.UspawnPoint[randomIndex].position + randomOffset, chickenObject.transform.rotation);
+            int randSprite = chickenWeightedIndices[Random.Range(0, chickenWeightedIndices.Length)];
+            chicken.GetComponent<SpriteRenderer>().sprite = chickenSpriteVariations[randSprite];
         }
 
         IsChickenMoment = false;

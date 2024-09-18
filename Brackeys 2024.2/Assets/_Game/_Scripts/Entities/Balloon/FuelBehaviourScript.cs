@@ -29,7 +29,7 @@ public class FuelBehaviourScript : MonoBehaviour
         _backgroundScroller = FindObjectOfType<BackgroundScroller>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (!_canFill) return;
 
