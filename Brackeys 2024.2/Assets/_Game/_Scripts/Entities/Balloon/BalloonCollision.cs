@@ -33,6 +33,7 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private Rigidbody2D rbBasket;
     [SerializeField] private SpriteRenderer sprDurability;
     [SerializeField] private SpriteRenderer sprDamageDurability;
+    [SerializeField] private Animator animGameOver;
     [SerializeField] private Sprite[] spritesDamageDurability;
 
     // Componentes:
@@ -87,17 +88,11 @@ public class BalloonCollision : MonoBehaviour
 
         if (newValue <= 0) 
         {
-            if (BalloonStats.DurabilityLevel > 0) 
-            {
-                sprDurability.color = damageColor;
-                sprDurability.gameObject.SetActive(false);
-                sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
-            }
-            else 
-            {
-                sprDurability.color = damageColor;
-            }
 
+            sprDurability.gameObject.SetActive(false);
+            animGameOver.gameObject.SetActive(true);
+            animGameOver.speed = 0f;
+            animGameOver.Play("Game Over " + BalloonStats.DurabilityLevel + " Animation");
             // GameOver
             _IsGameOver = true;
             
@@ -129,6 +124,11 @@ public class BalloonCollision : MonoBehaviour
 
             if (BalloonStats.DurabilityLevel > 0 && BalloonStats.Durability - 1 <= 0)
                 sprDurability.color = damageColor;
+            else 
+            {
+                sprDurability.gameObject.SetActive(false);
+                sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
+            }
 
             if (AudioManager.Instance != null) 
             {
@@ -183,6 +183,8 @@ public class BalloonCollision : MonoBehaviour
     {
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Morte");
+
+        animGameOver.speed = 1f;
     }
 
     private void StartToFall() 

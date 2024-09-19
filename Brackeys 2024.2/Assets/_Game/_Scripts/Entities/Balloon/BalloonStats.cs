@@ -46,6 +46,7 @@ public class BalloonStats : MonoBehaviour
             ChangeStability(MinStability);
             //ChangeDurability(MinDurability);
             Durability = 1;
+            BalloonCollision.InitialDurability = Durability;
 
             CurrentMoney = InitialMoney;
             _isFirstTime = false;

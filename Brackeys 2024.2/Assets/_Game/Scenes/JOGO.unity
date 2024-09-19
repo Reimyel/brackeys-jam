@@ -962,6 +962,7 @@ MonoBehaviour:
   rbBasket: {fileID: 0}
   sprDurability: {fileID: 0}
   sprDamageDurability: {fileID: 0}
+  animGameOver: {fileID: 0}
   spritesDamageDurability: []
   _IsGameOver: 0
 --- !u!60 &278357419
@@ -1534,9 +1535,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1977268658}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: sprRopes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: sprSpeed.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: sprRopes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2018706439}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: sprRopes.Array.data[1]
+      value: 
+      objectReference: {fileID: 753341395}
+    - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
+      propertyPath: sprRopes.Array.data[2]
+      value: 
+      objectReference: {fileID: 1358939955}
     - target: {fileID: 7964655583097153985, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: sprSpeed.Array.data[0]
       value: 
@@ -2699,13 +2716,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1124356322}
   - component: {fileID: 1124356323}
+  - component: {fileID: 1124356324}
   m_Layer: 0
   m_Name: GFX GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1124356322
 Transform:
   m_ObjectHideFlags: 0
@@ -2762,17 +2780,38 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 751bc5fdd4e93b7428540cdc31a480a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 64, y: 64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1124356324
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124356321}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ecfe49f29394f0418ae424283cc0f83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1129396155
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,6 +5962,7 @@ MonoBehaviour:
   rbBasket: {fileID: 6850665145861439448}
   sprDurability: {fileID: 5725499643185204153}
   sprDamageDurability: {fileID: 1977268658}
+  animGameOver: {fileID: 1124356324}
   spritesDamageDurability:
   - {fileID: 0}
   - {fileID: 21300000, guid: 018c9f37ce83842439c22dae88ff8e66, type: 3}

@@ -8,14 +8,14 @@ public class BalloonPlay : MonoBehaviour
     [Header("Configurações:")]
     [Header("UI:")]
     [SerializeField] private Image imgDurability;
-    [SerializeField] private Image[] imgSpeed;
+    [SerializeField] private Image[] imgRopes;
     [SerializeField] private Image imgStability;
     [SerializeField] private Image imgPlayerHead;
     [SerializeField] private Image imgChicken;
 
     [Header("Sprites:")]
     [SerializeField] private Sprite[] spritesDurability;
-    [SerializeField] private Sprite[] spritesSpeed;
+    [SerializeField] private Sprite[] spritesRopes;
     [SerializeField] private Sprite[] spritesStability;
     [SerializeField] private Sprite[] spritesPlayerHead;
 
@@ -23,8 +23,8 @@ public class BalloonPlay : MonoBehaviour
     {
         imgDurability.sprite = spritesDurability[BalloonStats.DurabilityLevel];
 
-        for (int i = 0; i < imgSpeed.Length; i++)
-            imgSpeed[i].sprite = spritesSpeed[BalloonStats.SpeedLevel];
+        for (int i = 0; i < imgRopes.Length; i++)
+            imgRopes[i].sprite = spritesRopes[BalloonStats.DurabilityLevel];
 
         imgStability.sprite = spritesStability[BalloonStats.StabilityLevel];
 

@@ -17,11 +17,15 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private string nextSceneName;
     [SerializeField] private TransitionSettings transitionSettings;
     [SerializeField] private float loadTime;
+
+    private bool _isPlayed = false;
     #endregion
 
     #region Funções Próprias
     public void Play()
     {
+        if (_isPlayed) return;
+
         FindObjectOfType<StandaloneInputModule>().enabled = false;
         FindObjectOfType<BaseInputModule>().enabled = false;
 
@@ -39,6 +43,8 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         // 7.25f
         TransitionManager.Instance().Transition(nextSceneName, transitionSettings, loadTime);
+
+        _isPlayed = true;
     }
 
     public void OnPointerEnter(PointerEventData pointerEventData)
