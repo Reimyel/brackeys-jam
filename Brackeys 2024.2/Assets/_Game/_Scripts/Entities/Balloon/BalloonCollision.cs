@@ -69,11 +69,6 @@ public class BalloonCollision : MonoBehaviour
 
         if (col.gameObject.layer == layerObstacle)
         {
-            if (col.gameObject.CompareTag("Cow") || col.gameObject.CompareTag("Chicken"))
-            {
-                if (BalloonStats.HasGun) return;
-            }
-
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BalloonDamage);
             StartCoroutine(Blink());
         }

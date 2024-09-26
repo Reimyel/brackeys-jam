@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCursor: {fileID: 2800000, guid: 8339dbfc1268b534fbfa68d8cca6a539, type: 3}
   clickCursor: {fileID: 2800000, guid: c2e79891df1d6754abe698249971e075, type: 3}
+  crosshairCursor: {fileID: 2800000, guid: 94aa00f4798b45347b48215e6e43db59, type: 3}

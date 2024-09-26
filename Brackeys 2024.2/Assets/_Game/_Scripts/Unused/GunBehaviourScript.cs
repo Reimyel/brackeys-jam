@@ -6,7 +6,7 @@ public class GunBehaviourScript : MonoBehaviour
 {
     #region Variáveis
     [Header("Shoot Sprite:")]
-    [SerializeField] private SpriteRenderer playerHeadSpr;
+    //[SerializeField] private SpriteRenderer playerHeadSpr;
     [SerializeField] private Sprite shootSprite;
     [SerializeField] private Transform playerHeadTransform;
 
@@ -23,8 +23,8 @@ public class GunBehaviourScript : MonoBehaviour
     #region Funções Unity
     private void Start()
     {
-        if (BalloonStats.HasGun) 
-            playerHeadSpr.sprite = shootSprite;
+        //if (BalloonStats.HasGun) 
+            //playerHeadSpr.sprite = shootSprite;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -75,7 +75,7 @@ public class GunBehaviourScript : MonoBehaviour
 
     private void ResetSprite()
     {
-        playerHeadSpr.flipX = false;
+        //playerHeadSpr.flipX = false;
         playerHeadTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
     #endregion
