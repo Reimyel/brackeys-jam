@@ -12,11 +12,19 @@ public class FuelBehaviourScript : MonoBehaviour
     [SerializeField] private float fillRate = 0.5f;
     [SerializeField] private float drainRate = 0.05f;
     [SerializeField] private float delayBeforeDraining = 1f;
+
+    [SerializeField] private BackgroundScroller cloudBackgroundScroller1;
+    [SerializeField] private BackgroundScroller skyBackgroundScroller1;
+
+    [SerializeField] private BackgroundScroller cloudBackgroundScroller2;
+
+    [SerializeField] private BackgroundScroller cloudBackgroundScroller3;
+    [SerializeField] private BackgroundScroller skyBackgroundScroller3;
+
     private bool isFilling = false;
     private float fillDelayTimer = 0f;
     private TimerManager _timerManager;
     private BalloonCollision _balloonCollision;
-    private BackgroundScroller _backgroundScroller;
 
     private bool _canFill = true;
     #endregion
@@ -26,7 +34,6 @@ public class FuelBehaviourScript : MonoBehaviour
     {
         _timerManager = FindObjectOfType<TimerManager>();
         _balloonCollision = FindObjectOfType<BalloonCollision>();
-        _backgroundScroller = FindObjectOfType<BackgroundScroller>();
     }
 
     void LateUpdate()
@@ -37,7 +44,13 @@ public class FuelBehaviourScript : MonoBehaviour
         {
             isFilling = true;
             fillDelayTimer = 0f;
-            _backgroundScroller.ySpeed *= 2f;
+            cloudBackgroundScroller1.ySpeed *= 1.5f;
+            skyBackgroundScroller1.ySpeed *= 1.25f;
+
+            cloudBackgroundScroller2.ySpeed *= 1.5f;
+
+            cloudBackgroundScroller3.ySpeed *= 1.5f;
+            skyBackgroundScroller3.ySpeed *= 1.25f;
         }
 
         if (Input.GetKey(KeyCode.Space))
@@ -75,7 +88,13 @@ public class FuelBehaviourScript : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isFilling = false;
-            _backgroundScroller.ySpeed *= 0.5f;
+            cloudBackgroundScroller1.ySpeed *= 1 / 1.5f;
+            skyBackgroundScroller1.ySpeed *= 1 / 1.25f ;
+
+            cloudBackgroundScroller2.ySpeed *= 1 / 1.5f;
+
+            cloudBackgroundScroller3.ySpeed *= 1 / 1.5f;
+            skyBackgroundScroller3.ySpeed *= 1 / 1.25f;
         }
     }
     #endregion

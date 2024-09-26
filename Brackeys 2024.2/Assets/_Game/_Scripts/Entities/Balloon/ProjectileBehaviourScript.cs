@@ -12,4 +12,15 @@ public class ProjectileBehaviourScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Update()
+    {
+        StartCoroutine(DestroyProjectile(3f));
+    }
+
+    IEnumerator DestroyProjectile(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+    }
 }

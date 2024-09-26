@@ -38,12 +38,13 @@ public class GunScript : MonoBehaviour
         if (!BalloonStats.HasGun)
         {
             gameObject.SetActive(false);
-            ammoText.enabled = false;
+            ammoText.gameObject.SetActive(false);
         }
         else if (BalloonStats.HasGun)
         {
             gameObject.SetActive(true);
-            ammoText.enabled = true;
+            ammoText.gameObject.SetActive(true);
+            Debug.Log("armagames");
         }
 
         _originalRotation = headHolder.transform.rotation;

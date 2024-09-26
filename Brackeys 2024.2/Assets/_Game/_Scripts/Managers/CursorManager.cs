@@ -13,7 +13,7 @@ public class CursorManager : MonoBehaviour
     #endregion
 
     #region Funções Unity
-    private void Awake()
+    private void Start()
     {
         if (SceneManager.GetSceneByName("JOGO").isLoaded && BalloonStats.HasGun)
         {
