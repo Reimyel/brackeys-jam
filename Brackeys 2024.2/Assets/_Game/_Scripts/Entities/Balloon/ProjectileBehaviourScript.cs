@@ -6,7 +6,7 @@ public class ProjectileBehaviourScript : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Cow") || other.CompareTag("Chicken"))
+        if (other.gameObject.layer == 11)
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
