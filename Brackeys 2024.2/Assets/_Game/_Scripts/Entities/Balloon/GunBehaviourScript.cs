@@ -29,10 +29,10 @@ public class GunBehaviourScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (!BalloonStats.HasGun) return;
+
         if (other.gameObject.CompareTag("Cow") || other.gameObject.CompareTag("Chicken"))
         {
-            if (!BalloonStats.HasGun) return;
-            
             Debug.Log("BALA NA AGULHA");
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Shoot");

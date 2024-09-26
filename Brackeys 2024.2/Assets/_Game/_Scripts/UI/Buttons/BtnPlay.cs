@@ -12,6 +12,7 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [Header("Referências:")]
     [SerializeField] private GameObject panelInputs;
     [SerializeField] private GameObject balloonPlay;
+    [SerializeField] private RuntimeAnimatorController pressedAnimatorController;
 
     [Header("Transição:")]
     [SerializeField] private string nextSceneName;
@@ -26,8 +27,7 @@ public class BtnPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (_isPlayed) return;
 
-        FindObjectOfType<StandaloneInputModule>().enabled = false;
-        FindObjectOfType<BaseInputModule>().enabled = false;
+        gameObject.GetComponent<Animator>().runtimeAnimatorController = pressedAnimatorController;
 
         if (AudioManager.Instance != null && SceneManager.GetActiveScene().name == "Upgrade Scene")
             AudioManager.Instance.PlaySFX("Rebuilding");

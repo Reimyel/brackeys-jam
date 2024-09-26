@@ -54,13 +54,17 @@ public class UpgradesStatus : MonoBehaviour
                 chicken.SetActive(true);
             else if (stats == TargetStats.Gun)
                 gun.SetActive(true);
-         
+
+            SelectStats();
+            SetUpgradeLevel();
             DisableBtn();
         }
     }
 
     private void Update() 
     {
+        Debug.Log(gameObject.name + " " + _currentCost);
+
         if (IsMaximized())
             DisableBtn();
 
@@ -146,7 +150,7 @@ public class UpgradesStatus : MonoBehaviour
     public void ChangeIntegerStats(int value)
     {
         // Ignore o Upgrade
-        if (BalloonStats.CurrentMoney <= _currentCost)
+        if (BalloonStats.CurrentMoney < _currentCost)
         {
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Locked");
@@ -166,7 +170,7 @@ public class UpgradesStatus : MonoBehaviour
     public void EnableConsumable() 
     {
         // Ignore o Upgrade
-        if (BalloonStats.CurrentMoney <= _currentCost)
+        if (BalloonStats.CurrentMoney < _currentCost)
         {
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Locked");

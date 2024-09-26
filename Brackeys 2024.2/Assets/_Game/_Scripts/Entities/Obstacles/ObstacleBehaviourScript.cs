@@ -42,18 +42,21 @@ public class ObstacleBehaviourScript : MonoBehaviour
         {
             if (gameObject.CompareTag("Cow"))
                 AudioManager.Instance.PlaySFX("Cow" + Random.Range(1, 6));
-            else if (gameObject.CompareTag("Car"))
+            else if (gameObject.CompareTag("Car") && BalloonStats.Durability > 0)
                 AudioManager.Instance.PlaySFX("Carro");
             else if (gameObject.CompareTag("Chicken")) 
             {
-                if (!ChickenCowManager.IsChickenMoment  && Random.Range(0, 100) < 45)
+                if (!ChickenCowManager.IsChickenMoment && Random.Range(0, 100) < 45 && BalloonStats.Durability > 0)
                     AudioManager.Instance.PlaySFX("Galinha");
 
                 AudioManager.Instance.PlaySFX("Galinha" + Random.Range(1, 3));
             }
         }
 
-        Destroy(gameObject, 5f);
+        if (gameObject.CompareTag("Cow"))
+            Destroy(gameObject, 10f);
+        else
+            Destroy(gameObject, 5f);
     }
 
     private void Update()

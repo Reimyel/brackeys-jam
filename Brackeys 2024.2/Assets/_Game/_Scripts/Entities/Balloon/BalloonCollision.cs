@@ -69,7 +69,10 @@ public class BalloonCollision : MonoBehaviour
 
         if (col.gameObject.layer == layerObstacle)
         {
-            if (col.gameObject.CompareTag("Cow") || col.gameObject.CompareTag("Chicken") && BalloonStats.HasGun) return;
+            if (col.gameObject.CompareTag("Cow") || col.gameObject.CompareTag("Chicken"))
+            {
+                if (BalloonStats.HasGun) return;
+            }
 
             ReduceDurability(col.gameObject.GetComponent<ObstacleBehaviourScript>().BalloonDamage);
             StartCoroutine(Blink());
@@ -90,8 +93,9 @@ public class BalloonCollision : MonoBehaviour
         {
 
             sprDurability.gameObject.SetActive(false);
+            sprDamageDurability.gameObject.SetActive(false);
             animGameOver.gameObject.SetActive(true);
-            animGameOver.speed = 0f;
+            //animGameOver.speed = 0f;
             animGameOver.Play("Game Over " + BalloonStats.DurabilityLevel + " Animation");
             // GameOver
             _IsGameOver = true;
@@ -109,14 +113,14 @@ public class BalloonCollision : MonoBehaviour
 
 
             // Balão Cair
-            Invoke("UnfreezeY", 4.75f);
+            Invoke("UnfreezeY", 2.75f);
 
 
             // Mais SFXs 
-            Invoke("StartToScream", 4.25f);
+            Invoke("StartToScream", 2.25f);
 
             // Cair e Começa GameOver
-            Invoke("StartToFall", 4.75f);
+            Invoke("StartToFall", 2.75f);
         }
         else 
         {
@@ -184,7 +188,7 @@ public class BalloonCollision : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("Morte");
 
-        animGameOver.speed = 1f;
+        //animGameOver.speed = 1f;
     }
 
     private void StartToFall() 

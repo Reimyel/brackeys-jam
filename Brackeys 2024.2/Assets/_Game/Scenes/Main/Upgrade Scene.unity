@@ -6259,6 +6259,10 @@ PrefabInstance:
       propertyPath: panelInputs
       value: 
       objectReference: {fileID: 1778176935}
+    - target: {fileID: 4365742014841074247, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: pressedAnimatorController
+      value: 
+      objectReference: {fileID: 9100000, guid: 1e9eec5b83ac3c1448c691691c7603ba, type: 2}
     - target: {fileID: 4467772604038506516, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtNextUpgrade
       value: 
