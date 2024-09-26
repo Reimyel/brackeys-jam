@@ -2391,6 +2391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 60
   playerHeadSpr: {fileID: 8427757672316606746}
+  idleSprite: {fileID: 21300000, guid: 09b2d5819f0f00945bd2e7b1c132fb14, type: 3}
   shootSprite: {fileID: 21300000, guid: 15869f99252397f4ba9b59ce218af119, type: 3}
   crosshair: {fileID: 938201703}
   headHolder: {fileID: 1695178836}
@@ -3439,6 +3440,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1417457042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1248777927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 166923345048380734, guid: d8b4e966be83e4444978cd1a19de34b6, type: 3}
+  m_PrefabInstance: {fileID: 6140544341846687896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1248777933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248777927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37699f1de4507314f906a09b9c1ad5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1248956406
 GameObject:
   m_ObjectHideFlags: 0
@@ -6991,7 +7009,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 166923345048380734, guid: d8b4e966be83e4444978cd1a19de34b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1248777933}
   m_SourcePrefab: {fileID: 100100000, guid: d8b4e966be83e4444978cd1a19de34b6, type: 3}
 --- !u!1001 &6379730404075501032
 PrefabInstance:
