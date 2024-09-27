@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a4b67db0aef3f40a105d760f07e81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeColor: {r: 0, g: 0, b: 0, a: 0.49019608}
+  fadePrefab: {fileID: 7556467490304143911, guid: 222d3645e17136541afafcae53eb35fa, type: 3}
 --- !u!50 &-2166624529937530610
 Rigidbody2D:
   serializedVersion: 4
