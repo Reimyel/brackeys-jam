@@ -5282,6 +5282,7 @@ MonoBehaviour:
   headHolder: {fileID: 155316434}
   projectilePrefab: {fileID: 1888065499314421501, guid: befee28643d9d6347be86521326e6685, type: 3}
   projectileSpawnpoint: {fileID: 439341498}
+  cameraAnimator: {fileID: 6140544341846687897}
 --- !u!1 &1973767268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6797,6 +6798,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8b4e966be83e4444978cd1a19de34b6, type: 3}
+--- !u!95 &6140544341846687897 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2806857857584313621, guid: d8b4e966be83e4444978cd1a19de34b6, type: 3}
+  m_PrefabInstance: {fileID: 6140544341846687896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6379730404075501032
 PrefabInstance:
   m_ObjectHideFlags: 0

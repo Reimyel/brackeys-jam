@@ -26,6 +26,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] private GameObject headHolder;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawnpoint;
+    [SerializeField] private Animator cameraAnimator;
 
     private Vector3 _target;
     private float _upTreshold = 10f;
@@ -62,6 +63,8 @@ public class GunScript : MonoBehaviour
         }
         else if (BalloonStats.HasGun && Input.GetMouseButtonDown(0) && _canShoot)
         {
+            cameraAnimator.SetTrigger("shake");
+            cameraAnimator.SetInteger("random", 3);
             Shoot();
         }
         else if (BalloonStats.HasGun && Input.GetMouseButtonDown(0) && ammoCount == 0)
