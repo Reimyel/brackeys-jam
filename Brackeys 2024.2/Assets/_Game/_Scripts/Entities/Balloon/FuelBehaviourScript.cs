@@ -22,13 +22,6 @@ public class FuelBehaviourScript : MonoBehaviour
     [SerializeField] private BackgroundScroller cloudBackgroundScroller3;
     [SerializeField] private BackgroundScroller skyBackgroundScroller3;
 
-    [Header("Shake:")]
-    [SerializeField] private float fullShakeIntensity;
-    [SerializeField] private float fullShakeInterval;
-
-    [Header("Referências:")]
-    [SerializeField] private CameraShake cameraShake;
-
     private bool isFilling = false;
     private float fillDelayTimer = 0f;
     private TimerManager _timerManager;
@@ -84,7 +77,6 @@ public class FuelBehaviourScript : MonoBehaviour
                 chargeBar.value = chargeBar.maxValue;
                 isFilling = false;
                 _canFill = false;
-                cameraShake.ApplyShake(fullShakeIntensity, fullShakeInterval);
             }
         }
         else
