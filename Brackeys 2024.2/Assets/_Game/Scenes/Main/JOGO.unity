@@ -1767,9 +1767,6 @@ MonoBehaviour:
   cloudBackgroundScroller2: {fileID: 0}
   cloudBackgroundScroller3: {fileID: 0}
   skyBackgroundScroller3: {fileID: 0}
-  fullShakeIntensity: 0
-  fullShakeInterval: 0
-  cameraShake: {fileID: 0}
 --- !u!1 &281531469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4651,7 +4648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1653286569
 Transform:
   m_ObjectHideFlags: 0
@@ -6807,9 +6804,6 @@ MonoBehaviour:
   cloudBackgroundScroller2: {fileID: 835183154}
   cloudBackgroundScroller3: {fileID: 1232989097}
   skyBackgroundScroller3: {fileID: 1006343121}
-  fullShakeIntensity: 8
-  fullShakeInterval: 0.25
-  cameraShake: {fileID: 1095302059}
 --- !u!50 &5523085678126978019
 Rigidbody2D:
   serializedVersion: 4
