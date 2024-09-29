@@ -23,6 +23,12 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private Transform rightSidePoint;
     [SerializeField] private float resetCanMoveInterval;
 
+    [Header("Shake:")]
+    [SerializeField] private float hitShakeIntensity;
+    [SerializeField] private float hitShakeInterval;
+    [SerializeField] private float gameOverShakeIntensity;
+    [SerializeField] private float gameOverShakeInterval;
+
     [Header("Transição Game Over:")]
     [SerializeField] private Color damageColor;
     [SerializeField] private string upgradeSceneName;
@@ -35,6 +41,8 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private SpriteRenderer sprDamageDurability;
     [SerializeField] private Animator animGameOver;
     [SerializeField] private Sprite[] spritesDamageDurability;
+    [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private Transform weatherChickenTransform;
 
     // Componentes:
     private Rigidbody2D _rb;
@@ -82,11 +90,13 @@ public class BalloonCollision : MonoBehaviour
     #region Funções Próprias
     public void ReduceDurability(int damage) 
     {
+
+
         var newValue = BalloonStats.Durability - damage;
 
         if (newValue <= 0) 
         {
-
+            cameraShake.ApplyShake(gameOverShakeIntensity, gameOverShakeInterval);
             sprDurability.gameObject.SetActive(false);
             sprDamageDurability.gameObject.SetActive(false);
             animGameOver.gameObject.SetActive(true);
@@ -119,6 +129,7 @@ public class BalloonCollision : MonoBehaviour
         }
         else 
         {
+            cameraShake.ApplyShake(hitShakeIntensity, hitShakeInterval);
             BalloonStats.Durability -= damage;
 
             if (BalloonStats.DurabilityLevel > 0 && BalloonStats.Durability - 1 <= 0)
@@ -126,6 +137,10 @@ public class BalloonCollision : MonoBehaviour
             else 
             {
                 sprDurability.gameObject.SetActive(false);
+
+                if (BalloonStats.HasChicken)
+                    weatherChickenTransform.position += Vector3.down * 0.5f;
+
                 sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
             }
 

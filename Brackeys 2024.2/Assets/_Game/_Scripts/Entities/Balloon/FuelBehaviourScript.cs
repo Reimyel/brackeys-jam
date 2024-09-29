@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class FuelBehaviourScript : MonoBehaviour
 {
     #region Variáveis
+    // Unity Inspector:
     [SerializeField] private Slider chargeBar;
     [SerializeField] private float fillRate = 0.5f;
     [SerializeField] private float drainRate = 0.05f;
@@ -20,6 +21,13 @@ public class FuelBehaviourScript : MonoBehaviour
 
     [SerializeField] private BackgroundScroller cloudBackgroundScroller3;
     [SerializeField] private BackgroundScroller skyBackgroundScroller3;
+
+    [Header("Shake:")]
+    [SerializeField] private float fullShakeIntensity;
+    [SerializeField] private float fullShakeInterval;
+
+    [Header("Referências:")]
+    [SerializeField] private CameraShake cameraShake;
 
     private bool isFilling = false;
     private float fillDelayTimer = 0f;
@@ -40,6 +48,13 @@ public class FuelBehaviourScript : MonoBehaviour
     {
         if (!_canFill) return;
 
+        FuelInput();
+    }
+    #endregion
+
+    #region Funções Próprias
+    private void FuelInput() 
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isFilling = true;
@@ -65,10 +80,11 @@ public class FuelBehaviourScript : MonoBehaviour
             if (chargeBar.value >= chargeBar.maxValue)
             {
                 _balloonCollision.ReduceDurability(BalloonStats.Durability);
-                Debug.Log("MORREU");
+                //Debug.Log("MORREU");
                 chargeBar.value = chargeBar.maxValue;
                 isFilling = false;
                 _canFill = false;
+                cameraShake.ApplyShake(fullShakeIntensity, fullShakeInterval);
             }
         }
         else
@@ -89,7 +105,7 @@ public class FuelBehaviourScript : MonoBehaviour
         {
             isFilling = false;
             cloudBackgroundScroller1.ySpeed *= 1 / 1.5f;
-            skyBackgroundScroller1.ySpeed *= 1 / 1.25f ;
+            skyBackgroundScroller1.ySpeed *= 1 / 1.25f;
 
             cloudBackgroundScroller2.ySpeed *= 1 / 1.5f;
 
@@ -97,8 +113,5 @@ public class FuelBehaviourScript : MonoBehaviour
             skyBackgroundScroller3.ySpeed *= 1 / 1.25f;
         }
     }
-    #endregion
-
-    #region Funções Próprias
     #endregion
 }

@@ -49,7 +49,6 @@ public class GunScript : MonoBehaviour
         {
             gameObject.SetActive(true);
             ammoText.gameObject.SetActive(true);
-            Debug.Log("armagames");
         }
 
         _originalRotation = headHolder.transform.rotation;
@@ -57,35 +56,33 @@ public class GunScript : MonoBehaviour
 
     private void Update()
     {
-        ammoText.text = (ammoCount.ToString() + "/" + maxAmmo.ToString());
+        SetAmmoText();
 
-        _target = FindObjectOfType<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Mathf.Abs(FindObjectOfType<Camera>().transform.position.z)));
+        if (!BalloonStats.HasGun) return;
 
-        if (!BalloonStats.HasGun)
-        {
-            return;
-        }
-        else if (BalloonStats.HasGun && Input.GetMouseButtonDown(0) && _canShoot)
+        VerifyShootInput();
+    }
+    
+    private void SetAmmoText()  => ammoText.text = (ammoCount.ToString() + "/" + maxAmmo.ToString());
+
+    private void VerifyShootInput() 
+    {
+        if (Input.GetMouseButtonDown(0) && _canShoot)
         {
             cameraShake.ApplyShake(shootShakeIntensity, shootShakeInterval);
             Shoot();
         }
-        else if (BalloonStats.HasGun && Input.GetMouseButtonDown(0) && ammoCount == 0)
+        else if (Input.GetMouseButtonDown(0) && ammoCount == 0)
         {
             StartCoroutine(FlickerAmmoText(0.1f));
         }
-    }
-    
-    private void SetAmmoText() 
-    {
-    
     }
 
     private void Shoot()
     {
         if (ammoCount <= maxAmmo && ammoCount > 0)
         {
-            //ChangeHeadPosRot();
+            ChangeHeadPosRot();
 
             for (int i = 0; i < projectileCount; i++)
             {
@@ -148,6 +145,8 @@ public class GunScript : MonoBehaviour
 
     private void ChangeHeadPosRot()
     {
+        _target = FindObjectOfType<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Mathf.Abs(FindObjectOfType<Camera>().transform.position.z)));
+
         headHolder.transform.rotation = Quaternion.identity;
 
         if (_target.x > headHolder.transform.position.x)

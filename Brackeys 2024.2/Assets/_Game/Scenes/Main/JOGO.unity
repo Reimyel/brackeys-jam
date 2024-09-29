@@ -1324,6 +1324,10 @@ MonoBehaviour:
   leftSidePoint: {fileID: 2020730153}
   rightSidePoint: {fileID: 1166305565}
   resetCanMoveInterval: 2
+  hitShakeIntensity: 0
+  hitShakeInterval: 0
+  gameOverShakeIntensity: 0
+  gameOverShakeInterval: 0
   damageColor: {r: 0, g: 0, b: 0, a: 0}
   upgradeSceneName: Upgrade Scene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
@@ -1333,6 +1337,8 @@ MonoBehaviour:
   sprDamageDurability: {fileID: 0}
   animGameOver: {fileID: 0}
   spritesDamageDurability: []
+  cameraShake: {fileID: 0}
+  weatherChickenTransform: {fileID: 0}
   _IsGameOver: 0
 --- !u!60 &278357419
 PolygonCollider2D:
@@ -1761,6 +1767,9 @@ MonoBehaviour:
   cloudBackgroundScroller2: {fileID: 0}
   cloudBackgroundScroller3: {fileID: 0}
   skyBackgroundScroller3: {fileID: 0}
+  fullShakeIntensity: 0
+  fullShakeInterval: 0
+  cameraShake: {fileID: 0}
 --- !u!1 &281531469
 GameObject:
   m_ObjectHideFlags: 0
@@ -6192,6 +6201,10 @@ MonoBehaviour:
   leftSidePoint: {fileID: 2020730153}
   rightSidePoint: {fileID: 1166305565}
   resetCanMoveInterval: 2
+  hitShakeIntensity: 6
+  hitShakeInterval: 0.25
+  gameOverShakeIntensity: 8
+  gameOverShakeInterval: 0.25
   damageColor: {r: 0.9528302, g: 0.31011927, b: 0.31011927, a: 1}
   upgradeSceneName: Upgrade Scene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
@@ -6205,6 +6218,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 018c9f37ce83842439c22dae88ff8e66, type: 3}
   - {fileID: 21300000, guid: 95265934555a63e438caddf93f7c5610, type: 3}
   - {fileID: 21300000, guid: db3b6e577e855bf4982f40f34e78914d, type: 3}
+  cameraShake: {fileID: 1095302059}
+  weatherChickenTransform: {fileID: 1653286569}
   _IsGameOver: 0
 --- !u!4 &1470760018904737205
 Transform:
@@ -6792,6 +6807,9 @@ MonoBehaviour:
   cloudBackgroundScroller2: {fileID: 835183154}
   cloudBackgroundScroller3: {fileID: 1232989097}
   skyBackgroundScroller3: {fileID: 1006343121}
+  fullShakeIntensity: 8
+  fullShakeInterval: 0.25
+  cameraShake: {fileID: 1095302059}
 --- !u!50 &5523085678126978019
 Rigidbody2D:
   serializedVersion: 4
