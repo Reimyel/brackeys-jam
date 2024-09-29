@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BalloonMovement : MonoBehaviour
@@ -27,6 +28,7 @@ public class BalloonMovement : MonoBehaviour
     [SerializeField] private Transform chickenTransform;
     [SerializeField] private GameObject windAlert;
     [SerializeField] private Rigidbody2D rbBasket;
+    [SerializeField] private SpriteRenderer playerHeadSpr;
 
     // Referências:
     private Animator _chickenAnimator;
@@ -70,42 +72,19 @@ public class BalloonMovement : MonoBehaviour
     private void Update()
     {
 
-        dirX = Input.GetAxisRaw("Horizontal");
+        MoveInput();
+        FlipHead();
 
         if (!CanMove) return;
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            targetRotation = -tiltAmount;
-        }
-
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            targetRotation = tiltAmount;
-        }
-
-        else
-        {
-            targetRotation = 0f;
-        }
-        //Faz a girada
-        float currentRotation = Mathf.LerpAngle(transform.eulerAngles.z, targetRotation, Time.deltaTime * tiltSpeed);
-
-        transform.rotation = Quaternion.Euler(0, 0, currentRotation);
+        SetRotation();
     }
 
     private void FixedUpdate()
     {
         if (!CanMove) return;
-        /*Faz a subida
-        _rb.velocity = new Vector2(0, upSpeed);
-        */
-
-        var inputMove = dirX * BalloonStats.Speed;
-        var windMove = windDirection * windForce / BalloonStats.Stability;
-
-        transform.position += inputMove * Vector3.right * Time.fixedDeltaTime * 1.5f;
-        transform.position += windMove * Vector3.right * Time.fixedDeltaTime * 0.75f;
+        
+        ApplyMove();
     }
     #endregion
 
@@ -141,6 +120,42 @@ public class BalloonMovement : MonoBehaviour
         windAlert.gameObject.SetActive(false);
     }
     */
+
+    private void MoveInput() => dirX = Input.GetAxisRaw("Horizontal");
+
+    private void SetRotation() 
+    {
+        if (dirX > 0)
+        {
+            targetRotation = -tiltAmount;
+        }
+        else if (dirX < 0)
+        {
+            targetRotation = tiltAmount;
+        }
+        else
+        {
+            targetRotation = 0f;
+        }
+
+        //Faz a girada
+        float currentRotation = Mathf.LerpAngle(transform.eulerAngles.z, targetRotation, Time.deltaTime * tiltSpeed);
+
+        transform.rotation = Quaternion.Euler(0, 0, currentRotation);
+    }
+
+    private void ApplyMove() 
+    {
+        /*Faz a subida
+        _rb.velocity = new Vector2(0, upSpeed);
+        */
+
+        var inputMove = dirX * BalloonStats.Speed;
+        var windMove = windDirection * windForce / BalloonStats.Stability;
+
+        transform.position += inputMove * Vector3.right * Time.fixedDeltaTime * 1.5f;
+        transform.position += windMove * Vector3.right * Time.fixedDeltaTime * 0.75f;
+    }
 
     private void SetWindAlert()
     {
@@ -180,6 +195,14 @@ public class BalloonMovement : MonoBehaviour
             _chickenAnimator.Play("Chicken Turning Right Animation");       
         else
             _chickenAnimator.Play("Chicken Turning Left Animation");
+    }
+
+    private void FlipHead() 
+    {
+        if (dirX < 0)
+            playerHeadSpr.flipX = true;
+        else
+            playerHeadSpr.flipX = false;
     }
     #endregion
 }

@@ -22,11 +22,15 @@ public class GunScript : MonoBehaviour
     [SerializeField] private Sprite idleSprite;
     [SerializeField] private Sprite shootSprite;
 
+    [Header("Shake:")]
+    [SerializeField] private float shootShakeIntensity;
+    [SerializeField] private float shootShakeInterval;
+
     [Header("Referências:")]
     [SerializeField] private GameObject headHolder;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawnpoint;
-    [SerializeField] private Animator cameraAnimator;
+    [SerializeField] private CameraShake cameraShake;
 
     private Vector3 _target;
     private float _upTreshold = 10f;
@@ -63,8 +67,7 @@ public class GunScript : MonoBehaviour
         }
         else if (BalloonStats.HasGun && Input.GetMouseButtonDown(0) && _canShoot)
         {
-            cameraAnimator.SetTrigger("shake");
-            cameraAnimator.SetInteger("random", 3);
+            cameraShake.ApplyShake(shootShakeIntensity, shootShakeInterval);
             Shoot();
         }
         else if (BalloonStats.HasGun && Input.GetMouseButtonDown(0) && ammoCount == 0)
@@ -72,12 +75,17 @@ public class GunScript : MonoBehaviour
             StartCoroutine(FlickerAmmoText(0.1f));
         }
     }
+    
+    private void SetAmmoText() 
+    {
+    
+    }
 
-    void Shoot()
+    private void Shoot()
     {
         if (ammoCount <= maxAmmo && ammoCount > 0)
         {
-            ChangeHeadPosRot();
+            //ChangeHeadPosRot();
 
             for (int i = 0; i < projectileCount; i++)
             {
@@ -104,7 +112,7 @@ public class GunScript : MonoBehaviour
         }
     }
 
-    IEnumerator ChangeSprite()
+    private IEnumerator ChangeSprite()
     {
         playerHeadSpr.sprite = shootSprite;
 
@@ -114,20 +122,20 @@ public class GunScript : MonoBehaviour
         headHolder.transform.rotation = _originalRotation;
     }
 
-    IEnumerator ShootCooldown()
+    private IEnumerator ShootCooldown()
     {
         _canShoot = false;
         yield return new WaitForSeconds(fireRate);
         _canShoot = true;
     }
 
-    IEnumerator NoAmmoLeft()
+    private IEnumerator NoAmmoLeft()
     {
         yield return new WaitForSeconds(1f);
         _canShoot = false;
     }
 
-    IEnumerator FlickerAmmoText(float timeToFlicker)
+    private IEnumerator FlickerAmmoText(float timeToFlicker)
     {
         ammoText.enabled = false;
         yield return new WaitForSeconds(timeToFlicker);
