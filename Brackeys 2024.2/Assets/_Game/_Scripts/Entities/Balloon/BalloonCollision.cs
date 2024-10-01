@@ -90,12 +90,18 @@ public class BalloonCollision : MonoBehaviour
     #region Funções Próprias
     public void ReduceDurability(int damage) 
     {
-
-
         var newValue = BalloonStats.Durability - damage;
 
         if (newValue <= 0) 
         {
+            // Galinha Cair
+            if (BalloonStats.HasChicken) 
+            {
+                var chickenRb = weatherChickenTransform.gameObject.GetComponent<Rigidbody2D>();
+                chickenRb.simulated = true;
+                weatherChickenTransform.Rotate(Vector3.forward * 45f);
+            }
+
             cameraShake.ApplyShake(gameOverShakeIntensity, gameOverShakeInterval);
             sprDurability.gameObject.SetActive(false);
             sprDamageDurability.gameObject.SetActive(false);
@@ -139,7 +145,7 @@ public class BalloonCollision : MonoBehaviour
                 sprDurability.gameObject.SetActive(false);
 
                 if (BalloonStats.HasChicken)
-                    weatherChickenTransform.position += Vector3.down * 0.5f;
+                    weatherChickenTransform.localPosition = new Vector3(weatherChickenTransform.localPosition.x, 9.24f, weatherChickenTransform.localPosition.z);
 
                 sprDamageDurability.sprite = spritesDamageDurability[BalloonStats.DurabilityLevel];
             }
@@ -182,6 +188,7 @@ public class BalloonCollision : MonoBehaviour
         if (tag == "LeftSide") 
         {
             gameObject.transform.position = rightSidePoint.position;
+            
             //_rb.AddForce(Vector2.left * changeSideForce, ForceMode2D.Impulse);
         }
         else // RightSide

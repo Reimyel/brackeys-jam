@@ -6056,7 +6056,7 @@ PrefabInstance:
       objectReference: {fileID: 2095164029}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: InitialMoney
-      value: 500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxStability
