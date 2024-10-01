@@ -837,6 +837,7 @@ MonoBehaviour:
   chickenTransform: {fileID: 120786287}
   windAlert: {fileID: 263751706}
   rbBasket: {fileID: 0}
+  playerHeadSpr: {fileID: 0}
   CanMove: 1
 --- !u!212 &278357415
 SpriteRenderer:
@@ -955,6 +956,10 @@ MonoBehaviour:
   leftSidePoint: {fileID: 2020730153}
   rightSidePoint: {fileID: 1166305565}
   resetCanMoveInterval: 2
+  hitShakeIntensity: 0
+  hitShakeInterval: 0
+  gameOverShakeIntensity: 0
+  gameOverShakeInterval: 0
   damageColor: {r: 0, g: 0, b: 0, a: 0}
   upgradeSceneName: Upgrade Scene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
@@ -964,6 +969,8 @@ MonoBehaviour:
   sprDamageDurability: {fileID: 0}
   animGameOver: {fileID: 0}
   spritesDamageDurability: []
+  cameraShake: {fileID: 0}
+  weatherChickenTransform: {fileID: 0}
   _IsGameOver: 0
 --- !u!60 &278357419
 PolygonCollider2D:
@@ -1387,6 +1394,11 @@ MonoBehaviour:
   fillRate: 0.5
   drainRate: 0.5
   delayBeforeDraining: 0.1
+  cloudBackgroundScroller1: {fileID: 0}
+  skyBackgroundScroller1: {fileID: 0}
+  cloudBackgroundScroller2: {fileID: 0}
+  cloudBackgroundScroller3: {fileID: 0}
+  skyBackgroundScroller3: {fileID: 0}
 --- !u!1 &281531469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4769,7 +4781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0838562dcd3037f4c8940683555b39ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHeadSpr: {fileID: 0}
   shootSprite: {fileID: 0}
   playerHeadTransform: {fileID: 1771145684}
   projectileCount: 3
@@ -4919,7 +4930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0838562dcd3037f4c8940683555b39ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHeadSpr: {fileID: 0}
   shootSprite: {fileID: 0}
   playerHeadTransform: {fileID: 0}
   projectileCount: 3
@@ -5882,6 +5892,7 @@ MonoBehaviour:
   chickenTransform: {fileID: 1653286569}
   windAlert: {fileID: 263751706}
   rbBasket: {fileID: 6850665145861439448}
+  playerHeadSpr: {fileID: 0}
   CanMove: 1
 --- !u!232 &518109737957509405
 DistanceJoint2D:
@@ -5955,6 +5966,10 @@ MonoBehaviour:
   leftSidePoint: {fileID: 2020730153}
   rightSidePoint: {fileID: 1166305565}
   resetCanMoveInterval: 2
+  hitShakeIntensity: 0
+  hitShakeInterval: 0
+  gameOverShakeIntensity: 0
+  gameOverShakeInterval: 0
   damageColor: {r: 0.9528302, g: 0.31011927, b: 0.31011927, a: 1}
   upgradeSceneName: Upgrade Scene
   transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
@@ -5968,6 +5983,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 018c9f37ce83842439c22dae88ff8e66, type: 3}
   - {fileID: 21300000, guid: 95265934555a63e438caddf93f7c5610, type: 3}
   - {fileID: 21300000, guid: db3b6e577e855bf4982f40f34e78914d, type: 3}
+  cameraShake: {fileID: 0}
+  weatherChickenTransform: {fileID: 0}
   _IsGameOver: 0
 --- !u!4 &1470760018904737205
 Transform:
@@ -6566,6 +6583,11 @@ MonoBehaviour:
   fillRate: 0.5
   drainRate: 0.5
   delayBeforeDraining: 0.1
+  cloudBackgroundScroller1: {fileID: 0}
+  skyBackgroundScroller1: {fileID: 0}
+  cloudBackgroundScroller2: {fileID: 0}
+  cloudBackgroundScroller3: {fileID: 0}
+  skyBackgroundScroller3: {fileID: 0}
 --- !u!50 &5523085678126978019
 Rigidbody2D:
   serializedVersion: 4
@@ -6605,7 +6627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0838562dcd3037f4c8940683555b39ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHeadSpr: {fileID: 8427757672316606746}
   shootSprite: {fileID: 21300000, guid: 15869f99252397f4ba9b59ce218af119, type: 3}
   playerHeadTransform: {fileID: 7472975933893153909}
   projectileCount: 3
