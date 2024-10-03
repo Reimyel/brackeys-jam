@@ -645,12 +645,8 @@ MonoBehaviour:
   minTime: 2
   maxTime: 5
   moneyCount: 3
-  moneyObject: {fileID: 4878332863736183165, guid: 4c7b8a847afe69045912ed8818c0cbac, type: 3}
+  moneyObject: {fileID: 4878332863736183165, guid: 0923118c1982ab741916e4837d8f7f87, type: 3}
   distanceBetweenMoney: 1.5
-  moneyAnimations:
-  - {fileID: 7400000, guid: 84c8d408c3d8c334099243e0a98c7f8b, type: 2}
-  - {fileID: 7400000, guid: dc1cb051ad7ee764ea25488625e0698e, type: 2}
-  moneyAnimator: {fileID: 8785496292837031875, guid: 4c7b8a847afe69045912ed8818c0cbac, type: 3}
 --- !u!1 &155316434
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,22 +10,14 @@ public class MoneySpawnManager : MonoBehaviour
     [SerializeField] private int moneyCount = 3;
     [SerializeField] private GameObject moneyObject;
     [SerializeField] private float distanceBetweenMoney = 1.5f;
-    [SerializeField] public AnimationClip[] moneyAnimations;
-    [SerializeField] private Animator moneyAnimator;
     private ObstacleManagerScript _obstacleManagerScript;
     private float _nextSpawnTime;
     #endregion
 
     #region Funções Unity
-    private void Awake()
-    {
-        _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
-    }
+    private void Awake() => _obstacleManagerScript = FindObjectOfType<ObstacleManagerScript>();
 
-    private void Start()
-    {
-        DefineNextSpawn();
-    }
+    private void Start() => DefineNextSpawn();
 
     private void Update()
     {
@@ -37,22 +29,21 @@ public class MoneySpawnManager : MonoBehaviour
     }
     #endregion
 
-    void DefineNextSpawn()
-    {
-        _nextSpawnTime = Time.time + Random.Range(minTime, maxTime);
-    }
 
     #region Funções Próprias
-    void SpawnMoney()
+    private void DefineNextSpawn() => _nextSpawnTime = Time.time + Random.Range(minTime, maxTime);
+
+    private void SpawnMoney()
     {
         int randomIndex = Random.Range(0, _obstacleManagerScript.UspawnPoint.Length);
         Vector3 spawnPosition = _obstacleManagerScript.UspawnPoint[randomIndex].position; //posição aleatória dos spawnpoints
 
         for (int i = 0; i < moneyCount; i++)
         {
-            ChangeMoneyAnimationVariation();
             Vector3 offset = new Vector3(0, i * distanceBetweenMoney, 0);
             GameObject spawnedMoney = Instantiate(moneyObject, spawnPosition + offset, moneyObject.transform.rotation);
+
+            ChangeMoneyAnimationVariation(spawnedMoney.GetComponent<Animator>());
 
             Collider2D moneyCollider = spawnedMoney.GetComponent<CircleCollider2D>();
             if (moneyCollider != null)
@@ -69,10 +60,10 @@ public class MoneySpawnManager : MonoBehaviour
         collider.enabled = true;
     }
 
-    void ChangeMoneyAnimationVariation()
+    private void ChangeMoneyAnimationVariation(Animator moneyAnim)
     {
-        int randomIndex = Random.Range(0, moneyAnimations.Length);
-        moneyAnimator.Play(moneyAnimations[randomIndex].name);
+        int randomIndex = Random.Range(0, 2) + 1;
+        moneyAnim.Play("Money " + randomIndex + " Flip Animation");
     }
     #endregion
 }
