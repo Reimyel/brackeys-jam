@@ -61,7 +61,7 @@ public class TimerManager : MonoBehaviour
         if (BalloonStats.SpeedLevel < 1) 
             timeCounter += time * BalloonStats.Speed * 0.35f;
         else
-            timeCounter += time * BalloonStats.Speed * 0.15f;
+            timeCounter += time * BalloonStats.Speed * 0.25f;
 
         var txt = (int)timeCounter;
         timerText.text = txt + "ft";

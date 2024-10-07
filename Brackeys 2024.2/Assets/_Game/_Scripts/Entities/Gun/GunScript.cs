@@ -29,7 +29,9 @@ public class GunScript : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] private GameObject headHolder;
     [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private GameObject capsulePrefab;
     [SerializeField] private Transform projectileSpawnpoint;
+    [SerializeField] private Transform capsuleSpawnPoint;
     [SerializeField] private CameraShake cameraShake;
 
     private Vector3 _target;
@@ -98,6 +100,8 @@ public class GunScript : MonoBehaviour
             StartCoroutine(ShootCooldown());
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Shoot");
+
+            Instantiate(capsulePrefab, capsuleSpawnPoint.position, Quaternion.identity);
 
             ammoCount--;
         }

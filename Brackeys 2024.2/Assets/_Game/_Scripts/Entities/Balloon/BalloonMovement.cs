@@ -150,7 +150,7 @@ public class BalloonMovement : MonoBehaviour
         _rb.velocity = new Vector2(0, upSpeed);
         */
 
-        var inputMove = dirX * BalloonStats.Speed;
+        var inputMove = dirX * BalloonStats.Stability;
         var windMove = windDirection * windForce / BalloonStats.Stability;
 
         transform.position += inputMove * Vector3.right * Time.fixedDeltaTime * 1.5f;

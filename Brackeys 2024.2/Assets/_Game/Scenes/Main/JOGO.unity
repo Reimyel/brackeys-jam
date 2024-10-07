@@ -1160,6 +1160,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &277649650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277649651}
+  m_Layer: 6
+  m_Name: CapsuleSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277649651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277649650}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.173, y: 0.10399983, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 674931417}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278357413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: InitialMoney
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4179946512755133414, guid: d2eddc08c8ba46d4f89a7bdedab7f80e, type: 3}
       propertyPath: MaxStability
@@ -2633,6 +2664,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 439341498}
+  - {fileID: 277649651}
   m_Father: {fileID: 155316435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &674931418
@@ -5631,7 +5663,9 @@ MonoBehaviour:
   shootShakeInterval: 0.25
   headHolder: {fileID: 155316434}
   projectilePrefab: {fileID: 1888065499314421501, guid: befee28643d9d6347be86521326e6685, type: 3}
+  capsulePrefab: {fileID: 7697430557494197176, guid: e6dd0109d755f014ca2084072c90220f, type: 3}
   projectileSpawnpoint: {fileID: 439341498}
+  capsuleSpawnPoint: {fileID: 277649651}
   cameraShake: {fileID: 926676024}
 --- !u!1 &1973767268
 GameObject:
