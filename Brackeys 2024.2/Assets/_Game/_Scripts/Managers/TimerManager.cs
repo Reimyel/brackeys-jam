@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class TimerManager : MonoBehaviour
 {
-    #region Variáveis
-    [Header("Configurações:")]
+    #region VariÃ¡veis
+    [Header("ConfiguraÃ§Ãµes:")]
     [SerializeField] private float timeToStage2;
     [SerializeField] private float timeToStage3;
     [SerializeField] private float timeToEnd;
@@ -17,12 +17,12 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private string musicStage3;
     [SerializeField] private float endForce;
 
-    [Header("Transição:")]
+    [Header("TransiÃ§Ã£o:")]
     [SerializeField] private string endSceneName;
     [SerializeField] private TransitionSettings transitionSettings;
     [SerializeField] private float loadTime;
 
-    [Header("Referências:")]
+    [Header("ReferÃªncias:")]
     [SerializeField] private Rigidbody2D rbBaloon;
     [SerializeField] private PolygonCollider2D polygonColliderBalloon;
     [SerializeField] private EdgeCollider2D edgeColliderBalloon;
@@ -44,7 +44,7 @@ public class TimerManager : MonoBehaviour
     private GameObject _objMusic3;
     #endregion
 
-    #region Funções Unity
+    #region FunÃ§Ãµes Unity
     private void Start()
     {
         parallaxParent1.SetActive(true);
@@ -64,7 +64,7 @@ public class TimerManager : MonoBehaviour
             timeCounter += time * BalloonStats.Speed * 0.25f;
 
         var txt = (int)timeCounter;
-        timerText.text = txt + "ft";
+        timerText.text = txt + " pÃ©s";
 
         float tolerance = 1f;
 
@@ -92,12 +92,12 @@ public class TimerManager : MonoBehaviour
 
     #endregion
 
-    #region Funções Próprias
+    #region FunÃ§Ãµes PrÃ³prias
     void Stage2Begin()
     {
         bgTransition.SetActive(true);
         Debug.Log("FASE 2");
-        //lógica de transição de fases
+        //lï¿½gica de transiï¿½ï¿½o de fases
 
         parallaxParent1.SetActive(false);
         parallaxParent2.SetActive(true);
@@ -116,7 +116,7 @@ public class TimerManager : MonoBehaviour
     {
         bgTransition.SetActive(true);
         Debug.Log("FASE 3");
-        //lógica de transição de fases
+        //lï¿½gica de transiï¿½ï¿½o de fases
         parallaxParent1.SetActive(false);
         parallaxParent2.SetActive(false);
         parallaxParent3.SetActive(true);
@@ -134,7 +134,7 @@ public class TimerManager : MonoBehaviour
     void EndGame() 
     {
         Debug.Log("FIM");
-        // Fazer o balão subir
+        // Fazer o balï¿½o subir
         polygonColliderBalloon.enabled = false;
         edgeColliderBalloon.enabled = false;
 

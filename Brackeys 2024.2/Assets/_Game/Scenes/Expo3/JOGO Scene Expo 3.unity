@@ -4738,10 +4738,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6270815270735003423, guid: 751c6cef197f25e4f8248203eb6214d7, type: 3}
-      propertyPath: crosshairCursor
-      value: 
-      objectReference: {fileID: 2800000, guid: 94aa00f4798b45347b48215e6e43db59, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5635,7 +5631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0ft
+  m_text: "0 p\xE9s"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}

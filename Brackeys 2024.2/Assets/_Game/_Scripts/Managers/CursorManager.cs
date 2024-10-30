@@ -5,22 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class CursorManager : MonoBehaviour
 {
-    #region Variáveis
-    [Header("Referências:")]
+    #region VariÃ¡veis
+    [Header("ReferÃªncias:")]
     [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private Texture2D clickCursor;
     [SerializeField] private Texture2D crosshairCursor;
     #endregion
 
-    #region Funções Unity
+    #region Funï¿½ï¿½es Unity
     private void Start()
     {
-        if (SceneManager.GetSceneByName("JOGO").isLoaded && BalloonStats.HasGun)
+        if (SceneManager.GetSceneByName("JOGO Scene Expo 3").isLoaded && BalloonStats.HasGun)
         {
             ShowCrosshair();
             SetCrosshair();
         }
-        else if (SceneManager.GetSceneByName("JOGO").isLoaded && !BalloonStats.HasGun)
+        else if (SceneManager.GetSceneByName("JOGO Scene Expo 3").isLoaded && !BalloonStats.HasGun)
         {
             HideCrosshair();
         }
@@ -33,7 +33,7 @@ public class CursorManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetSceneByName("JOGO").isLoaded && BalloonStats.HasGun)
+        if (SceneManager.GetSceneByName("JOGO Scene Expo 3").isLoaded && BalloonStats.HasGun)
         {
             ShowCrosshair();
 
@@ -43,7 +43,7 @@ public class CursorManager : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
                 SetCrosshair();
         }
-        else if (SceneManager.GetSceneByName("JOGO").isLoaded && !BalloonStats.HasGun)
+        else if (SceneManager.GetSceneByName("JOGO Scene Expo 3").isLoaded && !BalloonStats.HasGun)
         {
             HideCrosshair();
         }
@@ -60,7 +60,7 @@ public class CursorManager : MonoBehaviour
     }
     #endregion
 
-    #region Funções Próprias
+    #region FunÃ§Ãµes PrÃ³prias
     private void SetDefault() => Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 
     private void SetClick() => Cursor.SetCursor(clickCursor, Vector2.zero, CursorMode.Auto);

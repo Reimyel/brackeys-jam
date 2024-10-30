@@ -8,7 +8,7 @@ public class BalloonStats : MonoBehaviour
     #region Variáveis
     public static BalloonStats Instance;
 
-    [Header("Configura��es:")]
+    [Header("Configurações:")]
     public int InitialMoney;
     public float MinSpeed;
     public float MaxSpeed;
