@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stability
+  m_text: Estabilidade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
@@ -925,8 +925,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "every balloon needs a good basket to ensure maximum safety! upgrade stability
-    to control better.\r"
+  m_text: "\rtodo bal\xE3o precisa de uma boa cesta para garantir a m\xE1xima seguran\xE7a!
+    melhore a estabilidade para controlar melhor."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
   m_sharedMaterial: {fileID: 1272970988828257294, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
@@ -2608,10 +2608,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'a weak envelope won''t get you far! upgrade durability to increase your
-    hit points.
-
-'
+  m_text: "\rum envelope fraco n\xE3o o levar\xE1 longe! melhore a durabilidade para
+    aumentar seus pontos de vida."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
   m_sharedMaterial: {fileID: 1272970988828257294, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
@@ -3015,8 +3013,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15dd06a84a37fe74da7053dc7d1c3870, type: 2}
-  m_sharedMaterial: {fileID: -2647719371205748776, guid: 15dd06a84a37fe74da7053dc7d1c3870, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
+  m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3040,8 +3038,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3147,7 +3145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gun
+  m_text: Arma
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
@@ -3551,8 +3549,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: your pop's long gone, but he left you his most valuable asset! use it as
-    a last resort to stop those nasty cows from hittin' you!
+  m_text: "seu pai se foi h\xE1 muito tempo, mas ele deixou para voc\xEA seu bem
+    mais valioso! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
   m_sharedMaterial: {fileID: 1272970988828257294, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
@@ -4020,10 +4018,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'feeling too slow? your burner may need better fuel! Upgrade velocity to
-    go faster.
-
-'
+  m_text: "\rsentindo-se muito lento? voc\xEA pode precisar de um combust\xEDvel
+    melhor! melhore a velocidade para ir mais r\xE1pido."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
   m_sharedMaterial: {fileID: 1272970988828257294, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
@@ -4741,7 +4737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Durability
+  m_text: Durabilidade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
@@ -4875,10 +4871,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'your good ol'' back scratcher can serve a bigger purpose! repair it to
-    know the way the wind blows.
-
-'
+  m_text: "seu bom e velho co\xE7ador de costas pode servir a um prop\xF3sito maior!
+    conserte-o para saber onde o vento sopra."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
   m_sharedMaterial: {fileID: 1272970988828257294, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
@@ -5570,7 +5564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Velocity
+  m_text: Velocidade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
@@ -5744,7 +5738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -78.8, y: 44.4}
+  m_AnchoredPosition: {x: -81.7, y: 44.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2147343409
@@ -5767,7 +5761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chicken
+  m_text: Galinha
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
@@ -6310,7 +6304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[0]
-      value: Rags
+      value: Trapos
       objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[1]
@@ -6318,7 +6312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[2]
-      value: Polyester
+      value: "Poli\xE9ster"
       objectReference: {fileID: 0}
     - target: {fileID: 2945584623761581581, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[3]
@@ -6554,19 +6548,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[0]
-      value: Wood
+      value: Madeira
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[1]
-      value: Wicker
+      value: Vime
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[2]
-      value: Aluminum
+      value: "Alum\xEDnio"
       objectReference: {fileID: 0}
     - target: {fileID: 7240525023590865817, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[3]
-      value: Carbon Fiber
+      value: Fibra de Carbono
       objectReference: {fileID: 0}
     - target: {fileID: 7717221937995043177, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: gun
@@ -6682,19 +6676,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[0]
-      value: Gasoline
+      value: Gasolina
       objectReference: {fileID: 0}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[1]
-      value: Methane
+      value: Metano
       objectReference: {fileID: 0}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[2]
-      value: Alcohol
+      value: "\xC1lcool"
       objectReference: {fileID: 0}
     - target: {fileID: 9141368846065451402, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: txtUpgrades.Array.data[3]
-      value: Propane
+      value: Propano
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

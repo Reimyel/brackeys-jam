@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class UpgradesStatus : MonoBehaviour
 {
-    #region Variáveis
-    [Header("Configurações:")]
+    #region VariÃ¡veis
+    [Header("ConfiguraÃ§Ãµes:")]
 
     [Header("Atributo:")]
     [SerializeField] private TargetStats stats;
 
-    [Header("Preço:")]
+    [Header("PreÃ§o:")]
     [SerializeField] private int baseCost;
     [SerializeField] private int baseCostModifier;
 
@@ -20,13 +20,13 @@ public class UpgradesStatus : MonoBehaviour
     [SerializeField] private Sprite activeSprite;
     [SerializeField] private Sprite disactiveSprite;
 
-    [Header("Referências:")]
+    [Header("ReferÃªncias:")]
     [SerializeField] private Image[] levelImages;
     [SerializeField] private GameObject btnMaximized;
     [SerializeField] private GameObject chicken;
     [SerializeField] private GameObject gun;
 
-    [Header("Descrição:")]
+    [Header("DescriÃ§Ã£o:")]
     [SerializeField] private TextMeshProUGUI txtCurrentUpgrade;
     [SerializeField] private TextMeshProUGUI txtNextUpgrade;
     [SerializeField] private TextMeshProUGUI txtNextCost;
@@ -45,7 +45,7 @@ public class UpgradesStatus : MonoBehaviour
     }
     #endregion
 
-    #region Funções Unity
+    #region FunÃ§Ãµes Unity
     private void Start()
     {
         if (IsMaximized())
@@ -75,7 +75,7 @@ public class UpgradesStatus : MonoBehaviour
     }
     #endregion
 
-    #region Funções Próprias
+    #region FunÃ§Ãµes PrÃ³prias
     private void SelectStats()
     {
         switch (stats) 
@@ -284,24 +284,24 @@ public class UpgradesStatus : MonoBehaviour
             switch (stats)
             {
                 case TargetStats.Speed:
-                    txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.SpeedLevel];
+                    txtCurrentUpgrade.text = "Atual: \n" + txtUpgrades[BalloonStats.SpeedLevel];
 
                     if (BalloonStats.SpeedLevel < 3)
-                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.SpeedLevel + 1];
+                        txtNextUpgrade.text = "PrÃ³ximo: \n" + txtUpgrades[BalloonStats.SpeedLevel + 1];
                     break;
 
                 case TargetStats.Stability:
-                    txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.StabilityLevel];
+                    txtCurrentUpgrade.text = "Atual: \n" + txtUpgrades[BalloonStats.StabilityLevel];
                     
                     if (BalloonStats.StabilityLevel < 3)
-                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.StabilityLevel + 1];
+                        txtNextUpgrade.text = "PrÃ³ximo: \n" + txtUpgrades[BalloonStats.StabilityLevel + 1];
                     break;
 
                 case TargetStats.Durability:
-                    txtCurrentUpgrade.text = "Current: \n" + txtUpgrades[BalloonStats.DurabilityLevel];
+                    txtCurrentUpgrade.text = "Atual: \n" + txtUpgrades[BalloonStats.DurabilityLevel];
 
                     if (BalloonStats.DurabilityLevel < 3)
-                        txtNextUpgrade.text = "Next: \n" + txtUpgrades[BalloonStats.DurabilityLevel + 1];
+                        txtNextUpgrade.text = "PrÃ³ximo: \n" + txtUpgrades[BalloonStats.DurabilityLevel + 1];
                     break;
             }
         }
