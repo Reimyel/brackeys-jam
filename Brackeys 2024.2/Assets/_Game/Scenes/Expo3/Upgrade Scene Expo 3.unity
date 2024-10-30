@@ -3781,10 +3781,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CONTROLS
+  m_text: Controles
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bdfd46cf1fda80c4b841046a105430b1, type: 2}
-  m_sharedMaterial: {fileID: 8017190678023211332, guid: bdfd46cf1fda80c4b841046a105430b1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
+  m_sharedMaterial: {fileID: -344138685348231549, guid: 91ee06834c1b96b4fb46577c3ca659e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3808,8 +3808,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5413,17 +5413,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'AD | <- ->
-
-    Move
-
-
-    SPACE
-
-    FUEL'
+  m_text: "AD ou <- ->\nMover\n\nESPACO\nCombust\xEDvel"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15dd06a84a37fe74da7053dc7d1c3870, type: 2}
-  m_sharedMaterial: {fileID: -2647719371205748776, guid: 15dd06a84a37fe74da7053dc7d1c3870, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
+  m_sharedMaterial: {fileID: 1272970988828257294, guid: 92021482aa7af764f9937ff4c5ca202e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5447,8 +5440,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

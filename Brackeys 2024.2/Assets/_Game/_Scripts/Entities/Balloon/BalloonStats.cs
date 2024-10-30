@@ -110,6 +110,7 @@ public class BalloonStats : MonoBehaviour
 
     public void EnableGun()
     {
+        DisplayTutorial.BoughtGun = true;
         gunObject.SetActive(true);
         HasGun = true;
     }

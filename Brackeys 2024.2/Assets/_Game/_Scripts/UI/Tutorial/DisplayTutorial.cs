@@ -5,9 +5,8 @@ using UnityEngine;
 public class DisplayTutorial : MonoBehaviour
 {
     #region Variáveis
-    [Header("Configurações:")]
-    
-    [Header("Referências:")]
+    [Header("Configurações:")] [Header("Referências:")] 
+    [SerializeField] private GameObject imgTutorialBoost;
     [SerializeField] private GameObject imgTutorialMovement;
     [SerializeField] private GameObject imgTutorialGun;
     
@@ -18,7 +17,7 @@ public class DisplayTutorial : MonoBehaviour
     #region  Funções Unity
     private void Start()
     {
-        VerifyTutorialMovement();    
+        VerifyTutorialMovement();   
         VerifyTutorialGun();
     }
     #endregion
@@ -29,10 +28,11 @@ public class DisplayTutorial : MonoBehaviour
         if (IsFirstRun)
         {
             imgTutorialMovement.SetActive(true);
+            imgTutorialBoost.SetActive(true);
             IsFirstRun = false;
         }
     }
-
+    
     private void VerifyTutorialGun()
     {
         if (BoughtGun)

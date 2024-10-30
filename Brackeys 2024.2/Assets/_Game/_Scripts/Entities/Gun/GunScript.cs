@@ -6,10 +6,10 @@ using TMPro;
 
 public class GunScript : MonoBehaviour
 {
-    #region Variáveis
+    #region VariÃ¡veis
     [Header("Stats:")]
-    [SerializeField] private int ammoCount;
-    [SerializeField] private int maxAmmo;
+    public int AmmoCount;
+    public int MaxAmmo;
 
     [SerializeField] private float projectileSpeed = 60f;
     [SerializeField] float fireRate = 1f;
@@ -26,7 +26,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] private float shootShakeIntensity;
     [SerializeField] private float shootShakeInterval;
 
-    [Header("Referências:")]
+    [Header("ReferÃªncias:")]
     [SerializeField] private GameObject headHolder;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject capsulePrefab;
@@ -65,7 +65,7 @@ public class GunScript : MonoBehaviour
         VerifyShootInput();
     }
     
-    private void SetAmmoText()  => ammoText.text = (ammoCount.ToString() + "/" + maxAmmo.ToString());
+    private void SetAmmoText()  => ammoText.text = (AmmoCount.ToString() + "/" + MaxAmmo.ToString());
 
     private void VerifyShootInput() 
     {
@@ -74,7 +74,7 @@ public class GunScript : MonoBehaviour
             cameraShake.ApplyShake(shootShakeIntensity, shootShakeInterval);
             Shoot();
         }
-        else if (Input.GetMouseButtonDown(0) && ammoCount == 0)
+        else if (Input.GetMouseButtonDown(0) && AmmoCount == 0)
         {
             StartCoroutine(FlickerAmmoText(0.1f));
         }
@@ -82,7 +82,7 @@ public class GunScript : MonoBehaviour
 
     private void Shoot()
     {
-        if (ammoCount <= maxAmmo && ammoCount > 0)
+        if (AmmoCount <= MaxAmmo && AmmoCount > 0)
         {
             ChangeHeadPosRot();
 
@@ -103,10 +103,10 @@ public class GunScript : MonoBehaviour
 
             Instantiate(capsulePrefab, capsuleSpawnPoint.position, Quaternion.identity);
 
-            ammoCount--;
+            AmmoCount--;
         }
 
-        if (ammoCount == 0)
+        if (AmmoCount == 0)
         {
             ammoText.color = Color.red;
             StartCoroutine(NoAmmoLeft());

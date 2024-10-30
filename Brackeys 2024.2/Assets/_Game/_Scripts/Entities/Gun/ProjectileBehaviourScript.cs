@@ -1,21 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileBehaviourScript : MonoBehaviour
 {
+    #region Variáveis
     [SerializeField] private Color fadeColor;
     [SerializeField] private FadeVFX fadePrefab;
+    #endregion
 
-    private void Start()
-    {
-        StartCoroutine(ApplyEffect(0.01f));
-    }
+    #region Funções Unity
+    private void Start() => StartCoroutine(ApplyEffect(0.01f));
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == 11)
         {
+            // Chance de recuperar uma munição
+            if (Random.Range(0, 100) <= 25)
+            {
+                var gunScript = FindObjectOfType<GunScript>();
+                
+                if (gunScript.AmmoCount < gunScript.MaxAmmo)
+                    gunScript.AmmoCount++;
+            }
+            
+            // Destruindo Alvo e Projétil
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
@@ -25,8 +34,10 @@ public class ProjectileBehaviourScript : MonoBehaviour
     {
         StartCoroutine(DestroyProjectile(3f));
     }
+    #endregion
 
-    IEnumerator DestroyProjectile(float time)
+    #region Funções Próprias
+    private IEnumerator DestroyProjectile(float time)
     {
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
@@ -43,9 +54,10 @@ public class ProjectileBehaviourScript : MonoBehaviour
         effectSpr.color = fadeColor;
         effectSpr.gameObject.transform.localScale = gameObject.transform.localScale;
 
-        // Colocando a refer�ncia para rota��o
+        // Colocando a refer�ncia para rota��o
         effect.GetComponent<FadeVFX>().RotationParent = gameObject.transform;
 
         StartCoroutine(ApplyEffect(0.01f));
     }
+    #endregion
 }
