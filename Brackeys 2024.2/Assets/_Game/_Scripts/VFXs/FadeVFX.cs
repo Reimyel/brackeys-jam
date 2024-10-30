@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class FadeVFX : MonoBehaviour
 {
-    #region Variáveis
-    [Header("Configurações:")]
+    #region Variï¿½veis
+    [Header("ConfiguraÃ§Ãµes:")]
     [SerializeField] private FadeType type;
     [SerializeField] private float speed;
     [SerializeField] private bool isUI;
+    [SerializeField] private bool destroyAfterFadeOut = true;
     
-    // Referências:
+    // ReferÃªncias:
     [HideInInspector] public Transform RotationParent;
 
     private enum FadeType
@@ -25,7 +26,7 @@ public class FadeVFX : MonoBehaviour
     private Image _img;
     #endregion
 
-    #region Funções Unity
+    #region Funï¿½ï¿½es Unity
     private void Start()
     {
         if (isUI) _img = GetComponent<Image>();
@@ -38,14 +39,13 @@ public class FadeVFX : MonoBehaviour
     private void Update()
     {
         ApplyFade();
-
-
+        
         if (RotationParent != null)
             gameObject.transform.rotation = RotationParent.rotation;
     }
     #endregion
 
-    #region Funções Próprias
+    #region FunÃ§Ãµes PrÃ³prias
     private void ApplyFade()
     {
         Color color;
@@ -63,7 +63,7 @@ public class FadeVFX : MonoBehaviour
                 if (isUI) _img.color = color;
                 else _spr.color = color;
             }
-            else
+            else if (destroyAfterFadeOut)
             {
                 Destroy(gameObject);
             }

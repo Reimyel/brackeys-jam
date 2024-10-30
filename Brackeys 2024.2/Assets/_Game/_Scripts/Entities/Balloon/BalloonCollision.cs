@@ -8,8 +8,8 @@ using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class BalloonCollision : MonoBehaviour
 {
-    #region Variáveis
-    [Header("Configurações:")]
+    #region VariÃ¡veis
+    [Header("ConfiguraÃ§Ãµes:")]
     [SerializeField] private float gameOverInterval;
 
     [Header("Layers:")]
@@ -29,13 +29,13 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private float gameOverShakeIntensity;
     [SerializeField] private float gameOverShakeInterval;
 
-    [Header("Transição Game Over:")]
+    [Header("TransiÃ§Ã£o Game Over:")]
     [SerializeField] private Color damageColor;
     [SerializeField] private string upgradeSceneName;
     [SerializeField] private TransitionSettings transitionSettings;
     [SerializeField] SpriteRenderer _spriteRenderer;
 
-    [Header("Referências:")]
+    [Header("ReferÃªncias:")]
     [SerializeField] private Rigidbody2D rbBasket;
     [SerializeField] private SpriteRenderer sprDurability;
     [SerializeField] private SpriteRenderer sprDamageDurability;
@@ -43,7 +43,8 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private Sprite[] spritesDamageDurability;
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private Transform weatherChickenTransform;
-
+    [SerializeField] private GameObject movementTrail;
+    
     // Componentes:
     private Rigidbody2D _rb;
 
@@ -56,7 +57,7 @@ public class BalloonCollision : MonoBehaviour
     private bool _startToFall = false;
     #endregion
 
-    #region Funções Unity
+    #region FunÃ§Ãµes Unity
     private void Start()
     {
         InitialDurability = BalloonStats.Durability;
@@ -72,7 +73,7 @@ public class BalloonCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col) 
     {
-        // Não detecctar mais nada, caso estiver no Game Over
+        // Nï¿½o detecctar mais nada, caso estiver no Game Over
         if (_IsGameOver) return;
 
         if (col.gameObject.layer == layerObstacle)
@@ -87,13 +88,16 @@ public class BalloonCollision : MonoBehaviour
     }
     #endregion
 
-    #region Funções Próprias
+    #region FunÃ§Ãµes PrÃ³prias
     public void ReduceDurability(int damage) 
     {
         var newValue = BalloonStats.Durability - damage;
 
         if (newValue <= 0) 
         {
+            // Parar efeito de rastro de movimentaÃ§Ã£o
+            movementTrail.SetActive(false);
+            
             // Galinha Cair
             if (BalloonStats.HasChicken) 
             {
@@ -111,26 +115,26 @@ public class BalloonCollision : MonoBehaviour
             // GameOver
             _IsGameOver = true;
             
-            // Balão Parar
+            // Balï¿½o Parar
             _balloonMovement.enabled = false;
             GetComponent<FuelBehaviourScript>().enabled = false;
 
-            // Parar Música
+            // Parar MÃºsica
             Destroy(GameObject.FindGameObjectWithTag("Music"));
 
-            // Efeito Sonoro do Balão Murchando
+            // Efeito Sonoro do Balï¿½o Murchando
             if (AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX("Death");
 
 
-            // Balão Cair
+            // Balï¿½o Cair
             Invoke("UnfreezeY", 2.75f);
 
 
             // Mais SFXs 
             Invoke("StartToScream", 2.25f);
 
-            // Cair e Começa GameOver
+            // Cair e Comeï¿½a GameOver
             Invoke("StartToFall", 2.75f);
         }
         else 
@@ -219,9 +223,6 @@ public class BalloonCollision : MonoBehaviour
         ExitGameOver();
     }
 
-    private void ExitGameOver()
-    {
-        TransitionManager.Instance().Transition(upgradeSceneName, transitionSettings, gameOverInterval);
-    }
+    private void ExitGameOver() => TransitionManager.Instance().Transition(upgradeSceneName, transitionSettings, gameOverInterval);
     #endregion
 }

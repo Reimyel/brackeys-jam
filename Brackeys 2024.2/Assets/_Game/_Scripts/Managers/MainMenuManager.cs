@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
-    #region Variables
+    #region Variáveis
     public static MainMenuManager Instance;
 
     public static GameObject MainMenu, OptionsMenu, ControlsMenu, CreditsMenu;
     #endregion
 
-    #region Unity
+    #region Funções Unity
     private void Awake()
     {
         Instance = this;
@@ -18,7 +18,7 @@ public class MainMenuManager : MonoBehaviour
     }
     #endregion
 
-    #region Other
+    #region Funções Próprias
     private void Init()
     {
         var menuCanvas = GameObject.Find("MainMenu Canvas");

@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class BalloonStats : MonoBehaviour
 {
-    #region Variáveis
+    #region VariÃ¡veis
     public static BalloonStats Instance;
 
-    [Header("Configurações:")]
+    [Header("Configuraï¿½ï¿½es:")]
     public int InitialMoney;
     public float MinSpeed;
     public float MaxSpeed;
@@ -20,7 +20,7 @@ public class BalloonStats : MonoBehaviour
     [SerializeField] private GameObject gunObject;
     [SerializeField] private GameObject chickenObject;
 
-    // Atributos atuais do Balão
+    // Atributos atuais do BalÃ£o
     public static float Speed;
     public static float Stability;
     public static int Durability;
@@ -32,24 +32,27 @@ public class BalloonStats : MonoBehaviour
     public static int DurabilityLevel;
     public static int CurrentMoney;
 
-    private static bool _isFirstTime = true;
+    public static bool IsFirstTime = true;
     #endregion
 
-    #region Funções Unity
+    #region FunÃ§Ãµes Unity
     private void Awake() => Instance = this;
 
     private void Start()
     {
-        if (_isFirstTime) 
+        if (IsFirstTime) 
         {
             ChangeSpeed(MinSpeed);
             ChangeStability(MinStability);
             //ChangeDurability(MinDurability);
             Durability = 1;
             BalloonCollision.InitialDurability = Durability;
-
+            
+            HasGun = false;
+            HasChicken = false;
+            
             CurrentMoney = InitialMoney;
-            _isFirstTime = false;
+            IsFirstTime = false;
         }
         else 
         {
@@ -67,7 +70,7 @@ public class BalloonStats : MonoBehaviour
     }
     #endregion
 
-    #region Funções Próprias
+    #region FunÃ§Ãµes PrÃ³prias
     public void ChangeSpeed(float value=0) 
     {
         var newValue = Mathf.Clamp(Speed + value, MinSpeed, MaxSpeed);

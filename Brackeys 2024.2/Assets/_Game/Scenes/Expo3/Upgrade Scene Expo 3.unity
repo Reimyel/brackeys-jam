@@ -5647,6 +5647,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963904357}
   m_CullTransparentMesh: 1
+--- !u!1 &2003372571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003372573}
+  - component: {fileID: 2003372572}
+  m_Layer: 0
+  m_Name: RestartProgress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2003372572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003372571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c7c2cb35355f147a9986da2c44d5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuSceneName: Main Menu Scene Expo 3
+  transitionSettings: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
+  transitionInterval: 0
+--- !u!4 &2003372573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003372571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2095164029 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8480265990215888998, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
@@ -6294,6 +6341,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1778176935}
     - target: {fileID: 4365742014841074247, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
+      propertyPath: nextSceneName
+      value: JOGO Scene Expo 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365742014841074247, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: pressedAnimatorController
       value: 
       objectReference: {fileID: 9100000, guid: 1e9eec5b83ac3c1448c691691c7603ba, type: 2}
@@ -6347,7 +6398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5403627521145831947, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441718522374711328, guid: 5445d2ece7004a14284fc3526ee1f318, type: 3}
       propertyPath: chicken
@@ -6763,3 +6814,4 @@ SceneRoots:
   - {fileID: 1004930229}
   - {fileID: 158250443}
   - {fileID: 7607901566607462922}
+  - {fileID: 2003372573}

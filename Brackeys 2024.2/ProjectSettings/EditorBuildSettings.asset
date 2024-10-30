@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Main/End Scene.unity
     guid: 262d5fd0fc4ce3f45abb12b736c523e2
+  - enabled: 1
+    path: Assets/_Game/Scenes/Expo3/JOGO Scene Expo 3.unity
+    guid: 91f13c0a337384549ad9980bdd117a0f
+  - enabled: 1
+    path: Assets/_Game/Scenes/Expo3/Upgrade Scene Expo 3.unity
+    guid: d286293a300a68141bb41a443ee9d31d
+  - enabled: 1
+    path: Assets/_Game/Scenes/Expo3/Main Menu Scene Expo 3.unity
+    guid: cbe0494b982bffb48b33acd642cd2281
   m_configObjects: {}
